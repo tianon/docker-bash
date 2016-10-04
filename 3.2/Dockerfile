@@ -81,6 +81,8 @@ RUN set -ex; \
 	./configure \
 		--enable-readline \
 		--with-curses \
+# musl does not implement brk/sbrk (they simply return -ENOMEM)
+#   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)
 		--without-bash-malloc \
 	|| { \
 		cat >&2 config.log; \
