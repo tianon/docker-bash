@@ -9,6 +9,7 @@ env:
   - VERSION=4.0
   - VERSION=3.2
   - VERSION=3.1
+  - VERSION=3.0
 
 install:
   - git clone https://github.com/docker-library/official-images.git ~/official-images
