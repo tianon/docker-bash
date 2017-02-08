@@ -115,4 +115,6 @@ RUN set -ex; \
 # for some reason, 3.0.xx manifests as 3.00.xx (hence the extra "0" added in the following check)
 	[ "$(bash -c 'echo "${BASH_VERSION%%[^0-9.]*}"')" = "${_BASH_VERSION}0.$_BASH_LATEST_PATCH" ];
 
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["bash"]
