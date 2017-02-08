@@ -59,6 +59,7 @@ for version in "${versions[@]}"; do
 			s/^(ENV _BASH_PATCH_LEVEL) .*/\1 '"$patchLevel"'/;
 			s/^(ENV _BASH_LATEST_PATCH) .*/\1 '"$latestPatch"'/
 		' "$version/Dockerfile"
+		cp -a docker-entrypoint.sh "$version/"
 	)
 	travisEnv='\n  - VERSION='"$version$travisEnv"
 done

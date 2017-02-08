@@ -21,6 +21,8 @@ before_script:
 
 script:
   - docker build -t "$image" .
+  - docker run -it --rm "$image" --version
+  - docker run -it --rm "$image" echo hi
   - ~/official-images/test/run.sh "$image"
 
 after_script:
