@@ -20,7 +20,7 @@ before_script:
   - image="bash:$VERSION"
 
 script:
-  - docker build -t "$image" .
+  - travis_retry docker build -t "$image" .
   - docker run -it --rm "$image" --version
   - docker run -it --rm "$image" echo hi
   - ~/official-images/test/run.sh "$image"
