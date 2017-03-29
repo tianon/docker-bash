@@ -97,6 +97,8 @@ RUN set -ex; \
 		cat >&2 config.log; \
 		false; \
 	}; \
+# parallel jobs workaround borrowed from Alpine :)
+	make y.tab.c; make builtins/libbuiltins.a; \
 	make -j "$(nproc)"; \
 	make install; \
 	cd /; \
