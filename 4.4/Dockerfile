@@ -15,6 +15,8 @@ RUN set -ex; \
 	apk add --no-cache --virtual .build-deps \
 		bison \
 		ca-certificates \
+		coreutils \
+		dpkg-dev dpkg \
 		gcc \
 		gnupg \
 		libc-dev \
@@ -78,7 +80,13 @@ RUN set -ex; \
 	fi; \
 	\
 	cd /usr/src/bash; \
+	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \
+# update "config.guess" and "config.sub" to get more aggressively inclusive architecture support
+	for f in config.guess config.sub; do \
+		wget -O "support/$f" "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=$f;hb=HEAD"; \
+	done; \
 	./configure \
+		--build="$gnuArch" \
 		--enable-readline \
 		--with-curses \
 # musl does not implement brk/sbrk (they simply return -ENOMEM)
@@ -88,7 +96,7 @@ RUN set -ex; \
 		cat >&2 config.log; \
 		false; \
 	}; \
-	make -j "$(getconf _NPROCESSORS_ONLN)"; \
+	make -j "$(nproc)"; \
 	make install; \
 	cd /; \
 	rm -r /usr/src/bash; \
