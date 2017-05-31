@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.6
 
 # gpg: key 64EA74AB: public key "Chet Ramey <chet@cwru.edu>" imported
 ENV _BASH_GPG_KEY 7C0135FB088AAF6C66C650B9BB5869F064EA74AB
@@ -57,7 +57,7 @@ RUN set -ex; \
 			rm "$sig"; \
 		done; \
 	fi; \
-	rm -r "$GNUPGHOME"; \
+	rm -rf "$GNUPGHOME"; \
 	\
 	mkdir -p /usr/src/bash; \
 	tar \
@@ -84,7 +84,7 @@ RUN set -ex; \
 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \
 # update "config.guess" and "config.sub" to get more aggressively inclusive architecture support
 	for f in config.guess config.sub; do \
-		wget -O "support/$f" "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=$f;hb=HEAD"; \
+		wget -O "support/$f" "https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=$f;hb=HEAD"; \
 	done; \
 	./configure \
 		--build="$gnuArch" \
