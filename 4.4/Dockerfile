@@ -79,6 +79,15 @@ RUN set -ex; \
 		rmdir bash-patches; \
 	fi; \
 	\
+# temporarily apply Alpine's patch to fix process substitution hanging in 4.4
+# see https://github.com/tianon/docker-bash/issues/4
+# and https://lists.gnu.org/archive/html/bug-bash/2017-12/msg00025.html
+# and https://github.com/alpinelinux/aports/commit/3239e62fb1c7968e923016358345a4dcc7e2f87d
+	wget -O alpine-fix-jobs.patch 'https://github.com/alpinelinux/aports/raw/3239e62fb1c7968e923016358345a4dcc7e2f87d/main/bash/fix-jobs.patch'; \
+	echo '0e1a1d0f9d1ec90188beb99e5c6c5c92a2baeb26f9d4f147b4c9e0a2b697d2d13ff3210985b8ebf849f916af1cc124f655bd026b28f37d5abd51be7b9672da9a *alpine-fix-jobs.patch' | sha512sum -c -; \
+	patch --directory=/usr/src/bash --input="$PWD/alpine-fix-jobs.patch" --strip=1; \
+	rm alpine-fix-jobs.patch; \
+	\
 	cd /usr/src/bash; \
 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \
 # update "config.guess" and "config.sub" to get more aggressively inclusive architecture support
