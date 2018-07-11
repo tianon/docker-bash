@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.8
 
 # gpg: key 64EA74AB: public key "Chet Ramey <chet@cwru.edu>" imported
 ENV _BASH_GPG_KEY 7C0135FB088AAF6C66C650B9BB5869F064EA74AB
