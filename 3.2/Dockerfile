@@ -48,6 +48,7 @@ RUN set -ex; \
 	export GNUPGHOME="$(mktemp -d)"; \
 	gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$_BASH_GPG_KEY"; \
 	gpg --batch --verify bash.tar.gz.sig bash.tar.gz; \
+	gpgconf --kill all; \
 	rm bash.tar.gz.sig; \
 	if [ -d bash-patches ]; then \
 		for sig in bash-patches/*.sig; do \
