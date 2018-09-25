@@ -2,6 +2,8 @@
 set -eu
 
 declare -A aliases=(
+	[5.0-rc]='rc'
+	[5.0]='5'
 	[4.4]='4 latest'
 	[3.2]='3'
 )
@@ -81,7 +83,12 @@ for version in "${versions[@]}"; do
 			bashLatestPatch = $3
 		}
 		bashVersion != "" && bashLatestPatch != "" {
-			printf "%s.%s", bashVersion, bashLatestPatch;
+			if (bashVersion ~ /-/ && bashLatestPatch == "0") {
+				printf "%s", bashVersion
+			}
+			else {
+				printf "%s.%s", bashVersion, bashLatestPatch;
+			}
 			exit
 		}
 	')"
