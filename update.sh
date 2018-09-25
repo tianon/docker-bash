@@ -18,13 +18,19 @@ allBaseVersions="$(
 
 travisEnv=
 for version in "${versions[@]}"; do
-	bashVersion="$version"
+	rcVersion="${version%-rc}"
+	rcGrepV='-v'
+	if [ "$version" != "$rcVersion" ]; then
+		rcGrepV=
+	fi
+
+	bashVersion="$rcVersion"
 
 	IFS=$'\n'
 	allVersions=( $(
 		echo "$allBaseVersions" \
-			| grep -E "^$bashVersion(\.|\$)" \
-			| grep -vE -- '-(rc|beta)' \
+			| grep -E "^$bashVersion([.-]|\$)" \
+			| grep -E $rcGrepV -- '-(rc|beta|alpha)' \
 			| sort -rV
 	) )
 	allPatches=( $(
@@ -50,6 +56,10 @@ for version in "${versions[@]}"; do
 	patchLevel='0'
 	if [[ "$latestVersion" == *.*.* ]]; then
 		patchLevel="${latestVersion##*.*.}"
+	fi
+
+	if [ "$rcVersion" != "$version" ]; then
+		bashVersion="$latestVersion" # "5.0-beta", "5.0-alpha", etc
 	fi
 
 	(
