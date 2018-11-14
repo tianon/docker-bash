@@ -46,7 +46,7 @@ RUN set -ex; \
 	fi; \
 	\
 	export GNUPGHOME="$(mktemp -d)"; \
-	gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$_BASH_GPG_KEY"; \
+	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$_BASH_GPG_KEY"; \
 	gpg --batch --verify bash.tar.gz.sig bash.tar.gz; \
 	gpgconf --kill all; \
 	rm bash.tar.gz.sig; \
