@@ -7,7 +7,7 @@ ENV _BASH_GPG_KEY 7C0135FB088AAF6C66C650B9BB5869F064EA74AB
 ENV _BASH_VERSION 5.0
 ENV _BASH_PATCH_LEVEL 0
 # https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
-ENV _BASH_LATEST_PATCH 0
+ENV _BASH_LATEST_PATCH 2
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -ex; \
