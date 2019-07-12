@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.10
 
 # gpg: key 64EA74AB: public key "Chet Ramey <chet@cwru.edu>" imported
 ENV _BASH_GPG_KEY 7C0135FB088AAF6C66C650B9BB5869F064EA74AB
@@ -10,14 +10,14 @@ ENV _BASH_PATCH_LEVEL 18
 ENV _BASH_LATEST_PATCH 23
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
-RUN set -ex; \
+RUN set -eux; \
 	\
 	apk add --no-cache --virtual .build-deps \
 		bison \
-		ca-certificates \
 		coreutils \
 		dpkg-dev dpkg \
 		gcc \
+		gettext-dev \
 		gnupg \
 		libc-dev \
 		make \
@@ -79,15 +79,6 @@ RUN set -ex; \
 		rmdir bash-patches; \
 	fi; \
 	\
-# temporarily apply Alpine's patch to fix process substitution hanging in 4.4
-# see https://github.com/tianon/docker-bash/issues/4
-# and https://lists.gnu.org/archive/html/bug-bash/2017-12/msg00025.html
-# and https://github.com/alpinelinux/aports/commit/3239e62fb1c7968e923016358345a4dcc7e2f87d
-	wget -O alpine-fix-jobs.patch 'https://github.com/alpinelinux/aports/raw/6c1881db229de5cdc49bc974b7b99badc3e187aa/main/bash/fix-jobs.patch'; \
-	echo '79473c41e620d78d25139b56c37d18adac5c03dc28939f218729dfcd3558d8cbac5e83db814ffd27aa833cd3e55f81aad26aaf62af3688c927d8ac2a4172eaa4 *alpine-fix-jobs.patch' | sha512sum -c -; \
-	patch --directory=/usr/src/bash --input="$PWD/alpine-fix-jobs.patch" --strip=1; \
-	rm alpine-fix-jobs.patch; \
-	\
 	cd /usr/src/bash; \
 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \
 # update "config.guess" and "config.sub" to get more aggressively inclusive architecture support
@@ -129,7 +120,7 @@ RUN set -ex; \
 	\
 	[ "$(which bash)" = '/usr/local/bin/bash' ]; \
 	bash --version; \
-	[ "$(bash -c 'echo "${BASH_VERSION%%[^0-9.]*}"')" = "$_BASH_VERSION.$_BASH_LATEST_PATCH" ];
+	[ "$(bash -c 'echo "${BASH_VERSION%%[^0-9.]*}"')" = "${_BASH_VERSION%%-*}.$_BASH_LATEST_PATCH" ];
 
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]

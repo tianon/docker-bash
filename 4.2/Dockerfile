@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.10
 
 # gpg: key 64EA74AB: public key "Chet Ramey <chet@cwru.edu>" imported
 ENV _BASH_GPG_KEY 7C0135FB088AAF6C66C650B9BB5869F064EA74AB
@@ -10,11 +10,10 @@ ENV _BASH_PATCH_LEVEL 53
 ENV _BASH_LATEST_PATCH 53
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
-RUN set -ex; \
+RUN set -eux; \
 	\
 	apk add --no-cache --virtual .build-deps \
 		bison \
-		ca-certificates \
 		coreutils \
 		dpkg-dev dpkg \
 		gcc \
@@ -119,7 +118,7 @@ RUN set -ex; \
 	\
 	[ "$(which bash)" = '/usr/local/bin/bash' ]; \
 	bash --version; \
-	[ "$(bash -c 'echo "${BASH_VERSION%%[^0-9.]*}"')" = "$_BASH_VERSION.$_BASH_LATEST_PATCH" ];
+	[ "$(bash -c 'echo "${BASH_VERSION%%[^0-9.]*}"')" = "${_BASH_VERSION%%-*}.$_BASH_LATEST_PATCH" ];
 
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]
