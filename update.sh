@@ -30,8 +30,11 @@ for version in "${versions[@]}"; do
 			echo >&2 "error: cannot determine commit for $version (from https://git.savannah.gnu.org/cgit/bash.git)"
 			exit 1
 		fi
-		echo "$version: $commit"
-		sed -ri -e 's/^(ENV _BASH_COMMIT) .*/\1 '"$commit"'/' "$version/Dockerfile"
+		desc="$(curl -fsSL "https://git.savannah.gnu.org/cgit/bash.git/patch/?id=$commit" | sed -n '/^Subject: /{s///p;q}')"
+		echo "$version: $commit ($desc)"
+		sed -ri -e 's/^(ENV _BASH_COMMIT) .*/\1 '"$commit"'/' \
+			-e 's!^(ENV _BASH_COMMIT_DESC) .*!\1 '"$desc"'!' \
+			"$version/Dockerfile"
 		cp -a docker-entrypoint.sh "$version/"
 		travisEnv='\n  - VERSION='"$version$travisEnv"
 		continue
