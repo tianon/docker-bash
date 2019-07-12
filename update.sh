@@ -24,6 +24,19 @@ for version in "${versions[@]}"; do
 		rcGrepV=
 	fi
 
+	if [ "$version" = 'devel' ]; then
+		commit="$(git ls-remote https://git.savannah.gnu.org/git/bash.git refs/heads/devel | cut -d$'\t' -f1)"
+		if [ -z "$commit" ]; then
+			echo >&2 "error: cannot determine commit for $version (from https://git.savannah.gnu.org/cgit/bash.git)"
+			exit 1
+		fi
+		echo "$version: $commit"
+		sed -ri -e 's/^(ENV _BASH_COMMIT) .*/\1 '"$commit"'/' "$version/Dockerfile"
+		cp -a docker-entrypoint.sh "$version/"
+		travisEnv='\n  - VERSION='"$version$travisEnv"
+		continue
+	fi
+
 	bashVersion="$rcVersion"
 
 	IFS=$'\n'
@@ -62,15 +75,15 @@ for version in "${versions[@]}"; do
 		bashVersion="$latestVersion" # "5.0-beta", "5.0-alpha", etc
 	fi
 
-	(
-		set -x
-		sed -ri '
-			s/^(ENV _BASH_VERSION) .*/\1 '"$bashVersion"'/;
-			s/^(ENV _BASH_PATCH_LEVEL) .*/\1 '"$patchLevel"'/;
-			s/^(ENV _BASH_LATEST_PATCH) .*/\1 '"$latestPatch"'/
-		' "$version/Dockerfile"
-		cp -a docker-entrypoint.sh "$version/"
-	)
+	echo "$version: $latestVersion"
+
+	sed -ri \
+		-e 's/^(ENV _BASH_VERSION) .*/\1 '"$bashVersion"'/' \
+		-e 's/^(ENV _BASH_PATCH_LEVEL) .*/\1 '"$patchLevel"'/' \
+		-e 's/^(ENV _BASH_LATEST_PATCH) .*/\1 '"$latestPatch"'/' \
+		"$version/Dockerfile"
+	cp -a docker-entrypoint.sh "$version/"
+
 	travisEnv='\n  - VERSION='"$version$travisEnv"
 done
 
