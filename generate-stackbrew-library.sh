@@ -75,7 +75,9 @@ for version in "${versions[@]}"; do
 	parent="$(awk 'toupper($1) == "FROM" { print $2 }' "$version/Dockerfile")"
 	arches="${parentRepoToArches[$parent]}"
 
-	fullVersion="$(git show "$commit":"$version/Dockerfile" | awk '
+	fullVersion="$(git show "$commit":"$version/Dockerfile" | awk -v version="$version" '
+		$1 == "ENV" && $2 == "_BASH_COMMIT_DESC" && $4 ~ /^bash-[0-9]+$/ && $5 == "snapshot" { gsub(/^bash-/, "", $4); print version "-" $4; exit }
+
 		$1 == "ENV" && $2 == "_BASH_VERSION" {
 			bashVersion = $3
 		}
