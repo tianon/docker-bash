@@ -30,7 +30,12 @@ for version in "${versions[@]}"; do
 			echo >&2 "error: cannot determine commit for $version (from https://git.savannah.gnu.org/cgit/bash.git)"
 			exit 1
 		fi
-		desc="$(curl -fsSL "https://git.savannah.gnu.org/cgit/bash.git/patch/?id=$commit" | sed -n '/^Subject: /{s///p;q}')"
+		desc="$(
+			curl -fsSL "https://git.savannah.gnu.org/cgit/bash.git/patch/?id=$commit" 2>/dev/null \
+				| sed -n '/^Subject: /{s///p;q}' \
+				|| :
+		)"
+		[ -n "$desc" ]
 		echo "$version: $commit ($desc)"
 		sed -ri -e 's/^(ENV _BASH_COMMIT) .*/\1 '"$commit"'/' \
 			-e 's!^(ENV _BASH_COMMIT_DESC) .*!\1 '"$desc"'!' \
