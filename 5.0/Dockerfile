@@ -1,13 +1,13 @@
 FROM alpine:3.10
 
 # gpg: key 64EA74AB: public key "Chet Ramey <chet@cwru.edu>" imported
-ARG _BASH_GPG_KEY 7C0135FB088AAF6C66C650B9BB5869F064EA74AB
+ARG _BASH_GPG_KEY=7C0135FB088AAF6C66C650B9BB5869F064EA74AB
 
 # https://ftp.gnu.org/gnu/bash/?C=M;O=D
-ARG _BASH_VERSION 5.0
-ARG _BASH_PATCH_LEVEL 0
+ARG _BASH_VERSION=5.0
+ARG _BASH_PATCH_LEVEL=0
 # https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
-ARG _BASH_LATEST_PATCH 11
+ARG _BASH_LATEST_PATCH=11
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
