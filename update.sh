@@ -16,7 +16,6 @@ allBaseVersions="$(
 		| sed -r 's/^bash-|\.tar\.gz$//g'
 )"
 
-travisEnv=
 for version in "${versions[@]}"; do
 	rcVersion="${version%-rc}"
 	rcGrepV='-v'
@@ -41,7 +40,6 @@ for version in "${versions[@]}"; do
 			-e 's!^(ENV _BASH_COMMIT_DESC) .*!\1 '"$desc"'!' \
 			"$version/Dockerfile"
 		cp -a docker-entrypoint.sh "$version/"
-		travisEnv='\n  - VERSION='"$version$travisEnv"
 		continue
 	fi
 
@@ -91,9 +89,4 @@ for version in "${versions[@]}"; do
 		-e 's/^(ENV _BASH_LATEST_PATCH) .*/\1 '"$latestPatch"'/' \
 		"$version/Dockerfile"
 	cp -a docker-entrypoint.sh "$version/"
-
-	travisEnv='\n  - VERSION='"$version$travisEnv"
 done
-
-travis="$(awk -v 'RS=\n\n' '$1 == "env:" { $0 = "env:'"$travisEnv"'" } { printf "%s%s", $0, RS }' .travis.yml)"
-echo "$travis" > .travis.yml
