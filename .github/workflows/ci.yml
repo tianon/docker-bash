@@ -18,12 +18,15 @@ jobs:
     outputs:
       strategy: ${{ steps.generate-jobs.outputs.strategy }}
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - id: generate-jobs
         name: Generate Jobs
         run: |
+          image="${GITHUB_REPOSITORY##*/}"
+          image="${image#docker-}"
+          export GITHUB_REPOSITORY="$image"
           git clone --depth 1 https://github.com/docker-library/bashbrew.git -b master ~/bashbrew
-          strategy="$(GITHUB_REPOSITORY='bash' ~/bashbrew/scripts/github-actions/generate.sh)"
+          strategy="$(~/bashbrew/scripts/github-actions/generate.sh)"
           jq . <<<"$strategy" # sanity check / debugging aid
           echo "::set-output name=strategy::$strategy"
 
@@ -33,7 +36,7 @@ jobs:
     name: ${{ matrix.name }}
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Prepare Environment
         run: ${{ matrix.runs.prepare }}
       - name: Pull Dependencies
