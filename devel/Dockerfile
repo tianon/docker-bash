@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
 ENV _BASH_COMMIT 37adc8b99d4c15dcb9e6582aa19a2ef61afb592f
