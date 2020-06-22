@@ -1,8 +1,8 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-ENV _BASH_COMMIT d37a47224aa80aaddc13e415886a698a8f8fde2e
-ENV _BASH_COMMIT_DESC commit bash-20200615 snapshot
+ENV _BASH_COMMIT bdf37a2d4f0f052ffd15d36de3b3a5d28f357000
+ENV _BASH_COMMIT_DESC commit bash-20200618 snapshot
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
