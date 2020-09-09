@@ -4,7 +4,7 @@ FROM alpine:3.12
 ENV _BASH_GPG_KEY 7C0135FB088AAF6C66C650B9BB5869F064EA74AB
 
 # https://ftp.gnu.org/gnu/bash/?C=M;O=D
-ENV _BASH_VERSION 5.1-alpha
+ENV _BASH_VERSION 5.1-beta
 ENV _BASH_PATCH_LEVEL 0
 # https://ftp.gnu.org/gnu/bash/bash-5.0-patches/?C=M;O=D
 ENV _BASH_LATEST_PATCH 0
