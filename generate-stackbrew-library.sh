@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-set -Eeuo pipefail
+#!/bin/bash
+set -eu
 
 declare -A aliases=(
 	[5.1-rc]='rc'
@@ -11,11 +11,13 @@ declare -A aliases=(
 self="$(basename "$BASH_SOURCE")"
 cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
 
-versions=( */ )
-versions=( "${versions[@]%/}" )
+if [ "$#" -eq 0 ]; then
+	versions="$(jq -r 'keys | map(@sh) | join(" ")' versions.json)"
+	eval "set -- $versions"
+fi
 
 # sort version numbers with highest first
-IFS=$'\n'; versions=( $(echo "${versions[*]}" | sort -rV) ); unset IFS
+IFS=$'\n'; set -- $(sort -rV <<<"$*"); unset IFS
 
 # get the most recent commit which modified any of "$@"
 fileCommit() {
@@ -53,7 +55,6 @@ getArches() {
 			| xargs bashbrew cat --format '[{{ .RepoName }}:{{ .TagName }}]="{{ join " " .TagEntry.Architectures }}"'
 	) )"
 }
-
 getArches 'bash'
 
 cat <<-EOH
@@ -70,36 +71,24 @@ join() {
 	echo "${out#$sep}"
 }
 
-for version in "${versions[@]}"; do
-	commit="$(dirCommit "$version")"
-	parent="$(awk 'toupper($1) == "FROM" { print $2 }' "$version/Dockerfile")"
-	arches="${parentRepoToArches[$parent]}"
+for version; do
+	export version
 
-	fullVersion="$(git show "$commit":"$version/Dockerfile" | awk -v version="$version" '
-		$1 == "ENV" && $2 == "_BASH_COMMIT_DESC" && $4 ~ /^bash-[0-9]+$/ && $5 == "snapshot" { gsub(/^bash-/, "", $4); print version "-" $4; exit }
-
-		$1 == "ENV" && $2 == "_BASH_VERSION" {
-			bashVersion = $3
-		}
-		$1 == "ENV" && $2 == "_BASH_LATEST_PATCH" {
-			bashLatestPatch = $3
-		}
-		bashVersion != "" && bashLatestPatch != "" {
-			if (bashVersion ~ /-/ && bashLatestPatch == "0") {
-				printf "%s", bashVersion
-			}
-			else {
-				printf "%s.%s", bashVersion, bashLatestPatch;
-			}
-			exit
-		}
-	')"
+	fullVersion="$(jq -r '.[env.version].version' versions.json)"
+	if [ "$version" = 'devel' ]; then
+		fullVersion="$version-$fullVersion"
+	fi
 
 	versionAliases=(
 		$fullVersion
 		$version
 		${aliases[$version]:-}
 	)
+
+	parent="$(awk 'toupper($1) == "FROM" { print $2 }' "$version/Dockerfile")"
+	arches="${parentRepoToArches[$parent]}"
+
+	commit="$(dirCommit "$version")"
 
 	echo
 	cat <<-EOE

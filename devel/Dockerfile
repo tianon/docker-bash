@@ -1,8 +1,14 @@
+#
+# NOTE: THIS DOCKERFILE IS GENERATED VIA "apply-templates.sh"
+#
+# PLEASE DO NOT EDIT IT DIRECTLY.
+#
+
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
 ENV _BASH_COMMIT f43f678557d150aeca89836812ccfac506718280
-ENV _BASH_COMMIT_DESC commit bash-20200901 snapshot
+ENV _BASH_VERSION devel-20200901
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
@@ -30,6 +36,7 @@ RUN set -eux; \
 	rm bash.tar.gz; \
 	\
 	if [ -d bash-patches ]; then \
+		apk add --no-cache --virtual .patch-deps patch; \
 		for p in bash-patches/*; do \
 			patch \
 				--directory=/usr/src/bash \
@@ -39,6 +46,7 @@ RUN set -eux; \
 			rm "$p"; \
 		done; \
 		rmdir bash-patches; \
+		apk del --no-network .patch-deps; \
 	fi; \
 	\
 	cd /usr/src/bash; \
@@ -60,10 +68,10 @@ RUN set -eux; \
 	rm -r /usr/src/bash; \
 	\
 # delete a few installed bits for smaller image size
-	rm -r \
+	rm -rf \
 		/usr/local/share/doc/bash/*.html \
 		/usr/local/share/info \
-#		/usr/local/share/locale \
+		/usr/local/share/locale \
 		/usr/local/share/man \
 	; \
 	\
@@ -73,11 +81,12 @@ RUN set -eux; \
 			| sort -u \
 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' \
 	)"; \
-	apk add --no-cache --virtual .bash-rundeps $runDeps; \
-	apk del .build-deps; \
+	apk add --no-network --virtual .bash-rundeps $runDeps; \
+	apk del --no-network .build-deps; \
 	\
 	[ "$(which bash)" = '/usr/local/bin/bash' ]; \
-	bash --version
+	bash --version; \
+	bash -c 'help' > /dev/null
 
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]
