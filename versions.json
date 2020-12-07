@@ -83,8 +83,11 @@
     },
     "version": "5.0.18"
   },
-  "5.1-rc": {
-    "version": "5.1-rc3"
+  "5.1": {
+    "baseline": {
+      "version": "5.1"
+    },
+    "version": "5.1.0"
   },
   "devel": {
     "commit": {
