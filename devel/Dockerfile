@@ -7,8 +7,8 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-ENV _BASH_COMMIT 975643bb2b3c00f4f57d77a53cc0e00d31e52cf1
-ENV _BASH_VERSION devel-20201214
+ENV _BASH_COMMIT 3c5683a47b8ad7abd8232dee8a47d7c821904802
+ENV _BASH_VERSION devel-20201218
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
