@@ -23,6 +23,9 @@ allBaseVersions="$(
 		| sort -V
 )"
 
+tmp="$(mktemp -d)"
+trap "$(printf 'rm -rf %q' "$tmp")" EXIT
+
 for version in "${versions[@]}"; do
 	export version
 
@@ -33,21 +36,23 @@ for version in "${versions[@]}"; do
 	fi
 
 	if [ "$version" = 'devel' ]; then
-		commit="$(git ls-remote https://git.savannah.gnu.org/git/bash.git refs/heads/devel | cut -d$'\t' -f1)"
+		git clone --quiet --branch devel --depth 10 https://git.savannah.gnu.org/git/bash.git "$tmp/devel"
+		snapshotDate="$(TZ=UTC date --date 'last monday 23:59:59' '+%Y-%m-%d %H:%M:%S %Z')" # https://github.com/docker-library/faq#can-i-use-a-bot-to-make-my-image-update-prs
+		commit="$(git -C "$tmp/devel" log --before="$snapshotDate" --format='format:%H' --max-count=1)"
 		if [ -z "$commit" ]; then
 			echo >&2 "error: cannot determine commit for $version (from https://git.savannah.gnu.org/cgit/bash.git)"
 			exit 1
 		fi
-		desc="$(
-			curl -fsSL "https://git.savannah.gnu.org/cgit/bash.git/patch/?id=$commit" 2>/dev/null \
-				| sed -ne '/^Subject: /{s///p;q}' \
-				|| :
-		)"
+		desc="$(git -C "$tmp/devel" log --max-count=1 --format='format:%s' "$commit")"
 		[ -n "$desc" ]
-		timestamp="$(sed -rne '/.*[[:space:]]+bash-([0-9]+)[[:space:]]+.*/s//\1/p' <<<"$desc")"
-		[ -n "$timestamp" ]
+		if timestamp="$(sed -rne '/.*[[:space:]]+bash-([0-9]+)[[:space:]]+.*/s//\1/p' <<<"$desc")" && [ -n "$timestamp" ]; then
+			: # "commit bash-20210305 snapshot"
+		else
+			timestamp="$(git -C "$tmp/devel" log --max-count=1 --format='format:%as' "$commit")"
+			timestamp="${timestamp//-/}"
+		fi
 
-		echo "$version: $commit ($timestamp)"
+		echo "$version: $commit ($timestamp -- $desc)"
 
 		export commit timestamp
 		json="$(jq <<<"$json" -c '.[env.version] = {
