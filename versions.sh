@@ -48,16 +48,17 @@ for version in "${versions[@]}"; do
 		if timestamp="$(sed -rne '/.*[[:space:]]+bash-([0-9]+)[[:space:]]+.*/s//\1/p' <<<"$desc")" && [ -n "$timestamp" ]; then
 			: # "commit bash-20210305 snapshot"
 		else
-			timestamp="$(git -C "$tmp/devel" log --max-count=1 --format='format:%as' "$commit")"
+			timestamp="$(git -C "$tmp/devel" log --max-count=1 --format='format:%aI' "$commit")" # ideally we'd use "%as" and just axe "-" but that requires newer Git than Debian 10 has /o\
+			timestamp="${timestamp%%T*}"
 			timestamp="${timestamp//-/}"
 		fi
 
 		echo "$version: $commit ($timestamp -- $desc)"
 
-		export commit timestamp
+		export commit timestamp desc
 		json="$(jq <<<"$json" -c '.[env.version] = {
 			version: env.timestamp,
-			commit: { version: env.commit },
+			commit: { version: env.commit, description: env.desc },
 		}')"
 		continue
 	fi
