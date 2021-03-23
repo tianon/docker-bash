@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "process $'...' and $\"...\" in here-documents",
-      "version": "83c4ad27c7f1284ecb5db6e2f1afc0c553d5fcf3"
+      "description": "documentation tweaks for clarity",
+      "version": "b37342db4fb8861821bf03c53163a3e517c81ace"
     },
-    "version": "20210315"
+    "version": "20210322"
   }
 }
