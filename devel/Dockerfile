@@ -6,7 +6,7 @@
 
 FROM alpine:3.12
 
-# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+# https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 ENV _BASH_COMMIT b37342db4fb8861821bf03c53163a3e517c81ace
 # documentation tweaks for clarity
 ENV _BASH_VERSION devel-20210322

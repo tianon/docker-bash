@@ -1,7 +1,7 @@
 FROM alpine:3.12
 
 {{ if env.version == "devel" then ( -}}
-# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+# https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 ENV _BASH_COMMIT {{ .commit.version }}
 # {{ .commit.description }}
 ENV _BASH_VERSION devel-{{ .version }}
