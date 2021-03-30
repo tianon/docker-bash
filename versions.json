@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "documentation tweaks for clarity",
-      "version": "b37342db4fb8861821bf03c53163a3e517c81ace"
+      "description": "alias expansion fix in case statements",
+      "version": "65822e501190830edd0223cfa88576b7709177e8"
     },
-    "version": "20210322"
+    "version": "20210329"
   }
 }

@@ -7,9 +7,9 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT b37342db4fb8861821bf03c53163a3e517c81ace
-# documentation tweaks for clarity
-ENV _BASH_VERSION devel-20210322
+ENV _BASH_COMMIT 65822e501190830edd0223cfa88576b7709177e8
+# alias expansion fix in case statements
+ENV _BASH_VERSION devel-20210329
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
