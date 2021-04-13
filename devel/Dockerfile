@@ -7,9 +7,9 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 8f485ff84c2d67593f8797ee10169f97163c7adb
-# new readline "fetch-history" bindable command; declare -p output change
-ENV _BASH_VERSION devel-20210401
+ENV _BASH_COMMIT fb4ddc2d2b66b776e013ddadfce86270a71c323a
+# default value for BASH_LOADABLES_PATH; other minor changes
+ENV _BASH_VERSION devel-20210412
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

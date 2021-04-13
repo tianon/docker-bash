@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "new readline \"fetch-history\" bindable command; declare -p output change",
-      "version": "8f485ff84c2d67593f8797ee10169f97163c7adb"
+      "description": "default value for BASH_LOADABLES_PATH; other minor changes",
+      "version": "fb4ddc2d2b66b776e013ddadfce86270a71c323a"
     },
-    "version": "20210401"
+    "version": "20210412"
   }
 }
