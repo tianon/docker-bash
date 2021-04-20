@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "default value for BASH_LOADABLES_PATH; other minor changes",
-      "version": "fb4ddc2d2b66b776e013ddadfce86270a71c323a"
+      "description": "command completion, key binding fixes",
+      "version": "d128c3ddc157f6f9b8bc02f881aff7297c990115"
     },
-    "version": "20210412"
+    "version": "20210419"
   }
 }
