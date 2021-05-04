@@ -7,9 +7,9 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 3fd77612fca0fa1956e54aac2e61bdcfecfe3b52
-# allow assignment to array keys @ and *; minor completion fix
-ENV _BASH_VERSION devel-20210426
+ENV _BASH_COMMIT b19658360926df6e889ca59becf2217f1c5d2e2d
+# new "enable-active-region" readline variable
+ENV _BASH_VERSION devel-20210430
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

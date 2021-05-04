@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "allow assignment to array keys @ and *; minor completion fix",
-      "version": "3fd77612fca0fa1956e54aac2e61bdcfecfe3b52"
+      "description": "new \"enable-active-region\" readline variable",
+      "version": "b19658360926df6e889ca59becf2217f1c5d2e2d"
     },
-    "version": "20210426"
+    "version": "20210430"
   }
 }
