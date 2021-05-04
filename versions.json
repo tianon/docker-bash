@@ -88,9 +88,9 @@
       "version": "5.1"
     },
     "patch": {
-      "version": "4"
+      "version": "8"
     },
-    "version": "5.1.4"
+    "version": "5.1.8"
   },
   "devel": {
     "commit": {
