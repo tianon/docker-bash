@@ -7,9 +7,9 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT b19658360926df6e889ca59becf2217f1c5d2e2d
-# new "enable-active-region" readline variable
-ENV _BASH_VERSION devel-20210430
+ENV _BASH_COMMIT b304aabc92d3f8f2a4f6ebbc35fa4614bbb83ea8
+# additional changes to avoid array subscript double expansion in arithmetic contexts
+ENV _BASH_VERSION devel-20210510
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

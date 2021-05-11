@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "new \"enable-active-region\" readline variable",
-      "version": "b19658360926df6e889ca59becf2217f1c5d2e2d"
+      "description": "additional changes to avoid array subscript double expansion in arithmetic contexts",
+      "version": "b304aabc92d3f8f2a4f6ebbc35fa4614bbb83ea8"
     },
-    "version": "20210430"
+    "version": "20210510"
   }
 }
