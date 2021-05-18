@@ -7,9 +7,9 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT b304aabc92d3f8f2a4f6ebbc35fa4614bbb83ea8
-# additional changes to avoid array subscript double expansion in arithmetic contexts
-ENV _BASH_VERSION devel-20210510
+ENV _BASH_COMMIT 7b024db83e0388c43b8e13e4e56144dabfe75c96
+# more minor changes for builtins and array subscript expansion; fix to `wait -n'
+ENV _BASH_VERSION devel-20210517
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
