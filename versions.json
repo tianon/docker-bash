@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "more minor changes for builtins and array subscript expansion; fix to `wait -n'",
-      "version": "7b024db83e0388c43b8e13e4e56144dabfe75c96"
+      "description": "add numeric arguments to bind -x commands and READLINE_ARGUMENT; minor fixes",
+      "version": "2047e28584f4200b55b5b704f798bcf1607b9ac6"
     },
-    "version": "20210517"
+    "version": "20210524"
   }
 }

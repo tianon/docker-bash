@@ -7,9 +7,9 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 7b024db83e0388c43b8e13e4e56144dabfe75c96
-# more minor changes for builtins and array subscript expansion; fix to `wait -n'
-ENV _BASH_VERSION devel-20210517
+ENV _BASH_COMMIT 2047e28584f4200b55b5b704f798bcf1607b9ac6
+# add numeric arguments to bind -x commands and READLINE_ARGUMENT; minor fixes
+ENV _BASH_VERSION devel-20210524
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
