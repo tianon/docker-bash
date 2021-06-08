@@ -7,9 +7,9 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 2047e28584f4200b55b5b704f798bcf1607b9ac6
-# add numeric arguments to bind -x commands and READLINE_ARGUMENT; minor fixes
-ENV _BASH_VERSION devel-20210524
+ENV _BASH_COMMIT 6e11792d93dca720d510914e978eb9b4fddcc0ea
+# minor documentation changes
+ENV _BASH_VERSION devel-20210601
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

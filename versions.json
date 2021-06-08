@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "add numeric arguments to bind -x commands and READLINE_ARGUMENT; minor fixes",
-      "version": "2047e28584f4200b55b5b704f798bcf1607b9ac6"
+      "description": "minor documentation changes",
+      "version": "6e11792d93dca720d510914e978eb9b4fddcc0ea"
     },
-    "version": "20210524"
+    "version": "20210601"
   }
 }
