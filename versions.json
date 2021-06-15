@@ -85,7 +85,7 @@
   },
   "5.1": {
     "baseline": {
-      "version": "5.1"
+      "patch": "8"
     },
     "patch": {
       "version": "8"
