@@ -46,7 +46,7 @@ RUN set -eux; \
 	apk add --no-cache --virtual .gpg-deps gnupg; \
 	export GNUPGHOME="$(mktemp -d)"; \
 # gpg: key 64EA74AB: public key "Chet Ramey <chet@cwru.edu>" imported
-	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 7C0135FB088AAF6C66C650B9BB5869F064EA74AB; \
+	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 7C0135FB088AAF6C66C650B9BB5869F064EA74AB; \
 	gpg --batch --verify bash.tar.gz.sig bash.tar.gz; \
 	rm bash.tar.gz.sig; \
 	if [ -d bash-patches ]; then \
