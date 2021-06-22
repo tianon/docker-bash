@@ -7,9 +7,9 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 6e11792d93dca720d510914e978eb9b4fddcc0ea
-# minor documentation changes
-ENV _BASH_VERSION devel-20210601
+ENV _BASH_COMMIT 03de84de4a79a8f7e6b87c7377a836356612c685
+# command substitution parsing now calls the parser recursively
+ENV _BASH_VERSION devel-20210621
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

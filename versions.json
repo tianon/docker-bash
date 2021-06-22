@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "minor documentation changes",
-      "version": "6e11792d93dca720d510914e978eb9b4fddcc0ea"
+      "description": "command substitution parsing now calls the parser recursively",
+      "version": "03de84de4a79a8f7e6b87c7377a836356612c685"
     },
-    "version": "20210601"
+    "version": "20210621"
   }
 }
