@@ -7,9 +7,9 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 03de84de4a79a8f7e6b87c7377a836356612c685
-# command substitution parsing now calls the parser recursively
-ENV _BASH_VERSION devel-20210621
+ENV _BASH_COMMIT 3fb16fce322266681faef39c11e3069437caadd9
+# new option to auto-close varassign redirs; fixed some new parser error reporting issues
+ENV _BASH_VERSION devel-20210628
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

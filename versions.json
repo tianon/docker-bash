@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "command substitution parsing now calls the parser recursively",
-      "version": "03de84de4a79a8f7e6b87c7377a836356612c685"
+      "description": "new option to auto-close varassign redirs; fixed some new parser error reporting issues",
+      "version": "3fb16fce322266681faef39c11e3069437caadd9"
     },
-    "version": "20210621"
+    "version": "20210628"
   }
 }
