@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "new option to auto-close varassign redirs; fixed some new parser error reporting issues",
-      "version": "3fb16fce322266681faef39c11e3069437caadd9"
+      "description": "readline: free undo list associated with the saved history line when traversing history",
+      "version": "9e3495c9e9e1861edc9ff1da2ad96a2ce7714ad3"
     },
-    "version": "20210628"
+    "version": "20210712"
   }
 }
