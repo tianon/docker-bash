@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "readline: free undo list associated with the saved history line when traversing history",
-      "version": "9e3495c9e9e1861edc9ff1da2ad96a2ce7714ad3"
+      "description": "fixes for minor memory leaks",
+      "version": "6650b4de61f9f6df2e39718a86dafb9ea36c144a"
     },
-    "version": "20210712"
+    "version": "20210719"
   }
 }
