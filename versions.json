@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fixes for minor memory leaks",
-      "version": "6650b4de61f9f6df2e39718a86dafb9ea36c144a"
+      "description": "\"enable name\" when name is not a shell builtin attempts to load it from a shared object",
+      "version": "0edd0a91830376f95f085d0ca3ba82502568fe18"
     },
-    "version": "20210719"
+    "version": "20210802"
   }
 }

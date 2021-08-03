@@ -7,9 +7,9 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 6650b4de61f9f6df2e39718a86dafb9ea36c144a
-# fixes for minor memory leaks
-ENV _BASH_VERSION devel-20210719
+ENV _BASH_COMMIT 0edd0a91830376f95f085d0ca3ba82502568fe18
+# "enable name" when name is not a shell builtin attempts to load it from a shared object
+ENV _BASH_VERSION devel-20210802
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
