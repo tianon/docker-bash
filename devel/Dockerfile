@@ -7,9 +7,9 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 0edd0a91830376f95f085d0ca3ba82502568fe18
-# "enable name" when name is not a shell builtin attempts to load it from a shared object
-ENV _BASH_VERSION devel-20210802
+ENV _BASH_COMMIT 4d4294caf728fb32307c506cb18afc90d4b70afa
+# globbing reacts to signals more quickly; new printf %Q format specifier; readline completion handles multiline quotes better
+ENV _BASH_VERSION devel-20210808
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

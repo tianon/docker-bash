@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "\"enable name\" when name is not a shell builtin attempts to load it from a shared object",
-      "version": "0edd0a91830376f95f085d0ca3ba82502568fe18"
+      "description": "globbing reacts to signals more quickly; new printf %Q format specifier; readline completion handles multiline quotes better",
+      "version": "4d4294caf728fb32307c506cb18afc90d4b70afa"
     },
-    "version": "20210802"
+    "version": "20210808"
   }
 }
