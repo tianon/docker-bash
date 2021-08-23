@@ -88,11 +88,15 @@ for version; do
 	parent="$(awk 'toupper($1) == "FROM" { print $2 }' "$version/Dockerfile")"
 	arches="${parentRepoToArches[$parent]}"
 
+	alpine="${parent#*:}" # "3.14"
+	suiteAliases=( "${versionAliases[@]/%/-alpine$alpine}" )
+	suiteAliases=( "${suiteAliases[@]//latest-/}" )
+
 	commit="$(dirCommit "$version")"
 
 	echo
 	cat <<-EOE
-		Tags: $(join ', ' "${versionAliases[@]}")
+		Tags: $(join ', ' "${versionAliases[@]}" "${suiteAliases[@]}")
 		Architectures: $(join ', ' $arches)
 		GitCommit: $commit
 		Directory: $version
