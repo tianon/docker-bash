@@ -4,7 +4,7 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM alpine:3.12
+FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 ENV _BASH_COMMIT ea32b611f76a549cb961885e8b3e64467436d215
