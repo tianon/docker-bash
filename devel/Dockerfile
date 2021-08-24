@@ -7,9 +7,9 @@
 FROM alpine:3.12
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT f5b32998011f7776ea8e0bc1f66cfc12f8e59b5c
-# new noexpand_translations shopt option
-ENV _BASH_VERSION devel-20210813
+ENV _BASH_COMMIT ea32b611f76a549cb961885e8b3e64467436d215
+# new "@k" parameter transformation; minor completion fix for uncommon case
+ENV _BASH_VERSION devel-20210823
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

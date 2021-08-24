@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "new noexpand_translations shopt option",
-      "version": "f5b32998011f7776ea8e0bc1f66cfc12f8e59b5c"
+      "description": "new \"@k\" parameter transformation; minor completion fix for uncommon case",
+      "version": "ea32b611f76a549cb961885e8b3e64467436d215"
     },
-    "version": "20210813"
+    "version": "20210823"
   }
 }
