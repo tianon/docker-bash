@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT ea32b611f76a549cb961885e8b3e64467436d215
-# new "@k" parameter transformation; minor completion fix for uncommon case
-ENV _BASH_VERSION devel-20210823
+ENV _BASH_COMMIT 61782ca16bef51e08723cf6994bfb085f75094d4
+# minor fix to readline:unix-filename-rubout
+ENV _BASH_VERSION devel-20210830
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
