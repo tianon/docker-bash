@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "minor fix to readline:unix-filename-rubout",
-      "version": "61782ca16bef51e08723cf6994bfb085f75094d4"
+      "description": "optimize many cases of $(<file) not to require a fork",
+      "version": "2208813a97583b0da1a843f161be0a575a766e8d"
     },
-    "version": "20210830"
+    "version": "20210902"
   }
 }

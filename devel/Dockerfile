@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 61782ca16bef51e08723cf6994bfb085f75094d4
-# minor fix to readline:unix-filename-rubout
-ENV _BASH_VERSION devel-20210830
+ENV _BASH_COMMIT 2208813a97583b0da1a843f161be0a575a766e8d
+# optimize many cases of $(<file) not to require a fork
+ENV _BASH_VERSION devel-20210902
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
