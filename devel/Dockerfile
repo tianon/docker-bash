@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 2208813a97583b0da1a843f161be0a575a766e8d
-# optimize many cases of $(<file) not to require a fork
-ENV _BASH_VERSION devel-20210902
+ENV _BASH_COMMIT 441078402919f6f0dd677cad18d55c7a89d294fc
+# more updates for autoconf-2.71: removing usage of AC_TRY_RUN
+ENV _BASH_VERSION devel-20210913
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

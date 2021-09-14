@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "optimize many cases of $(<file) not to require a fork",
-      "version": "2208813a97583b0da1a843f161be0a575a766e8d"
+      "description": "more updates for autoconf-2.71: removing usage of AC_TRY_RUN",
+      "version": "441078402919f6f0dd677cad18d55c7a89d294fc"
     },
-    "version": "20210902"
+    "version": "20210913"
   }
 }
