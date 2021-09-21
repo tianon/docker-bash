@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "more updates for autoconf-2.71: removing usage of AC_TRY_RUN",
-      "version": "441078402919f6f0dd677cad18d55c7a89d294fc"
+      "description": "more updates for autoconf-2.71: removing usage of AC_TRY_COMPILE",
+      "version": "232f5919645d0a02004a94a3ee8e28a550165df9"
     },
-    "version": "20210913"
+    "version": "20210920"
   }
 }
