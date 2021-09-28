@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 232f5919645d0a02004a94a3ee8e28a550165df9
-# more updates for autoconf-2.71: removing usage of AC_TRY_COMPILE
-ENV _BASH_VERSION devel-20210920
+ENV _BASH_COMMIT fa1e33671ddf9fdc70b1b8eb07d837ed0fa95530
+# prompt reprinting fixes for readline when screenwidth is less than prompt length; redirection fixes
+ENV _BASH_VERSION devel-20210927
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
