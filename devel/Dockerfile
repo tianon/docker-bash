@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT fa1e33671ddf9fdc70b1b8eb07d837ed0fa95530
-# prompt reprinting fixes for readline when screenwidth is less than prompt length; redirection fixes
-ENV _BASH_VERSION devel-20210927
+ENV _BASH_COMMIT f188aa6a013e89d421e39354086eed513652b492
+# enable support for using `&' in the pattern substitution replacement string
+ENV _BASH_VERSION devel-20211004
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

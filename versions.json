@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "prompt reprinting fixes for readline when screenwidth is less than prompt length; redirection fixes",
-      "version": "fa1e33671ddf9fdc70b1b8eb07d837ed0fa95530"
+      "description": "enable support for using `&' in the pattern substitution replacement string",
+      "version": "f188aa6a013e89d421e39354086eed513652b492"
     },
-    "version": "20210927"
+    "version": "20211004"
   }
 }
