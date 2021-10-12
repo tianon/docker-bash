@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT f188aa6a013e89d421e39354086eed513652b492
-# enable support for using `&' in the pattern substitution replacement string
-ENV _BASH_VERSION devel-20211004
+ENV _BASH_COMMIT 304b1e938cd0b41b6f691d11242f602b58791c85
+# preserve traps across a failed exec; small changes to how completion options interact; fix a bug with arithmetic for commands and LINENO
+ENV _BASH_VERSION devel-20211011
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

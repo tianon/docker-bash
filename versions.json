@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "enable support for using `&' in the pattern substitution replacement string",
-      "version": "f188aa6a013e89d421e39354086eed513652b492"
+      "description": "preserve traps across a failed exec; small changes to how completion options interact; fix a bug with arithmetic for commands and LINENO",
+      "version": "304b1e938cd0b41b6f691d11242f602b58791c85"
     },
-    "version": "20211004"
+    "version": "20211011"
   }
 }
