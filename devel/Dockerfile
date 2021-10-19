@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 304b1e938cd0b41b6f691d11242f602b58791c85
-# preserve traps across a failed exec; small changes to how completion options interact; fix a bug with arithmetic for commands and LINENO
-ENV _BASH_VERSION devel-20211011
+ENV _BASH_COMMIT 1fff64acdc5709cdc213f0143f1b8169fdf68a39
+# changes to new pattern substitution replacement; documentation updates
+ENV _BASH_VERSION devel-20211018
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

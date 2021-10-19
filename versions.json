@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "preserve traps across a failed exec; small changes to how completion options interact; fix a bug with arithmetic for commands and LINENO",
-      "version": "304b1e938cd0b41b6f691d11242f602b58791c85"
+      "description": "changes to new pattern substitution replacement; documentation updates",
+      "version": "1fff64acdc5709cdc213f0143f1b8169fdf68a39"
     },
-    "version": "20211011"
+    "version": "20211018"
   }
 }
