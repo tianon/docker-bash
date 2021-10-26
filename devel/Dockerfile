@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 1fff64acdc5709cdc213f0143f1b8169fdf68a39
-# changes to new pattern substitution replacement; documentation updates
-ENV _BASH_VERSION devel-20211018
+ENV _BASH_COMMIT c813e24652989e829c2af483d526fabbc1cc2223
+# new `patsub_replacement' shell option
+ENV _BASH_VERSION devel-20211025
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

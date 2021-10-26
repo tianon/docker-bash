@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "changes to new pattern substitution replacement; documentation updates",
-      "version": "1fff64acdc5709cdc213f0143f1b8169fdf68a39"
+      "description": "new `patsub_replacement' shell option",
+      "version": "c813e24652989e829c2af483d526fabbc1cc2223"
     },
-    "version": "20211018"
+    "version": "20211025"
   }
 }
