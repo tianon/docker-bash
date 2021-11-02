@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT c813e24652989e829c2af483d526fabbc1cc2223
-# new `patsub_replacement' shell option
-ENV _BASH_VERSION devel-20211025
+ENV _BASH_COMMIT 4657c0405034d4126c6d16f4aeb97a3f92f77a26
+# internal changes to prevent `unset' from scanning associative array subscripts multiple times
+ENV _BASH_VERSION devel-20211101
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

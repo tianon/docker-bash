@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "new `patsub_replacement' shell option",
-      "version": "c813e24652989e829c2af483d526fabbc1cc2223"
+      "description": "internal changes to prevent `unset' from scanning associative array subscripts multiple times",
+      "version": "4657c0405034d4126c6d16f4aeb97a3f92f77a26"
     },
-    "version": "20211025"
+    "version": "20211101"
   }
 }
