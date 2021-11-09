@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "internal changes to prevent `unset' from scanning associative array subscripts multiple times",
-      "version": "4657c0405034d4126c6d16f4aeb97a3f92f77a26"
+      "description": "update version to 5.2-devel, update copyright dates",
+      "version": "d384b92874197e0b885b32b50777b9cba0910c09"
     },
-    "version": "20211101"
+    "version": "20211108"
   }
 }

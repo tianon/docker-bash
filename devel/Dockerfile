@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 4657c0405034d4126c6d16f4aeb97a3f92f77a26
-# internal changes to prevent `unset' from scanning associative array subscripts multiple times
-ENV _BASH_VERSION devel-20211101
+ENV _BASH_COMMIT d384b92874197e0b885b32b50777b9cba0910c09
+# update version to 5.2-devel, update copyright dates
+ENV _BASH_VERSION devel-20211108
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
