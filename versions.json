@@ -95,9 +95,9 @@
   },
   "devel": {
     "commit": {
-      "description": "update version to 5.2-devel, update copyright dates",
-      "version": "d384b92874197e0b885b32b50777b9cba0910c09"
+      "description": "removed some commented-out code dependent on the compatibility level now that the version is 5.2",
+      "version": "25e43d2c0a4543e6d8893d0cd50e832cbd3e6015"
     },
-    "version": "20211108"
+    "version": "20211122"
   }
 }
