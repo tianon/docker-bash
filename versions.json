@@ -95,9 +95,9 @@
   },
   "devel": {
     "commit": {
-      "description": "removed some commented-out code dependent on the compatibility level now that the version is 5.2",
-      "version": "25e43d2c0a4543e6d8893d0cd50e832cbd3e6015"
+      "description": "portability and compatibility fixes",
+      "version": "71a11dbeb478fb637ea451f2f37c73d7539cc1f5"
     },
-    "version": "20211122"
+    "version": "20211206"
   }
 }
