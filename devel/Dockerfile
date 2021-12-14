@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 71a11dbeb478fb637ea451f2f37c73d7539cc1f5
-# portability and compatibility fixes
-ENV _BASH_VERSION devel-20211206
+ENV _BASH_COMMIT 567c0bc2ed4ca24b68f8dd75625275b0e152ae5c
+# fix to make += work with dynamic integer vars like RANDOM
+ENV _BASH_VERSION devel-20211213
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

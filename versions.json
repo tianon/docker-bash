@@ -95,9 +95,9 @@
   },
   "devel": {
     "commit": {
-      "description": "portability and compatibility fixes",
-      "version": "71a11dbeb478fb637ea451f2f37c73d7539cc1f5"
+      "description": "fix to make += work with dynamic integer vars like RANDOM",
+      "version": "567c0bc2ed4ca24b68f8dd75625275b0e152ae5c"
     },
-    "version": "20211206"
+    "version": "20211213"
   }
 }
