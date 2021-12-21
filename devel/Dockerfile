@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 567c0bc2ed4ca24b68f8dd75625275b0e152ae5c
-# fix to make += work with dynamic integer vars like RANDOM
-ENV _BASH_VERSION devel-20211213
+ENV _BASH_COMMIT 5f2dd5ff95a0bc46a6bb167d67f5627c995fb4d5
+# fix for posix semantics for the := word expansion when assigning array elements
+ENV _BASH_VERSION devel-20211214
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
