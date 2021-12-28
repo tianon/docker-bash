@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 5f2dd5ff95a0bc46a6bb167d67f5627c995fb4d5
-# fix for posix semantics for the := word expansion when assigning array elements
-ENV _BASH_VERSION devel-20211214
+ENV _BASH_COMMIT 701f36c2c3f445485a770639b349a2014cbd0166
+# more changes to avoid expanding associative array subscripts twice; internal debugging changes
+ENV _BASH_VERSION devel-20211222
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

@@ -95,9 +95,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix for posix semantics for the := word expansion when assigning array elements",
-      "version": "5f2dd5ff95a0bc46a6bb167d67f5627c995fb4d5"
+      "description": "more changes to avoid expanding associative array subscripts twice; internal debugging changes",
+      "version": "701f36c2c3f445485a770639b349a2014cbd0166"
     },
-    "version": "20211214"
+    "version": "20211222"
   }
 }
