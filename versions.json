@@ -85,12 +85,12 @@
   },
   "5.1": {
     "baseline": {
-      "patch": "12"
+      "patch": "16"
     },
     "patch": {
-      "version": "12"
+      "version": "16"
     },
-    "version": "5.1.12"
+    "version": "5.1.16"
   },
   "devel": {
     "commit": {
