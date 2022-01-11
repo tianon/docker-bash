@@ -7,9 +7,9 @@
 FROM alpine:3.14
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 701f36c2c3f445485a770639b349a2014cbd0166
-# more changes to avoid expanding associative array subscripts twice; internal debugging changes
-ENV _BASH_VERSION devel-20211222
+ENV _BASH_COMMIT be7fc0525eb4932c931a45026a20aa483d7bc671
+# minor change to here-doc processing in compoind lists; change to completion to avoid quoting word expansion characters like `$'
+ENV _BASH_VERSION devel-20220104
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "more changes to avoid expanding associative array subscripts twice; internal debugging changes",
-      "version": "701f36c2c3f445485a770639b349a2014cbd0166"
+      "description": "minor change to here-doc processing in compoind lists; change to completion to avoid quoting word expansion characters like `$'",
+      "version": "be7fc0525eb4932c931a45026a20aa483d7bc671"
     },
-    "version": "20211222"
+    "version": "20220104"
   }
 }
