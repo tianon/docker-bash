@@ -94,9 +94,9 @@
   },
   "devel": {
     "commit": {
-      "description": "minor change to here-doc processing in compoind lists; change to completion to avoid quoting word expansion characters like `$'",
-      "version": "be7fc0525eb4932c931a45026a20aa483d7bc671"
+      "description": "getting ready for bash-5.2",
+      "version": "5e6f45d9b16e4c95922e246491c2666a4c2c0399"
     },
-    "version": "20220104"
+    "version": "20220111"
   }
 }
