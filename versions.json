@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "getting ready for bash-5.2",
-      "version": "5e6f45d9b16e4c95922e246491c2666a4c2c0399"
+      "description": "fixes to read/wait; revert change that processes $'...' quoting in here-documents unconditionally",
+      "version": "3011048a929215ba2d13aff169bb0b75eee96439"
     },
-    "version": "20220111"
+    "version": "20220124"
   }
 }
