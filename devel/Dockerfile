@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 3011048a929215ba2d13aff169bb0b75eee96439
-# fixes to read/wait; revert change that processes $'...' quoting in here-documents unconditionally
-ENV _BASH_VERSION devel-20220124
+ENV _BASH_COMMIT b325b0e96bd05c76bbfc4d60d0707fc93d58f03f
+# more changes for here-docs and $'...'; command optimization updates
+ENV _BASH_VERSION devel-20220131
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

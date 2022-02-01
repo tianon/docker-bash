@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fixes to read/wait; revert change that processes $'...' quoting in here-documents unconditionally",
-      "version": "3011048a929215ba2d13aff169bb0b75eee96439"
+      "description": "more changes for here-docs and $'...'; command optimization updates",
+      "version": "b325b0e96bd05c76bbfc4d60d0707fc93d58f03f"
     },
-    "version": "20220124"
+    "version": "20220131"
   }
 }
