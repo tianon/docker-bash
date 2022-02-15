@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "more changes for here-docs and $'...'; command optimization updates",
-      "version": "b325b0e96bd05c76bbfc4d60d0707fc93d58f03f"
+      "description": "document new readline variables \"active-region-start-color\" and \"active-region-end-color\"",
+      "version": "bf09dfc08dce0c7691083cf7e1d115464e6adafd"
     },
-    "version": "20220131"
+    "version": "20220211"
   }
 }
