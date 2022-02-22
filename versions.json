@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "document new readline variables \"active-region-start-color\" and \"active-region-end-color\"",
-      "version": "bf09dfc08dce0c7691083cf7e1d115464e6adafd"
+      "description": "changes to make EOF state available to readline applications; fix for command substitution parsing inside conditional command",
+      "version": "e7a56619a2f8d8d8e49ba96b9febc22bce1f74f0"
     },
-    "version": "20220211"
+    "version": "20220221"
   }
 }

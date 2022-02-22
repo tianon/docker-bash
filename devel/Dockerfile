@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT bf09dfc08dce0c7691083cf7e1d115464e6adafd
-# document new readline variables "active-region-start-color" and "active-region-end-color"
-ENV _BASH_VERSION devel-20220211
+ENV _BASH_COMMIT e7a56619a2f8d8d8e49ba96b9febc22bce1f74f0
+# changes to make EOF state available to readline applications; fix for command substitution parsing inside conditional command
+ENV _BASH_VERSION devel-20220221
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
