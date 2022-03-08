@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "changes to make EOF state available to readline applications; fix for command substitution parsing inside conditional command",
-      "version": "e7a56619a2f8d8d8e49ba96b9febc22bce1f74f0"
+      "description": "fix to readline redisplay of invisible chars at end of line; fix to here-document delimiter quote removal; prompt expansion makes invisible chars in w, W, s visible",
+      "version": "b4e5e5505cc4495c6237c32a65ba62ebcc497b31"
     },
-    "version": "20220221"
+    "version": "20220307"
   }
 }
