@@ -49,3 +49,10 @@ jobs:
         run: ${{ matrix.runs.test }}
       - name: '"docker images"'
         run: ${{ matrix.runs.images }}
+
+  success:
+    name: Full Test Matrix Success
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'hack for auto-merge (since it does not work without protected branches which require specific checks that must pass and our matrix is dynamic so that is untenable)'
