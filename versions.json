@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix to readline redisplay of invisible chars at end of line; fix to here-document delimiter quote removal; prompt expansion makes invisible chars in w, W, s visible",
-      "version": "b4e5e5505cc4495c6237c32a65ba62ebcc497b31"
+      "description": "fix problem with saving tty state after running a command with 'bind -x'; builtins that create associative arrays can now convert existing scalar variables to associative arrays",
+      "version": "b6a567e7f13406952cbb1d1adb2f00b2260a871e"
     },
-    "version": "20220307"
+    "version": "20220311"
   }
 }

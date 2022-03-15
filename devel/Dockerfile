@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT b4e5e5505cc4495c6237c32a65ba62ebcc497b31
-# fix to readline redisplay of invisible chars at end of line; fix to here-document delimiter quote removal; prompt expansion makes invisible chars in w, W, s visible
-ENV _BASH_VERSION devel-20220307
+ENV _BASH_COMMIT b6a567e7f13406952cbb1d1adb2f00b2260a871e
+# fix problem with saving tty state after running a command with 'bind -x'; builtins that create associative arrays can now convert existing scalar variables to associative arrays
+ENV _BASH_VERSION devel-20220311
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
