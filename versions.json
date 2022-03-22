@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix problem with saving tty state after running a command with 'bind -x'; builtins that create associative arrays can now convert existing scalar variables to associative arrays",
-      "version": "b6a567e7f13406952cbb1d1adb2f00b2260a871e"
+      "description": "changes to history-search-forward, history-search backward to make the final history position more similar to incremental search",
+      "version": "5bba60397c6b92457e0a0d59cc9ad6efedff9076"
     },
-    "version": "20220311"
+    "version": "20220321"
   }
 }

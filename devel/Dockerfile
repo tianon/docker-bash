@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT b6a567e7f13406952cbb1d1adb2f00b2260a871e
-# fix problem with saving tty state after running a command with 'bind -x'; builtins that create associative arrays can now convert existing scalar variables to associative arrays
-ENV _BASH_VERSION devel-20220311
+ENV _BASH_COMMIT 5bba60397c6b92457e0a0d59cc9ad6efedff9076
+# changes to history-search-forward, history-search backward to make the final history position more similar to incremental search
+ENV _BASH_VERSION devel-20220321
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
