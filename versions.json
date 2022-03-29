@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "changes to history-search-forward, history-search backward to make the final history position more similar to incremental search",
-      "version": "5bba60397c6b92457e0a0d59cc9ad6efedff9076"
+      "description": "remove history position change to non-incremental search; fixes to $@ in some word expansions like :+",
+      "version": "8f68f9f0ff2544d03a9f38a368451e9cddcb9ece"
     },
-    "version": "20220321"
+    "version": "20220325"
   }
 }
