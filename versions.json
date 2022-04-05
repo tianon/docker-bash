@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "remove history position change to non-incremental search; fixes to $@ in some word expansions like :+",
-      "version": "8f68f9f0ff2544d03a9f38a368451e9cddcb9ece"
+      "description": "fix for history-search-backward after previous-history clearing the undo list",
+      "version": "505f60f94c079a2b1e1dae3c211ee67369386e86"
     },
-    "version": "20220325"
+    "version": "20220404"
   }
 }

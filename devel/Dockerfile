@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 8f68f9f0ff2544d03a9f38a368451e9cddcb9ece
-# remove history position change to non-incremental search; fixes to $@ in some word expansions like :+
-ENV _BASH_VERSION devel-20220325
+ENV _BASH_COMMIT 505f60f94c079a2b1e1dae3c211ee67369386e86
+# fix for history-search-backward after previous-history clearing the undo list
+ENV _BASH_VERSION devel-20220404
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
