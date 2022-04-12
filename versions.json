@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix for history-search-backward after previous-history clearing the undo list",
-      "version": "505f60f94c079a2b1e1dae3c211ee67369386e86"
+      "description": "readline changes to use xfree; bumped version to bash-5.2-beta",
+      "version": "0b9a4b3ae00d6dfd6e9c2acfd0ab4e2292176e5f"
     },
-    "version": "20220404"
+    "version": "20220408"
   }
 }

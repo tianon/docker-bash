@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 505f60f94c079a2b1e1dae3c211ee67369386e86
-# fix for history-search-backward after previous-history clearing the undo list
-ENV _BASH_VERSION devel-20220404
+ENV _BASH_COMMIT 0b9a4b3ae00d6dfd6e9c2acfd0ab4e2292176e5f
+# readline changes to use xfree; bumped version to bash-5.2-beta
+ENV _BASH_VERSION devel-20220408
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
