@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 0b9a4b3ae00d6dfd6e9c2acfd0ab4e2292176e5f
-# readline changes to use xfree; bumped version to bash-5.2-beta
-ENV _BASH_VERSION devel-20220408
+ENV _BASH_COMMIT 3be2a2ca9a22f6e33f96bc09a50a8ff3f7ddb17d
+# minor portability fixes; printf now uses double for floating point conversions by default in posix mode
+ENV _BASH_VERSION devel-20220412
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
