@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "minor portability fixes; printf now uses double for floating point conversions by default in posix mode",
-      "version": "3be2a2ca9a22f6e33f96bc09a50a8ff3f7ddb17d"
+      "description": "fix crash from compgen in a non-interactive shell; globstar option now works with complete -G; wait -p changes; some int->size_t changes",
+      "version": "7a8455e4213ea3b8638d4e939a3198f5b5896fa3"
     },
-    "version": "20220412"
+    "version": "20220419"
   }
 }

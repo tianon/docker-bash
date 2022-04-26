@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 3be2a2ca9a22f6e33f96bc09a50a8ff3f7ddb17d
-# minor portability fixes; printf now uses double for floating point conversions by default in posix mode
-ENV _BASH_VERSION devel-20220412
+ENV _BASH_COMMIT 7a8455e4213ea3b8638d4e939a3198f5b5896fa3
+# fix crash from compgen in a non-interactive shell; globstar option now works with complete -G; wait -p changes; some int->size_t changes
+ENV _BASH_VERSION devel-20220419
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
