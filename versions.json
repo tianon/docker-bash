@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix crash from compgen in a non-interactive shell; globstar option now works with complete -G; wait -p changes; some int->size_t changes",
-      "version": "7a8455e4213ea3b8638d4e939a3198f5b5896fa3"
+      "description": "fix up parser flags command substitution parsing inherits; using temp files for here-documents is now a compatibility mode option",
+      "version": "d0cd67ee13930ade6d926e3387551b79e8c5be37"
     },
-    "version": "20220419"
+    "version": "20220427"
   }
 }

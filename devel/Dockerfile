@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 7a8455e4213ea3b8638d4e939a3198f5b5896fa3
-# fix crash from compgen in a non-interactive shell; globstar option now works with complete -G; wait -p changes; some int->size_t changes
-ENV _BASH_VERSION devel-20220419
+ENV _BASH_COMMIT d0cd67ee13930ade6d926e3387551b79e8c5be37
+# fix up parser flags command substitution parsing inherits; using temp files for here-documents is now a compatibility mode option
+ENV _BASH_VERSION devel-20220427
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
