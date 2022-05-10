@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix up parser flags command substitution parsing inherits; using temp files for here-documents is now a compatibility mode option",
-      "version": "d0cd67ee13930ade6d926e3387551b79e8c5be37"
+      "description": "fix to RL_STATE_EOF in readline callback mode; fix to edge case for terminating signal handling and exit traps in -c command",
+      "version": "f9ed510acb690d8a570bf3ffcf0dc3e7c7be7dc9"
     },
-    "version": "20220427"
+    "version": "20220503"
   }
 }

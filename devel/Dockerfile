@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT d0cd67ee13930ade6d926e3387551b79e8c5be37
-# fix up parser flags command substitution parsing inherits; using temp files for here-documents is now a compatibility mode option
-ENV _BASH_VERSION devel-20220427
+ENV _BASH_COMMIT f9ed510acb690d8a570bf3ffcf0dc3e7c7be7dc9
+# fix to RL_STATE_EOF in readline callback mode; fix to edge case for terminating signal handling and exit traps in -c command
+ENV _BASH_VERSION devel-20220503
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
