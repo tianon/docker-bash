@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT f9ed510acb690d8a570bf3ffcf0dc3e7c7be7dc9
-# fix to RL_STATE_EOF in readline callback mode; fix to edge case for terminating signal handling and exit traps in -c command
-ENV _BASH_VERSION devel-20220503
+ENV _BASH_COMMIT daff9ecae93d466e7909c6dff7b5c87bb4e3fb17
+# fix for EXIT trap in -c command; suspend -f now suspends even if job control is not enabled
+ENV _BASH_VERSION devel-20220518
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

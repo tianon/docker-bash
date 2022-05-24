@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix to RL_STATE_EOF in readline callback mode; fix to edge case for terminating signal handling and exit traps in -c command",
-      "version": "f9ed510acb690d8a570bf3ffcf0dc3e7c7be7dc9"
+      "description": "fix for EXIT trap in -c command; suspend -f now suspends even if job control is not enabled",
+      "version": "daff9ecae93d466e7909c6dff7b5c87bb4e3fb17"
     },
-    "version": "20220503"
+    "version": "20220518"
   }
 }
