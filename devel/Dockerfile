@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT daff9ecae93d466e7909c6dff7b5c87bb4e3fb17
-# fix for EXIT trap in -c command; suspend -f now suspends even if job control is not enabled
-ENV _BASH_VERSION devel-20220518
+ENV _BASH_COMMIT ebeba87477a4bddd98874f83d639b7ff15696986
+# fix mem leak with local BASH_REMATCH
+ENV _BASH_VERSION devel-20220603
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

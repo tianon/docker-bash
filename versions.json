@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix for EXIT trap in -c command; suspend -f now suspends even if job control is not enabled",
-      "version": "daff9ecae93d466e7909c6dff7b5c87bb4e3fb17"
+      "description": "fix mem leak with local BASH_REMATCH",
+      "version": "ebeba87477a4bddd98874f83d639b7ff15696986"
     },
-    "version": "20220518"
+    "version": "20220603"
   }
 }
