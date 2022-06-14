@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix mem leak with local BASH_REMATCH",
-      "version": "ebeba87477a4bddd98874f83d639b7ff15696986"
+      "description": "fix for printing ambiguous redirection >& with declare -f",
+      "version": "b95dd4a06690e5ad365eb40371b94df4538b5fbd"
     },
-    "version": "20220603"
+    "version": "20220607"
   }
 }
