@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT b95dd4a06690e5ad365eb40371b94df4538b5fbd
-# fix for printing ambiguous redirection >& with declare -f
-ENV _BASH_VERSION devel-20220607
+ENV _BASH_COMMIT 6392d7af0ed4c2a5fa481902daa3396459bb3891
+# bumped version to 5.2-rc1
+ENV _BASH_VERSION devel-20220614
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
