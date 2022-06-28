@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "bumped version to 5.2-rc1",
-      "version": "6392d7af0ed4c2a5fa481902daa3396459bb3891"
+      "description": "updated translations; minor change to DEBUG trap",
+      "version": "eb2d46d77c1aea8cd1983f99c2db5f244ffee30a"
     },
-    "version": "20220614"
+    "version": "20220622"
   }
 }
