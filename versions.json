@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "updated translations; minor change to DEBUG trap",
-      "version": "eb2d46d77c1aea8cd1983f99c2db5f244ffee30a"
+      "description": "fix error message when completing backquote command substitution; fix test builtin with double negation",
+      "version": "42768befc05da1def2bdab6cd251cf1e404a530a"
     },
-    "version": "20220622"
+    "version": "20220628"
   }
 }
