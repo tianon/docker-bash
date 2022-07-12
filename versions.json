@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix error message when completing backquote command substitution; fix test builtin with double negation",
-      "version": "42768befc05da1def2bdab6cd251cf1e404a530a"
+      "description": "changes to text representation of parsed command substitution; small changes to tests",
+      "version": "67e47f224cf81ea0a836ff97f9781e09f930259a"
     },
-    "version": "20220628"
+    "version": "20220706"
   }
 }

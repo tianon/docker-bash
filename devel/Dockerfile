@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 42768befc05da1def2bdab6cd251cf1e404a530a
-# fix error message when completing backquote command substitution; fix test builtin with double negation
-ENV _BASH_VERSION devel-20220628
+ENV _BASH_COMMIT 67e47f224cf81ea0a836ff97f9781e09f930259a
+# changes to text representation of parsed command substitution; small changes to tests
+ENV _BASH_VERSION devel-20220706
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
