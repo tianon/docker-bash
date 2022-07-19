@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "changes to text representation of parsed command substitution; small changes to tests",
-      "version": "67e47f224cf81ea0a836ff97f9781e09f930259a"
+      "description": "additional tests; documentation updates",
+      "version": "87a6e89edc7cb1af057e2c15666df189595d305b"
     },
-    "version": "20220706"
+    "version": "20220712"
   }
 }
