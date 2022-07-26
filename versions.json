@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "additional tests; documentation updates",
-      "version": "87a6e89edc7cb1af057e2c15666df189595d305b"
+      "description": "fix for local variable problem in EXIT trap; add sed-like behavior for null patterns in pattern substitution",
+      "version": "52ae6c3f5d4db1dc210a07317429b8f5cc394f41"
     },
-    "version": "20220712"
+    "version": "20220719"
   }
 }
