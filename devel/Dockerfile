@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 52ae6c3f5d4db1dc210a07317429b8f5cc394f41
-# fix for local variable problem in EXIT trap; add sed-like behavior for null patterns in pattern substitution
-ENV _BASH_VERSION devel-20220719
+ENV _BASH_COMMIT e9e3e4fea56f9459705542ac39884650fb4c6007
+# fixed gcc printf warning; fixed typos in comments and support files
+ENV _BASH_VERSION devel-20220726
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
