@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 9c317a6ae12aae38feac73bf98e13f7756b15e9c
-# parse extended glob patterns in command substitutions in compatibility mode, even if extglob is not set
-ENV _BASH_VERSION devel-20220802
+ENV _BASH_COMMIT b9ed20acfdbc388ef97a0f0137af29fd6a973430
+# modify readline so it adjusts internal variables when the locale changes between calls to readline()
+ENV _BASH_VERSION devel-20220815
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

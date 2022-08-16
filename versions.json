@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "parse extended glob patterns in command substitutions in compatibility mode, even if extglob is not set",
-      "version": "9c317a6ae12aae38feac73bf98e13f7756b15e9c"
+      "description": "modify readline so it adjusts internal variables when the locale changes between calls to readline()",
+      "version": "b9ed20acfdbc388ef97a0f0137af29fd6a973430"
     },
-    "version": "20220802"
+    "version": "20220815"
   }
 }
