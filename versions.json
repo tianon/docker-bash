@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "modify readline so it adjusts internal variables when the locale changes between calls to readline()",
-      "version": "b9ed20acfdbc388ef97a0f0137af29fd6a973430"
+      "description": "fix for exec builtin when the command is not found",
+      "version": "7547afdf7333e0bf5f3c6ddf9b439ec4e30776ca"
     },
-    "version": "20220815"
+    "version": "20220823"
   }
 }

@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT b9ed20acfdbc388ef97a0f0137af29fd6a973430
-# modify readline so it adjusts internal variables when the locale changes between calls to readline()
-ENV _BASH_VERSION devel-20220815
+ENV _BASH_COMMIT 7547afdf7333e0bf5f3c6ddf9b439ec4e30776ca
+# fix for exec builtin when the command is not found
+ENV _BASH_VERSION devel-20220823
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
