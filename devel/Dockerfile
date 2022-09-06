@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 7547afdf7333e0bf5f3c6ddf9b439ec4e30776ca
-# fix for exec builtin when the command is not found
-ENV _BASH_VERSION devel-20220823
+ENV _BASH_COMMIT b7b9d7c306b2881560c4f94b7e7c7175f851c891
+# fix for problem with command substitutions inside aliases
+ENV _BASH_VERSION devel-20220901
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

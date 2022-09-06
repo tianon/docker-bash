@@ -97,9 +97,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix for exec builtin when the command is not found",
-      "version": "7547afdf7333e0bf5f3c6ddf9b439ec4e30776ca"
+      "description": "fix for problem with command substitutions inside aliases",
+      "version": "b7b9d7c306b2881560c4f94b7e7c7175f851c891"
     },
-    "version": "20220823"
+    "version": "20220901"
   }
 }
