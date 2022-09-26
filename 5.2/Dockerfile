@@ -7,8 +7,8 @@
 FROM alpine:3.15
 
 # https://ftp.gnu.org/gnu/bash/?C=M;O=D
-ENV _BASH_VERSION 5.2-rc4
-ENV _BASH_BASELINE 5.2-rc4
+ENV _BASH_VERSION 5.2.0
+ENV _BASH_BASELINE 5.2
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
@@ -117,7 +117,7 @@ RUN set -eux; \
 	\
 	[ "$(which bash)" = '/usr/local/bin/bash' ]; \
 	bash --version; \
-	[ "$(bash -c 'echo "${BASH_VERSION%%[^0-9.]*}"')" = "${_BASH_VERSION%%-*}.0" ]; \
+	[ "$(bash -c 'echo "${BASH_VERSION%%[^0-9.]*}"')" = "$_BASH_VERSION" ]; \
 	bash -c 'help' > /dev/null
 
 COPY docker-entrypoint.sh /usr/local/bin/
