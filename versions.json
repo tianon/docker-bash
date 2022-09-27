@@ -100,9 +100,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix for problem with command substitutions inside aliases",
-      "version": "b7b9d7c306b2881560c4f94b7e7c7175f851c891"
+      "description": "minor updates for release",
+      "version": "bdfa4b088eb4c35bdaff832d7e18b3159953986f"
     },
-    "version": "20220901"
+    "version": "20220923"
   }
 }
