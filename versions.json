@@ -49,9 +49,6 @@
     "baseline": {
       "patch": "53"
     },
-    "patch": {
-      "version": "53"
-    },
     "version": "4.2.53"
   },
   "4.3": {
