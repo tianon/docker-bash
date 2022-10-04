@@ -100,9 +100,9 @@
   },
   "devel": {
     "commit": {
-      "description": "minor updates for release",
-      "version": "bdfa4b088eb4c35bdaff832d7e18b3159953986f"
+      "description": "changes for multibyte characters with intermediate state; small change to readline forced redisplay",
+      "version": "e6dc31ac13b8794be62571bca654303cd6a84516"
     },
-    "version": "20220923"
+    "version": "20220928"
   }
 }
