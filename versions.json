@@ -96,7 +96,10 @@
     "baseline": {
       "version": "5.2"
     },
-    "version": "5.2.0"
+    "patch": {
+      "version": "2"
+    },
+    "version": "5.2.2"
   },
   "devel": {
     "commit": {

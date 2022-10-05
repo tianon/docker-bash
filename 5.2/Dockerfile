@@ -7,8 +7,10 @@
 FROM alpine:3.15
 
 # https://ftp.gnu.org/gnu/bash/?C=M;O=D
-ENV _BASH_VERSION 5.2.0
+ENV _BASH_VERSION 5.2.2
 ENV _BASH_BASELINE 5.2
+# https://ftp.gnu.org/gnu/bash/bash-5.2-patches/?C=M;O=D
+ENV _BASH_LATEST_PATCH 2
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
