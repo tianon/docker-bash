@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "changes for multibyte characters with intermediate state; small change to readline forced redisplay",
-      "version": "e6dc31ac13b8794be62571bca654303cd6a84516"
+      "description": "fixes for extended glob in compat mode; fix for brackets appearing in nested parameter expansions",
+      "version": "22f21b760ed90eb77c3756e6ccf39b73c84f532a"
     },
-    "version": "20220928"
+    "version": "20221007"
   }
 }

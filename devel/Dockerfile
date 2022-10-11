@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT e6dc31ac13b8794be62571bca654303cd6a84516
-# changes for multibyte characters with intermediate state; small change to readline forced redisplay
-ENV _BASH_VERSION devel-20220928
+ENV _BASH_COMMIT 22f21b760ed90eb77c3756e6ccf39b73c84f532a
+# fixes for extended glob in compat mode; fix for brackets appearing in nested parameter expansions
+ENV _BASH_VERSION devel-20221007
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
