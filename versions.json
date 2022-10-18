@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fixes for extended glob in compat mode; fix for brackets appearing in nested parameter expansions",
-      "version": "22f21b760ed90eb77c3756e6ccf39b73c84f532a"
+      "description": "change to readline callback signal handling; fix message when popping shell function context; handle new terminating signals inside terminating signal handler; fix to pattern substitution with null replacement and null string; fix to alias expansion when we get a SIGINT while entering a command substitution in an interactive shell",
+      "version": "055a4552c901e43e6a6007f5bc664a33698dbf85"
     },
-    "version": "20221007"
+    "version": "20221015"
   }
 }

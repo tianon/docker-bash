@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 22f21b760ed90eb77c3756e6ccf39b73c84f532a
-# fixes for extended glob in compat mode; fix for brackets appearing in nested parameter expansions
-ENV _BASH_VERSION devel-20221007
+ENV _BASH_COMMIT 055a4552c901e43e6a6007f5bc664a33698dbf85
+# change to readline callback signal handling; fix message when popping shell function context; handle new terminating signals inside terminating signal handler; fix to pattern substitution with null replacement and null string; fix to alias expansion when we get a SIGINT while entering a command substitution in an interactive shell
+ENV _BASH_VERSION devel-20221015
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
