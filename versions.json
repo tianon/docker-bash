@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "change to readline callback signal handling; fix message when popping shell function context; handle new terminating signals inside terminating signal handler; fix to pattern substitution with null replacement and null string; fix to alias expansion when we get a SIGINT while entering a command substitution in an interactive shell",
-      "version": "055a4552c901e43e6a6007f5bc664a33698dbf85"
+      "description": "fix for interactive shell parser reset issue; fix for nested array subscript quoting issue; fix for process substitutions being closed to early in for loops",
+      "version": "6711d2dc7793ed3d35e91b2bd4ecbdfccfcf469f"
     },
-    "version": "20221015"
+    "version": "20221024"
   }
 }

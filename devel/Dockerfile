@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 055a4552c901e43e6a6007f5bc664a33698dbf85
-# change to readline callback signal handling; fix message when popping shell function context; handle new terminating signals inside terminating signal handler; fix to pattern substitution with null replacement and null string; fix to alias expansion when we get a SIGINT while entering a command substitution in an interactive shell
-ENV _BASH_VERSION devel-20221015
+ENV _BASH_COMMIT 6711d2dc7793ed3d35e91b2bd4ecbdfccfcf469f
+# fix for interactive shell parser reset issue; fix for nested array subscript quoting issue; fix for process substitutions being closed to early in for loops
+ENV _BASH_VERSION devel-20221024
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
