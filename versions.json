@@ -94,12 +94,12 @@
   },
   "5.2": {
     "baseline": {
-      "version": "5.2"
+      "patch": "9"
     },
     "patch": {
-      "version": "2"
+      "version": "9"
     },
-    "version": "5.2.2"
+    "version": "5.2.9"
   },
   "devel": {
     "commit": {
