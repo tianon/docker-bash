@@ -7,9 +7,9 @@
 FROM alpine:3.15
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT b48c234286ae692c758306dac26a5bb72f782fef
-# change to binary file detection; fix for negative fractional read timeout; check more often for terminating signals in subshells; clear process substitutions in subshells; wait only for last procsub if `wait' is called without arguments
-ENV _BASH_VERSION devel-20221031
+ENV _BASH_COMMIT 31f4d468b60eb27d768ef56d0a8b4982346465d9
+# fix for displaying `local -'; fix for trap and POSIX interp 1602; fix for readline redisplay when the last invisible character in the prompt string is not on the last line
+ENV _BASH_VERSION devel-20221107
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
