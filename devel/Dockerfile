@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 31f4d468b60eb27d768ef56d0a8b4982346465d9
-# fix for displaying `local -'; fix for trap and POSIX interp 1602; fix for readline redisplay when the last invisible character in the prompt string is not on the last line
-ENV _BASH_VERSION devel-20221107
+ENV _BASH_COMMIT 96115811d810f97d0f1611864801a93cd320df50
+# clarify some arithmetic error messages; fix for read builtin readline timeouts; initial implementation of preserving double quotes in readline completion; add starting line number to some "EOF reached" parser error messages
+ENV _BASH_VERSION devel-20221114
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
