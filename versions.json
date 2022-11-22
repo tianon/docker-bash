@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "clarify some arithmetic error messages; fix for read builtin readline timeouts; initial implementation of preserving double quotes in readline completion; add starting line number to some \"EOF reached\" parser error messages",
-      "version": "96115811d810f97d0f1611864801a93cd320df50"
+      "description": "fix for too-aggressive optimizing forks away in an `eval' command inside a (command) subshell",
+      "version": "94d25f57f124a9b2268a3af0a0915871032f426e"
     },
-    "version": "20221114"
+    "version": "20221121"
   }
 }

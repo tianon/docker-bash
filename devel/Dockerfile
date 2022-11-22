@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 96115811d810f97d0f1611864801a93cd320df50
-# clarify some arithmetic error messages; fix for read builtin readline timeouts; initial implementation of preserving double quotes in readline completion; add starting line number to some "EOF reached" parser error messages
-ENV _BASH_VERSION devel-20221114
+ENV _BASH_COMMIT 94d25f57f124a9b2268a3af0a0915871032f426e
+# fix for too-aggressive optimizing forks away in an `eval' command inside a (command) subshell
+ENV _BASH_VERSION devel-20221121
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
