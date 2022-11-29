@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 94d25f57f124a9b2268a3af0a0915871032f426e
-# fix for too-aggressive optimizing forks away in an `eval' command inside a (command) subshell
-ENV _BASH_VERSION devel-20221121
+ENV _BASH_COMMIT 3c9dd4565792bc53de3a94ec38a65a1989f3fe2f
+# fix for memory leak with unset associative array elements; last set of changes to globbing bracket expressions; fix for timing subshell commands
+ENV _BASH_VERSION devel-20221123
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
