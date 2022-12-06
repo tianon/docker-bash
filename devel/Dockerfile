@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 3c9dd4565792bc53de3a94ec38a65a1989f3fe2f
-# fix for memory leak with unset associative array elements; last set of changes to globbing bracket expressions; fix for timing subshell commands
-ENV _BASH_VERSION devel-20221123
+ENV _BASH_COMMIT 198210c58f7ca8adf7fd3b68208f0840713e4f45
+# more changes for bracket expressions in patterns
+ENV _BASH_VERSION devel-20221202
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

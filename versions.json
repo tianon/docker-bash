@@ -104,9 +104,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix for memory leak with unset associative array elements; last set of changes to globbing bracket expressions; fix for timing subshell commands",
-      "version": "3c9dd4565792bc53de3a94ec38a65a1989f3fe2f"
+      "description": "more changes for bracket expressions in patterns",
+      "version": "198210c58f7ca8adf7fd3b68208f0840713e4f45"
     },
-    "version": "20221123"
+    "version": "20221202"
   }
 }
