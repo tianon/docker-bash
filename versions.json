@@ -104,9 +104,9 @@
   },
   "devel": {
     "commit": {
-      "description": "more changes for bracket expressions in patterns",
-      "version": "198210c58f7ca8adf7fd3b68208f0840713e4f45"
+      "description": "fix for programmable completion functions setting traps on signals that readline handles",
+      "version": "237c32ba166c23d59a620a4850cd3dacdbb16a55"
     },
-    "version": "20221202"
+    "version": "20221206"
   }
 }

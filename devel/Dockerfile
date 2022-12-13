@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 198210c58f7ca8adf7fd3b68208f0840713e4f45
-# more changes for bracket expressions in patterns
-ENV _BASH_VERSION devel-20221202
+ENV _BASH_COMMIT 237c32ba166c23d59a620a4850cd3dacdbb16a55
+# fix for programmable completion functions setting traps on signals that readline handles
+ENV _BASH_VERSION devel-20221206
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
