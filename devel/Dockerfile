@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 237c32ba166c23d59a620a4850cd3dacdbb16a55
-# fix for programmable completion functions setting traps on signals that readline handles
-ENV _BASH_VERSION devel-20221206
+ENV _BASH_COMMIT c4a2e37470e223c171f9dcf70d353d0e1eab1ea9
+# fix comsub inside parameter expansion in here-document; fix readline longjmp botch; posix change for unset non-identifier; posix change for double quotes inside backquote comsub in here-document; add missing posix pieces to umask builtin
+ENV _BASH_VERSION devel-20221219
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
