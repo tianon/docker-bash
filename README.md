@@ -14,7 +14,7 @@ For outstanding `bash` image PRs, check [PRs with the "library/bash" label on th
 
 ---
 
--	[![build status badge](https://img.shields.io/github/workflow/status/tianon/docker-bash/GitHub%20CI/master?label=GitHub%20CI)](https://github.com/tianon/docker-bash/actions?query=workflow%3A%22GitHub+CI%22+branch%3Amaster)
+-	[![build status badge](https://img.shields.io/github/actions/workflow/status/tianon/docker-bash/ci.yml?branch=master&label=GitHub%20CI)](https://github.com/tianon/docker-bash/actions?query=workflow%3A%22GitHub+CI%22+branch%3Amaster)
 -	[![build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/update.sh/job/bash.svg?label=Automated%20update.sh)](https://doi-janky.infosiftr.net/job/update.sh/job/bash/)
 
 | Build | Status | Badges | (per-arch) |
