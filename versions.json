@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix comsub inside parameter expansion in here-document; fix readline longjmp botch; posix change for unset non-identifier; posix change for double quotes inside backquote comsub in here-document; add missing posix pieces to umask builtin",
-      "version": "c4a2e37470e223c171f9dcf70d353d0e1eab1ea9"
+      "description": "handle signals at more places in brace expansion; fix for subshells changing terminal process group on signals",
+      "version": "001918cdecd4ab25aa3d0e08a2f791ceeb68b9ca"
     },
-    "version": "20221219"
+    "version": "20221221"
   }
 }

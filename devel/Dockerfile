@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT c4a2e37470e223c171f9dcf70d353d0e1eab1ea9
-# fix comsub inside parameter expansion in here-document; fix readline longjmp botch; posix change for unset non-identifier; posix change for double quotes inside backquote comsub in here-document; add missing posix pieces to umask builtin
-ENV _BASH_VERSION devel-20221219
+ENV _BASH_COMMIT 001918cdecd4ab25aa3d0e08a2f791ceeb68b9ca
+# handle signals at more places in brace expansion; fix for subshells changing terminal process group on signals
+ENV _BASH_VERSION devel-20221221
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
