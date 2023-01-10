@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "handle signals at more places in brace expansion; fix for subshells changing terminal process group on signals",
-      "version": "001918cdecd4ab25aa3d0e08a2f791ceeb68b9ca"
+      "description": "set of portability changes from lint/asan/ubsan",
+      "version": "8fd8cd8f7b01462dd4f5de668180a6d50b4ce74f"
     },
-    "version": "20221221"
+    "version": "20230107"
   }
 }

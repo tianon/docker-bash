@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 001918cdecd4ab25aa3d0e08a2f791ceeb68b9ca
-# handle signals at more places in brace expansion; fix for subshells changing terminal process group on signals
-ENV _BASH_VERSION devel-20221221
+ENV _BASH_COMMIT 8fd8cd8f7b01462dd4f5de668180a6d50b4ce74f
+# set of portability changes from lint/asan/ubsan
+ENV _BASH_VERSION devel-20230107
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
