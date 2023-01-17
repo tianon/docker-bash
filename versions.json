@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "set of portability changes from lint/asan/ubsan",
-      "version": "8fd8cd8f7b01462dd4f5de668180a6d50b4ce74f"
+      "description": "fix for completing quoted filenames with show-all-if-ambiguous set; avoid signed int overflow in intrand32",
+      "version": "0647e53bd15c8982d89a03c2db1643aedd7cd649"
     },
-    "version": "20230107"
+    "version": "20230110"
   }
 }
