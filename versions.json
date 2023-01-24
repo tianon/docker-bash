@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix for completing quoted filenames with show-all-if-ambiguous set; avoid signed int overflow in intrand32",
-      "version": "0647e53bd15c8982d89a03c2db1643aedd7cd649"
+      "description": "fix terminal pgrp issue with async jobs in non-interactive shells; history_expand change to first argument",
+      "version": "a37b2af98533ace0ca90b3a2187481ee08e2615f"
     },
-    "version": "20230110"
+    "version": "20230120"
   }
 }

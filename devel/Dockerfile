@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 0647e53bd15c8982d89a03c2db1643aedd7cd649
-# fix for completing quoted filenames with show-all-if-ambiguous set; avoid signed int overflow in intrand32
-ENV _BASH_VERSION devel-20230110
+ENV _BASH_COMMIT a37b2af98533ace0ca90b3a2187481ee08e2615f
+# fix terminal pgrp issue with async jobs in non-interactive shells; history_expand change to first argument
+ENV _BASH_VERSION devel-20230120
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
