@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT a37b2af98533ace0ca90b3a2187481ee08e2615f
-# fix terminal pgrp issue with async jobs in non-interactive shells; history_expand change to first argument
-ENV _BASH_VERSION devel-20230120
+ENV _BASH_COMMIT d0bc56a32584da615e5baff315d26ac7139a6ae2
+# allow async ignored signals to be reset to SIG_DFL; give rl_input_available_hook precedence in readline:rl_gather_tyi
+ENV _BASH_VERSION devel-20230124
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
