@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "allow async ignored signals to be reset to SIG_DFL; give rl_input_available_hook precedence in readline:rl_gather_tyi",
-      "version": "d0bc56a32584da615e5baff315d26ac7139a6ae2"
+      "description": "printf changes: %q/%Q altform, %ls/%lc wide character strings; posix mode changes for function execution; allow <( and >) in function names",
+      "version": "315095ad7f518761020bc956376ab0e006e6b92d"
     },
-    "version": "20230124"
+    "version": "20230206"
   }
 }

@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT d0bc56a32584da615e5baff315d26ac7139a6ae2
-# allow async ignored signals to be reset to SIG_DFL; give rl_input_available_hook precedence in readline:rl_gather_tyi
-ENV _BASH_VERSION devel-20230124
+ENV _BASH_COMMIT 315095ad7f518761020bc956376ab0e006e6b92d
+# printf changes: %q/%Q altform, %ls/%lc wide character strings; posix mode changes for function execution; allow <( and >) in function names
+ENV _BASH_VERSION devel-20230206
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
