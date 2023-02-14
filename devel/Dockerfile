@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 315095ad7f518761020bc956376ab0e006e6b92d
-# printf changes: %q/%Q altform, %ls/%lc wide character strings; posix mode changes for function execution; allow <( and >) in function names
-ENV _BASH_VERSION devel-20230206
+ENV _BASH_COMMIT d7a6d947dfdbb41d806f4bd65f8a74bffb5acbb4
+# fix for $_ when executing $PROMPT_COMMAND; fix for extra line in history after here-document in command substitution
+ENV _BASH_VERSION devel-20230213
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
