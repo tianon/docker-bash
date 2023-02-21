@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT d7a6d947dfdbb41d806f4bd65f8a74bffb5acbb4
-# fix for $_ when executing $PROMPT_COMMAND; fix for extra line in history after here-document in command substitution
-ENV _BASH_VERSION devel-20230213
+ENV _BASH_COMMIT 3b4d12c1a228ed7b07e0e30910b7cd54a733d41e
+# control default value of patsub_replacement from config-top.h; documentation updates
+ENV _BASH_VERSION devel-20230220
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

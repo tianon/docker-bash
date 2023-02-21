@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "fix for $_ when executing $PROMPT_COMMAND; fix for extra line in history after here-document in command substitution",
-      "version": "d7a6d947dfdbb41d806f4bd65f8a74bffb5acbb4"
+      "description": "control default value of patsub_replacement from config-top.h; documentation updates",
+      "version": "3b4d12c1a228ed7b07e0e30910b7cd54a733d41e"
     },
-    "version": "20230213"
+    "version": "20230220"
   }
 }
