@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "control default value of patsub_replacement from config-top.h; documentation updates",
-      "version": "3b4d12c1a228ed7b07e0e30910b7cd54a733d41e"
+      "description": "local variables no longer modify external variables if the variable is supplied as a variable assignment preceding a function call; assignments in compound assignment statements don't undergo brace expansion",
+      "version": "349e21043e362914551277728159f8e55350bad7"
     },
-    "version": "20230220"
+    "version": "20230227"
   }
 }
