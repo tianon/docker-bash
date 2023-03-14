@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "readline fix for rl_undo_list pointer aliasing; arith command sets word_top",
-      "version": "277c21d2b2c6730f6cbda428180b08bacdcecc80"
+      "description": "script read errors are now fatal errors; fixes for readline asan issues",
+      "version": "01084938a14b2a52aa90a829b712dbb1e5f21ce1"
     },
-    "version": "20230306"
+    "version": "20230313"
   }
 }

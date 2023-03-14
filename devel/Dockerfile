@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 277c21d2b2c6730f6cbda428180b08bacdcecc80
-# readline fix for rl_undo_list pointer aliasing; arith command sets word_top
-ENV _BASH_VERSION devel-20230306
+ENV _BASH_COMMIT 01084938a14b2a52aa90a829b712dbb1e5f21ce1
+# script read errors are now fatal errors; fixes for readline asan issues
+ENV _BASH_VERSION devel-20230313
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
