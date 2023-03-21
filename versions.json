@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "script read errors are now fatal errors; fixes for readline asan issues",
-      "version": "01084938a14b2a52aa90a829b712dbb1e5f21ce1"
+      "description": "more minor asan fixes",
+      "version": "4c2b574c0035884bc0869136eeeeb31132612f3d"
     },
-    "version": "20230313"
+    "version": "20230320"
   }
 }

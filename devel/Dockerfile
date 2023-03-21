@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 01084938a14b2a52aa90a829b712dbb1e5f21ce1
-# script read errors are now fatal errors; fixes for readline asan issues
-ENV _BASH_VERSION devel-20230313
+ENV _BASH_COMMIT 4c2b574c0035884bc0869136eeeeb31132612f3d
+# more minor asan fixes
+ENV _BASH_VERSION devel-20230320
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
