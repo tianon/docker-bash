@@ -22,6 +22,9 @@
     "baseline": {
       "patch": "57"
     },
+    "patch": {
+      "version": "57"
+    },
     "version": "3.2.57"
   },
   "4.0": {

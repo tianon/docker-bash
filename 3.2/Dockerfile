@@ -10,6 +10,8 @@ FROM alpine:3.16
 ENV _BASH_VERSION 3.2.57
 ENV _BASH_BASELINE 3.2.57
 ENV _BASH_BASELINE_PATCH 57
+# https://ftp.gnu.org/gnu/bash/bash-3.2-patches/?C=M;O=D
+ENV _BASH_LATEST_PATCH 57
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
