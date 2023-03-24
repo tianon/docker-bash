@@ -40,7 +40,10 @@
     "baseline": {
       "version": "4.1"
     },
-    "version": "4.1.0"
+    "patch": {
+      "version": "17"
+    },
+    "version": "4.1.17"
   },
   "4.2": {
     "baseline": {
