@@ -7,9 +7,9 @@
 FROM alpine:3.16
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 4c2b574c0035884bc0869136eeeeb31132612f3d
-# more minor asan fixes
-ENV _BASH_VERSION devel-20230320
+ENV _BASH_COMMIT 57d4dc15ff35895a1c1248f948f59739ffb99fde
+# small asan fixes; size_t and other ANSI C changes; restore readline variables in compgen builtin
+ENV _BASH_VERSION devel-20230327
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

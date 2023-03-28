@@ -103,9 +103,9 @@
   },
   "devel": {
     "commit": {
-      "description": "more minor asan fixes",
-      "version": "4c2b574c0035884bc0869136eeeeb31132612f3d"
+      "description": "small asan fixes; size_t and other ANSI C changes; restore readline variables in compgen builtin",
+      "version": "57d4dc15ff35895a1c1248f948f59739ffb99fde"
     },
-    "version": "20230320"
+    "version": "20230327"
   }
 }
