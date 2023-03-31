@@ -23,6 +23,13 @@ allBaseVersions="$(
 		| sort -V
 )"
 
+alpine="$(
+	bashbrew cat --format '{{ .TagEntry.Tags | join "\n" }}' https://github.com/docker-library/official-images/raw/HEAD/library/alpine:latest \
+		| grep -E '^[0-9]+[.][0-9]+$'
+)"
+[ "$(wc -l <<<"$alpine")" = 1 ]
+export alpine
+
 tmp="$(mktemp -d)"
 trap "$(printf 'rm -rf %q' "$tmp")" EXIT
 
@@ -59,6 +66,7 @@ for version in "${versions[@]}"; do
 		json="$(jq <<<"$json" -c '.[env.version] = {
 			version: env.timestamp,
 			commit: { version: env.commit, description: env.desc },
+			alpine: { version: env.alpine },
 		}')"
 		continue
 	fi
@@ -107,7 +115,7 @@ for version in "${versions[@]}"; do
 	json="$(jq <<<"$json" -c '
 		(env.patchbase | tonumber) as $patchbase
 		| (env.patchlevel | tonumber) as $patchlevel
-		| .[env.version] = { version: env.fullVersion }
+		| .[env.version] = { version: env.fullVersion, alpine: { version: env.alpine } }
 		+ if env.baseline != env.fullVersion or $patchbase > 0 then
 			{
 				baseline: (
