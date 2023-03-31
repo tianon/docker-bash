@@ -1,5 +1,8 @@
 {
   "3.0": {
+    "alpine": {
+      "version": "3.17"
+    },
     "baseline": {
       "patch": "16",
       "version": "3.0.16"
@@ -10,6 +13,9 @@
     "version": "3.0.22"
   },
   "3.1": {
+    "alpine": {
+      "version": "3.17"
+    },
     "baseline": {
       "version": "3.1"
     },
@@ -19,6 +25,9 @@
     "version": "3.1.23"
   },
   "3.2": {
+    "alpine": {
+      "version": "3.17"
+    },
     "baseline": {
       "patch": "57"
     },
@@ -28,6 +37,9 @@
     "version": "3.2.57"
   },
   "4.0": {
+    "alpine": {
+      "version": "3.17"
+    },
     "baseline": {
       "version": "4.0"
     },
@@ -37,6 +49,9 @@
     "version": "4.0.44"
   },
   "4.1": {
+    "alpine": {
+      "version": "3.17"
+    },
     "baseline": {
       "version": "4.1"
     },
@@ -46,6 +61,9 @@
     "version": "4.1.17"
   },
   "4.2": {
+    "alpine": {
+      "version": "3.17"
+    },
     "baseline": {
       "patch": "53"
     },
@@ -55,6 +73,9 @@
     "version": "4.2.53"
   },
   "4.3": {
+    "alpine": {
+      "version": "3.17"
+    },
     "baseline": {
       "patch": "30",
       "version": "4.3.30"
@@ -65,6 +86,9 @@
     "version": "4.3.48"
   },
   "4.4": {
+    "alpine": {
+      "version": "3.17"
+    },
     "baseline": {
       "patch": "18",
       "version": "4.4.18"
@@ -75,6 +99,9 @@
     "version": "4.4.23"
   },
   "5.0": {
+    "alpine": {
+      "version": "3.17"
+    },
     "baseline": {
       "version": "5.0"
     },
@@ -84,6 +111,9 @@
     "version": "5.0.18"
   },
   "5.1": {
+    "alpine": {
+      "version": "3.17"
+    },
     "baseline": {
       "patch": "16"
     },
@@ -93,6 +123,9 @@
     "version": "5.1.16"
   },
   "5.2": {
+    "alpine": {
+      "version": "3.17"
+    },
     "baseline": {
       "patch": "15"
     },
@@ -102,6 +135,9 @@
     "version": "5.2.15"
   },
   "devel": {
+    "alpine": {
+      "version": "3.17"
+    },
     "commit": {
       "description": "small asan fixes; size_t and other ANSI C changes; restore readline variables in compgen builtin",
       "version": "57d4dc15ff35895a1c1248f948f59739ffb99fde"
