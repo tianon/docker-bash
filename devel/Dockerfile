@@ -7,9 +7,9 @@
 FROM alpine:3.17
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 57d4dc15ff35895a1c1248f948f59739ffb99fde
-# small asan fixes; size_t and other ANSI C changes; restore readline variables in compgen builtin
-ENV _BASH_VERSION devel-20230327
+ENV _BASH_COMMIT 877ff7267584b40c082ddcc49ce6c539f05f16f4
+# rest of work to convert unwind-protects to ANSI/ISO C; size_t updates; function prototype changes for ANSI/ISO C
+ENV _BASH_VERSION devel-20230403
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

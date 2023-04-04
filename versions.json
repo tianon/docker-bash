@@ -139,9 +139,9 @@
       "version": "3.17"
     },
     "commit": {
-      "description": "small asan fixes; size_t and other ANSI C changes; restore readline variables in compgen builtin",
-      "version": "57d4dc15ff35895a1c1248f948f59739ffb99fde"
+      "description": "rest of work to convert unwind-protects to ANSI/ISO C; size_t updates; function prototype changes for ANSI/ISO C",
+      "version": "877ff7267584b40c082ddcc49ce6c539f05f16f4"
     },
-    "version": "20230327"
+    "version": "20230403"
   }
 }
