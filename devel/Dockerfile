@@ -7,9 +7,9 @@
 FROM alpine:3.17
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 877ff7267584b40c082ddcc49ce6c539f05f16f4
-# rest of work to convert unwind-protects to ANSI/ISO C; size_t updates; function prototype changes for ANSI/ISO C
-ENV _BASH_VERSION devel-20230403
+ENV _BASH_COMMIT ec9447ce9392a0f93d96789c3741285fede8a150
+# fix minor asan bug; $(<nosuchfile) is no longer a fatal error with errexit enabled; fixes for vi t/T motion commands
+ENV _BASH_VERSION devel-20230405
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
