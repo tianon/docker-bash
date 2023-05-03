@@ -24,6 +24,7 @@ RUN set -eux; \
 		libc-dev \
 		make \
 		ncurses-dev \
+		patch \
 		tar \
 	; \
 	\
