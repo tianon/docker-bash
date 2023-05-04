@@ -92,6 +92,12 @@ RUN set -eux; \
 		rmdir bash-patches; \
 		apk del --no-network .patch-deps; \
 	fi; \
+{{ if env.version == "devel" then ( -}}
+	\
+# https://lists.gnu.org/archive/html/bug-bash/2023-05/msg00011.html
+	{ echo '#include <unistd.h>'; echo; cat /usr/src/bash/lib/sh/strscpy.c; } > /usr/src/bash/lib/sh/strscpy.c.new; \
+	mv /usr/src/bash/lib/sh/strscpy.c.new /usr/src/bash/lib/sh/strscpy.c; \
+{{ ) else "" end -}}
 	\
 	cd /usr/src/bash; \
 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \
