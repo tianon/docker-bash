@@ -7,9 +7,9 @@
 FROM alpine:3.17
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT ec9447ce9392a0f93d96789c3741285fede8a150
-# fix minor asan bug; $(<nosuchfile) is no longer a fatal error with errexit enabled; fixes for vi t/T motion commands
-ENV _BASH_VERSION devel-20230405
+ENV _BASH_COMMIT 23935dbe8513437e69ca14d6b0890067dddceba3
+# asan fuzzing fixes; fix incomplete multibyte chars in history expansion; new nosort GLOBSORT value
+ENV _BASH_VERSION devel-20230501
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
@@ -50,6 +50,10 @@ RUN set -eux; \
 		rmdir bash-patches; \
 		apk del --no-network .patch-deps; \
 	fi; \
+	\
+# https://lists.gnu.org/archive/html/bug-bash/2023-05/msg00011.html
+	{ echo '#include <unistd.h>'; echo; cat /usr/src/bash/lib/sh/strscpy.c; } > /usr/src/bash/lib/sh/strscpy.c.new; \
+	mv /usr/src/bash/lib/sh/strscpy.c.new /usr/src/bash/lib/sh/strscpy.c; \
 	\
 	cd /usr/src/bash; \
 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \
