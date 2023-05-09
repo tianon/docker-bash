@@ -139,9 +139,9 @@
       "version": "3.17"
     },
     "commit": {
-      "description": "asan fuzzing fixes; fix incomplete multibyte chars in history expansion; new nosort GLOBSORT value",
-      "version": "23935dbe8513437e69ca14d6b0890067dddceba3"
+      "description": "fix for incomplete multibyte characters in pasted input; fix for syntax errors while entering compound assignments; fix for jobs not removing jobs from the list in a SIGCHLD trap; fix for PS0 that contains a command substitution after interactive shell reads EOF; fix for non-interactive shell reading from stdin and evaling a command that dups stdin",
+      "version": "896df2874a513d41b570852c2de6b2d612a1706a"
     },
-    "version": "20230501"
+    "version": "20230504"
   }
 }

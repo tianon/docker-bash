@@ -7,9 +7,9 @@
 FROM alpine:3.17
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 23935dbe8513437e69ca14d6b0890067dddceba3
-# asan fuzzing fixes; fix incomplete multibyte chars in history expansion; new nosort GLOBSORT value
-ENV _BASH_VERSION devel-20230501
+ENV _BASH_COMMIT 896df2874a513d41b570852c2de6b2d612a1706a
+# fix for incomplete multibyte characters in pasted input; fix for syntax errors while entering compound assignments; fix for jobs not removing jobs from the list in a SIGCHLD trap; fix for PS0 that contains a command substitution after interactive shell reads EOF; fix for non-interactive shell reading from stdin and evaling a command that dups stdin
+ENV _BASH_VERSION devel-20230504
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
