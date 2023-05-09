@@ -136,7 +136,7 @@
   },
   "devel": {
     "alpine": {
-      "version": "3.17"
+      "version": "3.18"
     },
     "commit": {
       "description": "fix for incomplete multibyte characters in pasted input; fix for syntax errors while entering compound assignments; fix for jobs not removing jobs from the list in a SIGCHLD trap; fix for PS0 that contains a command substitution after interactive shell reads EOF; fix for non-interactive shell reading from stdin and evaling a command that dups stdin",
