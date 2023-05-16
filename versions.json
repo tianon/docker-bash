@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "fix for incomplete multibyte characters in pasted input; fix for syntax errors while entering compound assignments; fix for jobs not removing jobs from the list in a SIGCHLD trap; fix for PS0 that contains a command substitution after interactive shell reads EOF; fix for non-interactive shell reading from stdin and evaling a command that dups stdin",
-      "version": "896df2874a513d41b570852c2de6b2d612a1706a"
+      "description": "complete initial implementation of nofork command substitution (${ command; })",
+      "version": "e44e3d50dee26d12927baca188ad2a44a0135173"
     },
-    "version": "20230504"
+    "version": "20230515"
   }
 }

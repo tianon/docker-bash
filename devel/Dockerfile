@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 896df2874a513d41b570852c2de6b2d612a1706a
-# fix for incomplete multibyte characters in pasted input; fix for syntax errors while entering compound assignments; fix for jobs not removing jobs from the list in a SIGCHLD trap; fix for PS0 that contains a command substitution after interactive shell reads EOF; fix for non-interactive shell reading from stdin and evaling a command that dups stdin
-ENV _BASH_VERSION devel-20230504
+ENV _BASH_COMMIT e44e3d50dee26d12927baca188ad2a44a0135173
+# complete initial implementation of nofork command substitution (${ command; })
+ENV _BASH_VERSION devel-20230515
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
