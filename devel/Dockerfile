@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT e44e3d50dee26d12927baca188ad2a44a0135173
-# complete initial implementation of nofork command substitution (${ command; })
-ENV _BASH_VERSION devel-20230515
+ENV _BASH_COMMIT 782af56204608d09b24a5d6ef19ffdd1a55b96f6
+# updates for nofork command substitution; changes for z/OS machines; fix for race in wait_for_any_job
+ENV _BASH_VERSION devel-20230522
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

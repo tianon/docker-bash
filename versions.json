@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "complete initial implementation of nofork command substitution (${ command; })",
-      "version": "e44e3d50dee26d12927baca188ad2a44a0135173"
+      "description": "updates for nofork command substitution; changes for z/OS machines; fix for race in wait_for_any_job",
+      "version": "782af56204608d09b24a5d6ef19ffdd1a55b96f6"
     },
-    "version": "20230515"
+    "version": "20230522"
   }
 }
