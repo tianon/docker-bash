@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "updates for nofork command substitution; changes for z/OS machines; fix for race in wait_for_any_job",
-      "version": "782af56204608d09b24a5d6ef19ffdd1a55b96f6"
+      "description": "remove `(' from chars that can follow `${' command substitution; fix for empty command substitutions; fix for adding incomplete command substitutions to history; fix for function source file with -c command; fix for EOF at PS2 when ignoreeof is set",
+      "version": "e2520247889a0813f803f8fbf59cc139414a4a54"
     },
-    "version": "20230522"
+    "version": "20230526"
   }
 }

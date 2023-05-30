@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 782af56204608d09b24a5d6ef19ffdd1a55b96f6
-# updates for nofork command substitution; changes for z/OS machines; fix for race in wait_for_any_job
-ENV _BASH_VERSION devel-20230522
+ENV _BASH_COMMIT e2520247889a0813f803f8fbf59cc139414a4a54
+# remove `(' from chars that can follow `${' command substitution; fix for empty command substitutions; fix for adding incomplete command substitutions to history; fix for function source file with -c command; fix for EOF at PS2 when ignoreeof is set
+ENV _BASH_VERSION devel-20230526
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
