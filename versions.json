@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "remove `(' from chars that can follow `${' command substitution; fix for empty command substitutions; fix for adding incomplete command substitutions to history; fix for function source file with -c command; fix for EOF at PS2 when ignoreeof is set",
-      "version": "e2520247889a0813f803f8fbf59cc139414a4a54"
+      "description": "fix for adding `;' to nofork command substitution; IBM z/OS changes; fix for files ending with backslash; fix for expanding compound assignment in an alias; fix for printing here-documents in if statements; change to make enable -fn load a builtin but mark it as disabled; fix for removing FIFOs during `.'; fix for single-quoting translations",
+      "version": "a629483b0ee2975d9a869ea5240ad5ef3a339b00"
     },
-    "version": "20230526"
+    "version": "20230603"
   }
 }
