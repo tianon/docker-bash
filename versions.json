@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "fix for adding `;' to nofork command substitution; IBM z/OS changes; fix for files ending with backslash; fix for expanding compound assignment in an alias; fix for printing here-documents in if statements; change to make enable -fn load a builtin but mark it as disabled; fix for removing FIFOs during `.'; fix for single-quoting translations",
-      "version": "a629483b0ee2975d9a869ea5240ad5ef3a339b00"
+      "description": "fix for optimizing forks away if bash -ic command is executed",
+      "version": "d44a45afbc61f889de105e1833a13205931ee898"
     },
-    "version": "20230603"
+    "version": "20230612"
   }
 }

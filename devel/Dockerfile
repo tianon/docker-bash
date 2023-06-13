@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT a629483b0ee2975d9a869ea5240ad5ef3a339b00
-# fix for adding `;' to nofork command substitution; IBM z/OS changes; fix for files ending with backslash; fix for expanding compound assignment in an alias; fix for printing here-documents in if statements; change to make enable -fn load a builtin but mark it as disabled; fix for removing FIFOs during `.'; fix for single-quoting translations
-ENV _BASH_VERSION devel-20230603
+ENV _BASH_COMMIT d44a45afbc61f889de105e1833a13205931ee898
+# fix for optimizing forks away if bash -ic command is executed
+ENV _BASH_VERSION devel-20230612
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
