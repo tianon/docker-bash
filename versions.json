@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "fix for optimizing forks away if bash -ic command is executed",
-      "version": "d44a45afbc61f889de105e1833a13205931ee898"
+      "description": "new readline application variable rl_full_quoting_desired; new programmable completion option \"fullquote\"; TIMEFORMAT now accepts precisions up to six digits",
+      "version": "b91488b51cae38a7e07b7567b6ac42ea19d02740"
     },
-    "version": "20230612"
+    "version": "20230616"
   }
 }

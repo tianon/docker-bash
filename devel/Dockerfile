@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT d44a45afbc61f889de105e1833a13205931ee898
-# fix for optimizing forks away if bash -ic command is executed
-ENV _BASH_VERSION devel-20230612
+ENV _BASH_COMMIT b91488b51cae38a7e07b7567b6ac42ea19d02740
+# new readline application variable rl_full_quoting_desired; new programmable completion option "fullquote"; TIMEFORMAT now accepts precisions up to six digits
+ENV _BASH_VERSION devel-20230616
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
