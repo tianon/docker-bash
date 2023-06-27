@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "new readline application variable rl_full_quoting_desired; new programmable completion option \"fullquote\"; TIMEFORMAT now accepts precisions up to six digits",
-      "version": "b91488b51cae38a7e07b7567b6ac42ea19d02740"
+      "description": "fix for exit builtin when ignoreeof set; better resource deallocation when completion is interrupted; fix small memleak in globbing; compile out obsolete readline typedefs by default; readline callback mode doesn't print signal chars by default; xtrace mode prefers to use $'...' quoting if required",
+      "version": "829aad36dbbeee462fa142fe2c571fd7ab735ba8"
     },
-    "version": "20230616"
+    "version": "20230626"
   }
 }
