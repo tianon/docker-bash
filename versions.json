@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "fix for exit builtin when ignoreeof set; better resource deallocation when completion is interrupted; fix small memleak in globbing; compile out obsolete readline typedefs by default; readline callback mode doesn't print signal chars by default; xtrace mode prefers to use $'...' quoting if required",
-      "version": "829aad36dbbeee462fa142fe2c571fd7ab735ba8"
+      "description": "more small fixes to command printing code; simplify readline username completion if getpwent is not available",
+      "version": "935fe11af06a9ff3e63cbccb7fdfe47e8a8d48cd"
     },
-    "version": "20230626"
+    "version": "20230703"
   }
 }

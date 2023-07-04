@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 829aad36dbbeee462fa142fe2c571fd7ab735ba8
-# fix for exit builtin when ignoreeof set; better resource deallocation when completion is interrupted; fix small memleak in globbing; compile out obsolete readline typedefs by default; readline callback mode doesn't print signal chars by default; xtrace mode prefers to use $'...' quoting if required
-ENV _BASH_VERSION devel-20230626
+ENV _BASH_COMMIT 935fe11af06a9ff3e63cbccb7fdfe47e8a8d48cd
+# more small fixes to command printing code; simplify readline username completion if getpwent is not available
+ENV _BASH_VERSION devel-20230703
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
