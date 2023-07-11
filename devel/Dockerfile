@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 935fe11af06a9ff3e63cbccb7fdfe47e8a8d48cd
-# more small fixes to command printing code; simplify readline username completion if getpwent is not available
-ENV _BASH_VERSION devel-20230703
+ENV _BASH_COMMIT 2f09fa19cf54b83adbf4b7d051fb9ee0e0a1dfa3
+# fix cd when user assigns a value to OLDPWD; fix android issue with blocked system calls; fix historical use of test -t; fix issue with foreground-TSTP async jobs
+ENV _BASH_VERSION devel-20230710
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

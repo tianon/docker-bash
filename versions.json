@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "more small fixes to command printing code; simplify readline username completion if getpwent is not available",
-      "version": "935fe11af06a9ff3e63cbccb7fdfe47e8a8d48cd"
+      "description": "fix cd when user assigns a value to OLDPWD; fix android issue with blocked system calls; fix historical use of test -t; fix issue with foreground-TSTP async jobs",
+      "version": "2f09fa19cf54b83adbf4b7d051fb9ee0e0a1dfa3"
     },
-    "version": "20230703"
+    "version": "20230710"
   }
 }
