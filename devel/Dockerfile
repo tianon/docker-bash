@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 2f09fa19cf54b83adbf4b7d051fb9ee0e0a1dfa3
-# fix cd when user assigns a value to OLDPWD; fix android issue with blocked system calls; fix historical use of test -t; fix issue with foreground-TSTP async jobs
-ENV _BASH_VERSION devel-20230710
+ENV _BASH_COMMIT 7f7ee0e9c6766ff5d3de542d03c59590c4a5a44a
+# fix for leak when completing command word with glob pattern that matches multiple files; preserve export attribute when unsetting local variable in case it is reset; fix for using nl_langinfo when performing charset conversions
+ENV _BASH_VERSION devel-20230717
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
