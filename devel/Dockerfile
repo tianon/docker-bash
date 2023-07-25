@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 7f7ee0e9c6766ff5d3de542d03c59590c4a5a44a
-# fix for leak when completing command word with glob pattern that matches multiple files; preserve export attribute when unsetting local variable in case it is reset; fix for using nl_langinfo when performing charset conversions
-ENV _BASH_VERSION devel-20230717
+ENV _BASH_COMMIT ad39c5c3d77dfa9d3d175db1fae4cdc9bc9d4d79
+# change redisplay to handle some cases where the line consumes more than the number of physical screen lines; add regerror() error messages if regular expression compilation fails; make sure active region readline variables are displayed with bind -v; partial fix for bind -x and commands containing quoting characters
+ENV _BASH_VERSION devel-20230719
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
