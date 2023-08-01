@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT ad39c5c3d77dfa9d3d175db1fae4cdc9bc9d4d79
-# change redisplay to handle some cases where the line consumes more than the number of physical screen lines; add regerror() error messages if regular expression compilation fails; make sure active region readline variables are displayed with bind -v; partial fix for bind -x and commands containing quoting characters
-ENV _BASH_VERSION devel-20230719
+ENV _BASH_COMMIT f6a78e24d8928574fb239978c10d3509619271a2
+# fixes for $LINENO in multi-line simple commands; printf out-of-range values now cause a non-zero return status
+ENV _BASH_VERSION devel-20230728
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
