@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT f6a78e24d8928574fb239978c10d3509619271a2
-# fixes for $LINENO in multi-line simple commands; printf out-of-range values now cause a non-zero return status
-ENV _BASH_VERSION devel-20230728
+ENV _BASH_COMMIT dc91b3f509eb56f0f1ddf483730fccb3cc131706
+# fixes for read builtin with backslash escapes; change history builtin behavior when HISTFILE is unset or null; change to compopt to make it use the name from the actual compspec it uses; fix for executing coproc in functions; fix for array variables and declare -g
+ENV _BASH_VERSION devel-20230804
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
