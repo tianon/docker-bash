@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "fixes for read builtin with backslash escapes; change history builtin behavior when HISTFILE is unset or null; change to compopt to make it use the name from the actual compspec it uses; fix for executing coproc in functions; fix for array variables and declare -g",
-      "version": "dc91b3f509eb56f0f1ddf483730fccb3cc131706"
+      "description": "update included libintl to gettext-0.21.1",
+      "version": "50ffbc9ddc29a52e37efd8ed5c72dbe407257cc7"
     },
-    "version": "20230804"
+    "version": "20230814"
   }
 }

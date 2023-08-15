@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT dc91b3f509eb56f0f1ddf483730fccb3cc131706
-# fixes for read builtin with backslash escapes; change history builtin behavior when HISTFILE is unset or null; change to compopt to make it use the name from the actual compspec it uses; fix for executing coproc in functions; fix for array variables and declare -g
-ENV _BASH_VERSION devel-20230804
+ENV _BASH_COMMIT 50ffbc9ddc29a52e37efd8ed5c72dbe407257cc7
+# update included libintl to gettext-0.21.1
+ENV _BASH_VERSION devel-20230814
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
