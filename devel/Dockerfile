@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 50ffbc9ddc29a52e37efd8ed5c72dbe407257cc7
-# update included libintl to gettext-0.21.1
-ENV _BASH_VERSION devel-20230814
+ENV _BASH_COMMIT b64a7d8cbe8392868812f85fa3184bd8ded284b8
+# fix for LINENO after shell errors; fix for crash with !&; new read -E option
+ENV _BASH_VERSION devel-20230818
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

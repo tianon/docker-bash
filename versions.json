@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "update included libintl to gettext-0.21.1",
-      "version": "50ffbc9ddc29a52e37efd8ed5c72dbe407257cc7"
+      "description": "fix for LINENO after shell errors; fix for crash with !&; new read -E option",
+      "version": "b64a7d8cbe8392868812f85fa3184bd8ded284b8"
     },
-    "version": "20230814"
+    "version": "20230818"
   }
 }
