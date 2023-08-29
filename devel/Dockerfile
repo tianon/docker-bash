@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT b64a7d8cbe8392868812f85fa3184bd8ded284b8
-# fix for LINENO after shell errors; fix for crash with !&; new read -E option
-ENV _BASH_VERSION devel-20230818
+ENV _BASH_COMMIT f4683835d896effb5bbbf6b43719519d86e4b0a9
+# documentation updates for arrayname[0]; update trace/debug order for some compound commands
+ENV _BASH_VERSION devel-20230828
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

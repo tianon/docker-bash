@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "fix for LINENO after shell errors; fix for crash with !&; new read -E option",
-      "version": "b64a7d8cbe8392868812f85fa3184bd8ded284b8"
+      "description": "documentation updates for arrayname[0]; update trace/debug order for some compound commands",
+      "version": "f4683835d896effb5bbbf6b43719519d86e4b0a9"
     },
-    "version": "20230818"
+    "version": "20230828"
   }
 }
