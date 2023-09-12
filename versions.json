@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "documentation updates for arrayname[0]; update trace/debug order for some compound commands",
-      "version": "f4683835d896effb5bbbf6b43719519d86e4b0a9"
+      "description": "fix for race condition with process creation and terminal process group; changes to printf builtin for multibyte characters",
+      "version": "32826f717dfe43f6a90eb894bcbdfe78bbe70d4d"
     },
-    "version": "20230828"
+    "version": "20230911"
   }
 }
