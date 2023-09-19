@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 32826f717dfe43f6a90eb894bcbdfe78bbe70d4d
-# fix for race condition with process creation and terminal process group; changes to printf builtin for multibyte characters
-ENV _BASH_VERSION devel-20230911
+ENV _BASH_COMMIT 94bce520e8ab78262fcf693b685070779e4185b7
+# more error checking for hash builtin; fix for [[ builtin and some test syntax errors
+ENV _BASH_VERSION devel-20230913
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "fix for race condition with process creation and terminal process group; changes to printf builtin for multibyte characters",
-      "version": "32826f717dfe43f6a90eb894bcbdfe78bbe70d4d"
+      "description": "more error checking for hash builtin; fix for [[ builtin and some test syntax errors",
+      "version": "94bce520e8ab78262fcf693b685070779e4185b7"
     },
-    "version": "20230911"
+    "version": "20230913"
   }
 }
