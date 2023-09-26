@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "more error checking for hash builtin; fix for [[ builtin and some test syntax errors",
-      "version": "94bce520e8ab78262fcf693b685070779e4185b7"
+      "description": "a select command invalid selection variable name is now a fatal error in posix mode; many test suite additions",
+      "version": "b3958b3ab44054a42f16bbc9ff9bc162eaf783b1"
     },
-    "version": "20230913"
+    "version": "20230925"
   }
 }

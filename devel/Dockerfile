@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 94bce520e8ab78262fcf693b685070779e4185b7
-# more error checking for hash builtin; fix for [[ builtin and some test syntax errors
-ENV _BASH_VERSION devel-20230913
+ENV _BASH_COMMIT b3958b3ab44054a42f16bbc9ff9bc162eaf783b1
+# a select command invalid selection variable name is now a fatal error in posix mode; many test suite additions
+ENV _BASH_VERSION devel-20230925
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
