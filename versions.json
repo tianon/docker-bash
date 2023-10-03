@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "a select command invalid selection variable name is now a fatal error in posix mode; many test suite additions",
-      "version": "b3958b3ab44054a42f16bbc9ff9bc162eaf783b1"
+      "description": "small changes to some error messages; greatly expanded builtins tests",
+      "version": "00edd0ee5051cd396c5594290bb21c212a9093e8"
     },
-    "version": "20230925"
+    "version": "20230928"
   }
 }
