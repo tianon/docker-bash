@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "small changes to some error messages; greatly expanded builtins tests",
-      "version": "00edd0ee5051cd396c5594290bb21c212a9093e8"
+      "description": "fix for subshells resetting job stats; new hook for rewriting part of completion word",
+      "version": "2eb9a3699b0b8276bc582049b03246ad786e8212"
     },
-    "version": "20230928"
+    "version": "20231005"
   }
 }

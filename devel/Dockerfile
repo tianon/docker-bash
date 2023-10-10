@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 00edd0ee5051cd396c5594290bb21c212a9093e8
-# small changes to some error messages; greatly expanded builtins tests
-ENV _BASH_VERSION devel-20230928
+ENV _BASH_COMMIT 2eb9a3699b0b8276bc582049b03246ad786e8212
+# fix for subshells resetting job stats; new hook for rewriting part of completion word
+ENV _BASH_VERSION devel-20231005
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
