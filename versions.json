@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "fix for subshells resetting job stats; new hook for rewriting part of completion word",
-      "version": "2eb9a3699b0b8276bc582049b03246ad786e8212"
+      "description": "changes to quoting for some globbing characters; regularize error behavior of builtins that take numeric arguments and complain about too many arguments",
+      "version": "7a698806d1332fdb69ed7eaf1d0ce0519dbf0923"
     },
-    "version": "20231005"
+    "version": "20231011"
   }
 }
