@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 7a698806d1332fdb69ed7eaf1d0ce0519dbf0923
-# changes to quoting for some globbing characters; regularize error behavior of builtins that take numeric arguments and complain about too many arguments
-ENV _BASH_VERSION devel-20231011
+ENV _BASH_COMMIT b348b871b45ca354f58c8c965e53866903b666ea
+# small change to brace expansion to inhibit some error messages; changes to printf builtin for precision and field widths
+ENV _BASH_VERSION devel-20231023
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

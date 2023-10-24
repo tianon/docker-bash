@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "changes to quoting for some globbing characters; regularize error behavior of builtins that take numeric arguments and complain about too many arguments",
-      "version": "7a698806d1332fdb69ed7eaf1d0ce0519dbf0923"
+      "description": "small change to brace expansion to inhibit some error messages; changes to printf builtin for precision and field widths",
+      "version": "b348b871b45ca354f58c8c965e53866903b666ea"
     },
-    "version": "20231011"
+    "version": "20231023"
   }
 }
