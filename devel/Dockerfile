@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT b348b871b45ca354f58c8c965e53866903b666ea
-# small change to brace expansion to inhibit some error messages; changes to printf builtin for precision and field widths
-ENV _BASH_VERSION devel-20231023
+ENV _BASH_COMMIT fe24a6a55e8850298b496c5b9d82f1866eba190e
+# changes to SIGINT handler while waiting for a child; skip vertical whitespace after translating an integer
+ENV _BASH_VERSION devel-20231030
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
