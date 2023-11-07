@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT fe24a6a55e8850298b496c5b9d82f1866eba190e
-# changes to SIGINT handler while waiting for a child; skip vertical whitespace after translating an integer
-ENV _BASH_VERSION devel-20231030
+ENV _BASH_COMMIT 511fef0f5c402483ca32f6b9b6a94ebdb7e5d2d5
+# new bindable readline command `execute-named-command', bound to M-x in emacs mode
+ENV _BASH_VERSION devel-20231106
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

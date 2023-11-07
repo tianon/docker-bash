@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "changes to SIGINT handler while waiting for a child; skip vertical whitespace after translating an integer",
-      "version": "fe24a6a55e8850298b496c5b9d82f1866eba190e"
+      "description": "new bindable readline command `execute-named-command', bound to M-x in emacs mode",
+      "version": "511fef0f5c402483ca32f6b9b6a94ebdb7e5d2d5"
     },
-    "version": "20231030"
+    "version": "20231106"
   }
 }
