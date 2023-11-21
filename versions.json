@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "new bindable readline command `execute-named-command', bound to M-x in emacs mode",
-      "version": "511fef0f5c402483ca32f6b9b6a94ebdb7e5d2d5"
+      "description": "allow quoted-insert while reading readline search strings; force filename argument to enable -f without a slash to read from the current directory; update BASH_LOADABLES_PATH documentation",
+      "version": "f491b933503f64fdf6add63e134e0cf2e9271a17"
     },
-    "version": "20231106"
+    "version": "20231114"
   }
 }

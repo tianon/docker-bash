@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 511fef0f5c402483ca32f6b9b6a94ebdb7e5d2d5
-# new bindable readline command `execute-named-command', bound to M-x in emacs mode
-ENV _BASH_VERSION devel-20231106
+ENV _BASH_COMMIT f491b933503f64fdf6add63e134e0cf2e9271a17
+# allow quoted-insert while reading readline search strings; force filename argument to enable -f without a slash to read from the current directory; update BASH_LOADABLES_PATH documentation
+ENV _BASH_VERSION devel-20231114
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
