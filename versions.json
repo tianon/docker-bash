@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "allow quoted-insert while reading readline search strings; force filename argument to enable -f without a slash to read from the current directory; update BASH_LOADABLES_PATH documentation",
-      "version": "f491b933503f64fdf6add63e134e0cf2e9271a17"
+      "description": "fix for fdflags loadable builtin; new strptime loadable builtin; enable -f doesn't fall back to current directory if using BASH_LOADABLES_PATH; new operator for rl_complete_internal that just dumps possible completions",
+      "version": "55a224da44768bdcb57603a135657919cf08c2f7"
     },
-    "version": "20231114"
+    "version": "20231124"
   }
 }

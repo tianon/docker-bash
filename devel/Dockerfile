@@ -7,9 +7,9 @@
 FROM alpine:3.18
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT f491b933503f64fdf6add63e134e0cf2e9271a17
-# allow quoted-insert while reading readline search strings; force filename argument to enable -f without a slash to read from the current directory; update BASH_LOADABLES_PATH documentation
-ENV _BASH_VERSION devel-20231114
+ENV _BASH_COMMIT 55a224da44768bdcb57603a135657919cf08c2f7
+# fix for fdflags loadable builtin; new strptime loadable builtin; enable -f doesn't fall back to current directory if using BASH_LOADABLES_PATH; new operator for rl_complete_internal that just dumps possible completions
+ENV _BASH_VERSION devel-20231124
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
