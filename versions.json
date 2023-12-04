@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": "fix for fdflags loadable builtin; new strptime loadable builtin; enable -f doesn't fall back to current directory if using BASH_LOADABLES_PATH; new operator for rl_complete_internal that just dumps possible completions",
-      "version": "55a224da44768bdcb57603a135657919cf08c2f7"
+      "description": ".gitignore updates",
+      "version": "2b877d5f9ccae3a419c0e2c7ab3f0e92a73226c2"
     },
-    "version": "20231124"
+    "version": "20231125"
   }
 }
