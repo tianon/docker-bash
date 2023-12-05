@@ -139,9 +139,9 @@
       "version": "3.18"
     },
     "commit": {
-      "description": ".gitignore updates",
-      "version": "2b877d5f9ccae3a419c0e2c7ab3f0e92a73226c2"
+      "description": "fix for ssh infinite loop when SSH_SOURCE_BASHRC is defined and bash is run in a comsub in .bashrc; implement posix interp 1009 in posix mode",
+      "version": "d5ab50bc0214f07222d5a6d2597f5e0d7e3f1f52"
     },
-    "version": "20231125"
+    "version": "20231204"
   }
 }
