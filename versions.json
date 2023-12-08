@@ -136,7 +136,7 @@
   },
   "devel": {
     "alpine": {
-      "version": "3.18"
+      "version": "3.19"
     },
     "commit": {
       "description": "fix for ssh infinite loop when SSH_SOURCE_BASHRC is defined and bash is run in a comsub in .bashrc; implement posix interp 1009 in posix mode",
