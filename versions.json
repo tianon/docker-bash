@@ -100,7 +100,7 @@
   },
   "5.0": {
     "alpine": {
-      "version": "3.18"
+      "version": "3.19"
     },
     "baseline": {
       "version": "5.0"
