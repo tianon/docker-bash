@@ -139,9 +139,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "fix for ssh infinite loop when SSH_SOURCE_BASHRC is defined and bash is run in a comsub in .bashrc; implement posix interp 1009 in posix mode",
-      "version": "d5ab50bc0214f07222d5a6d2597f5e0d7e3f1f52"
+      "description": "readline fix for do-lowercase-version; fix for reading here-documents from aliases",
+      "version": "ba57a3e752a949da1ba1e5729ec5ae1a7ac06bca"
     },
-    "version": "20231204"
+    "version": "20231205"
   }
 }

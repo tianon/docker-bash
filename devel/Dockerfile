@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT d5ab50bc0214f07222d5a6d2597f5e0d7e3f1f52
-# fix for ssh infinite loop when SSH_SOURCE_BASHRC is defined and bash is run in a comsub in .bashrc; implement posix interp 1009 in posix mode
-ENV _BASH_VERSION devel-20231204
+ENV _BASH_COMMIT ba57a3e752a949da1ba1e5729ec5ae1a7ac06bca
+# readline fix for do-lowercase-version; fix for reading here-documents from aliases
+ENV _BASH_VERSION devel-20231205
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
