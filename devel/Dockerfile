@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT ba57a3e752a949da1ba1e5729ec5ae1a7ac06bca
-# readline fix for do-lowercase-version; fix for reading here-documents from aliases
-ENV _BASH_VERSION devel-20231205
+ENV _BASH_COMMIT 9d51df7546eab80ea6baa4a83b2ae2178e8020c5
+# fix off by one error when dequoting completed filenames; initial cut at readline identifying ANSI terminals; print coproc commands without coproc name if the coproc is a simple command
+ENV _BASH_VERSION devel-20231213
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
