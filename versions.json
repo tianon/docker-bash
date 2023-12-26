@@ -139,9 +139,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "fix off by one error when dequoting completed filenames; initial cut at readline identifying ANSI terminals; print coproc commands without coproc name if the coproc is a simple command",
-      "version": "9d51df7546eab80ea6baa4a83b2ae2178e8020c5"
+      "description": "fix history expansion to not perform quick substitution on a new line that's part of a quoted string; save the value of $_ around prompt string decoding",
+      "version": "aa2d23cfac90bebe2924ba075fef0a03fddd521d"
     },
-    "version": "20231213"
+    "version": "20231219"
   }
 }
