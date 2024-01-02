@@ -12,14 +12,11 @@ else
 fi
 versions=( "${versions[@]%/}" )
 
-ftpBase='ftp://ftp.gnu.org/gnu/bash'
-ftp_list() {
-	curl --silent --list-only "$ftpBase/${1:-}/"
-}
+ftpBase='https://ftp.gnu.org/gnu/bash'
 
 allBaseVersions="$(
-	ftp_list \
-		| sed -rne '/^bash-([0-9].+)[.]tar[.]gz$/s//\1/p' \
+	wget -qO- "$ftpBase/" \
+		| sed -rne '/^(.*[/"[:space:]])?bash-([0-9].+)[.]tar[.]gz([/"[:space:]].*)?$/s//\2/p' \
 		| sort -V
 )"
 
@@ -84,10 +81,9 @@ for version in "${versions[@]}"; do
 	patchlevel=
 	if [ "$version" = "$rcVersion" ]; then
 		patchlevel="$(
-			ftp_list "bash-$rcVersion-patches" \
-				| sed -rne '/^bash[0-9]+-([0-9]{3})$/s//\1/p' \
-				| tail -1 \
-				|| :
+			{ wget -qO- "$ftpBase/bash-$rcVersion-patches/" || :; } \
+				| sed -rne '/^(.*[/"[:space:]])?bash[0-9]+-([0-9]{3})([/"[:space:]].*)?$/s//\2/p' \
+				| tail -1
 		)"
 	fi
 	patchlevel="${patchlevel#0}"
