@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT aa2d23cfac90bebe2924ba075fef0a03fddd521d
-# fix history expansion to not perform quick substitution on a new line that's part of a quoted string; save the value of $_ around prompt string decoding
-ENV _BASH_VERSION devel-20231219
+ENV _BASH_COMMIT fa0b002927c2897f80da762dd4196d688a46a3ab
+# fix for dequoting words in pretty-print mode; posix mode changes for readonly/export invalid identifier errors
+ENV _BASH_VERSION devel-20240102
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

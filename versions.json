@@ -139,9 +139,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "fix history expansion to not perform quick substitution on a new line that's part of a quoted string; save the value of $_ around prompt string decoding",
-      "version": "aa2d23cfac90bebe2924ba075fef0a03fddd521d"
+      "description": "fix for dequoting words in pretty-print mode; posix mode changes for readonly/export invalid identifier errors",
+      "version": "fa0b002927c2897f80da762dd4196d688a46a3ab"
     },
-    "version": "20231219"
+    "version": "20240102"
   }
 }
