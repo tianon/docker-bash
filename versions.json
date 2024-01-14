@@ -127,12 +127,13 @@
       "version": "3.19"
     },
     "baseline": {
-      "patch": "21"
+      "patch": "21",
+      "version": "5.2.21"
     },
     "patch": {
-      "version": "21"
+      "version": "26"
     },
-    "version": "5.2.21"
+    "version": "5.2.26"
   },
   "devel": {
     "alpine": {
