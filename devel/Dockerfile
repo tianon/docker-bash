@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT fa0b002927c2897f80da762dd4196d688a46a3ab
-# fix for dequoting words in pretty-print mode; posix mode changes for readonly/export invalid identifier errors
-ENV _BASH_VERSION devel-20240102
+ENV _BASH_COMMIT f2fdb5e31317bf5199814ae9866debe1c20cd3a4
+# unconditionally define PGRP_PIPE; fix wait in funsubs; fix REPLY as nameref in varsub; fix crash with parse errors in compound assignments
+ENV _BASH_VERSION devel-20240114
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

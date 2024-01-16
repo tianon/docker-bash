@@ -140,9 +140,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "fix for dequoting words in pretty-print mode; posix mode changes for readonly/export invalid identifier errors",
-      "version": "fa0b002927c2897f80da762dd4196d688a46a3ab"
+      "description": "unconditionally define PGRP_PIPE; fix wait in funsubs; fix REPLY as nameref in varsub; fix crash with parse errors in compound assignments",
+      "version": "f2fdb5e31317bf5199814ae9866debe1c20cd3a4"
     },
-    "version": "20240102"
+    "version": "20240114"
   }
 }
