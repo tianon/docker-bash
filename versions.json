@@ -140,9 +140,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "unconditionally define PGRP_PIPE; fix wait in funsubs; fix REPLY as nameref in varsub; fix crash with parse errors in compound assignments",
-      "version": "f2fdb5e31317bf5199814ae9866debe1c20cd3a4"
+      "description": "fix bug parsing a compound assignment inside a (( nested subshell; man page style and formatting updates",
+      "version": "a4f44b7a11af874556529209fae7e8d261d51293"
     },
-    "version": "20240114"
+    "version": "20240119"
   }
 }

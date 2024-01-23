@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT f2fdb5e31317bf5199814ae9866debe1c20cd3a4
-# unconditionally define PGRP_PIPE; fix wait in funsubs; fix REPLY as nameref in varsub; fix crash with parse errors in compound assignments
-ENV _BASH_VERSION devel-20240114
+ENV _BASH_COMMIT a4f44b7a11af874556529209fae7e8d261d51293
+# fix bug parsing a compound assignment inside a (( nested subshell; man page style and formatting updates
+ENV _BASH_VERSION devel-20240119
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
