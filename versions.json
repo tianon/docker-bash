@@ -140,9 +140,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "fix bug parsing a compound assignment inside a (( nested subshell; man page style and formatting updates",
-      "version": "a4f44b7a11af874556529209fae7e8d261d51293"
+      "description": "make completion of nofork comsubs a little better; fix leaks on signals for non-incremental searches; fix leaks in readstr interface",
+      "version": "138f3cc3591163d18ee4b6390ecd6894d5d16977"
     },
-    "version": "20240119"
+    "version": "20240127"
   }
 }

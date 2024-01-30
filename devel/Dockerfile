@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT a4f44b7a11af874556529209fae7e8d261d51293
-# fix bug parsing a compound assignment inside a (( nested subshell; man page style and formatting updates
-ENV _BASH_VERSION devel-20240119
+ENV _BASH_COMMIT 138f3cc3591163d18ee4b6390ecd6894d5d16977
+# make completion of nofork comsubs a little better; fix leaks on signals for non-incremental searches; fix leaks in readstr interface
+ENV _BASH_VERSION devel-20240127
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
