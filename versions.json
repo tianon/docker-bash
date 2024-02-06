@@ -140,9 +140,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "make completion of nofork comsubs a little better; fix leaks on signals for non-incremental searches; fix leaks in readstr interface",
-      "version": "138f3cc3591163d18ee4b6390ecd6894d5d16977"
+      "description": "fix for cd when curent directory doesn't exist; fix wait -n in posix mode to delete any job that it returns; fix some variables where readonly can be circumvented; fix some overflows in printf",
+      "version": "35465406cdae9cd4a15e7f6699e657b5d09bf7bd"
     },
-    "version": "20240127"
+    "version": "20240202"
   }
 }

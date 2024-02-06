@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 138f3cc3591163d18ee4b6390ecd6894d5d16977
-# make completion of nofork comsubs a little better; fix leaks on signals for non-incremental searches; fix leaks in readstr interface
-ENV _BASH_VERSION devel-20240127
+ENV _BASH_COMMIT 35465406cdae9cd4a15e7f6699e657b5d09bf7bd
+# fix for cd when curent directory doesn't exist; fix wait -n in posix mode to delete any job that it returns; fix some variables where readonly can be circumvented; fix some overflows in printf
+ENV _BASH_VERSION devel-20240202
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
