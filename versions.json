@@ -140,9 +140,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "fix for cd when curent directory doesn't exist; fix wait -n in posix mode to delete any job that it returns; fix some variables where readonly can be circumvented; fix some overflows in printf",
-      "version": "35465406cdae9cd4a15e7f6699e657b5d09bf7bd"
+      "description": "fix for background jobs killed by SIGTERM being marked as notified",
+      "version": "fbc7d97de6c6f3dedb34f49f89a628a99ef6ddf5"
     },
-    "version": "20240202"
+    "version": "20240209"
   }
 }

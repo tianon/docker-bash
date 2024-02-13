@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 35465406cdae9cd4a15e7f6699e657b5d09bf7bd
-# fix for cd when curent directory doesn't exist; fix wait -n in posix mode to delete any job that it returns; fix some variables where readonly can be circumvented; fix some overflows in printf
-ENV _BASH_VERSION devel-20240202
+ENV _BASH_COMMIT fbc7d97de6c6f3dedb34f49f89a628a99ef6ddf5
+# fix for background jobs killed by SIGTERM being marked as notified
+ENV _BASH_VERSION devel-20240209
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
