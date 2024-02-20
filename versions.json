@@ -140,9 +140,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "fix for background jobs killed by SIGTERM being marked as notified",
-      "version": "fbc7d97de6c6f3dedb34f49f89a628a99ef6ddf5"
+      "description": "additional error checking for declare; changes for MSYS32; add support for unlocked-io stdio functions; several C23 changes",
+      "version": "e1dd98a1dba28310c78157070c5566a43ed86ca6"
     },
-    "version": "20240209"
+    "version": "20240216"
   }
 }

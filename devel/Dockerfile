@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT fbc7d97de6c6f3dedb34f49f89a628a99ef6ddf5
-# fix for background jobs killed by SIGTERM being marked as notified
-ENV _BASH_VERSION devel-20240209
+ENV _BASH_COMMIT e1dd98a1dba28310c78157070c5566a43ed86ca6
+# additional error checking for declare; changes for MSYS32; add support for unlocked-io stdio functions; several C23 changes
+ENV _BASH_VERSION devel-20240216
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
