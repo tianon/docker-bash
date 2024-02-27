@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT e1dd98a1dba28310c78157070c5566a43ed86ca6
-# additional error checking for declare; changes for MSYS32; add support for unlocked-io stdio functions; several C23 changes
-ENV _BASH_VERSION devel-20240216
+ENV _BASH_COMMIT 43ecbeb31e5bbbc1a7557243af82b9f3e6390ced
+# fix quoting for positional parameters if not word splitting; retry open for startup files on EINTR; update HISTIGNORE description
+ENV _BASH_VERSION devel-20240221
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
