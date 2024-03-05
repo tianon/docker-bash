@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 43ecbeb31e5bbbc1a7557243af82b9f3e6390ced
-# fix quoting for positional parameters if not word splitting; retry open for startup files on EINTR; update HISTIGNORE description
-ENV _BASH_VERSION devel-20240221
+ENV _BASH_COMMIT 54f3ed2278025081f897b9bd958fcf099fd5be18
+# fix for printing case pattern lists beginning with "esac"; several fixes for expansion when IFS contains DEL
+ENV _BASH_VERSION devel-20240304
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

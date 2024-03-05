@@ -140,9 +140,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "fix quoting for positional parameters if not word splitting; retry open for startup files on EINTR; update HISTIGNORE description",
-      "version": "43ecbeb31e5bbbc1a7557243af82b9f3e6390ced"
+      "description": "fix for printing case pattern lists beginning with \"esac\"; several fixes for expansion when IFS contains DEL",
+      "version": "54f3ed2278025081f897b9bd958fcf099fd5be18"
     },
-    "version": "20240221"
+    "version": "20240304"
   }
 }
