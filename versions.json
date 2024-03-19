@@ -140,9 +140,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "fix for printing case pattern lists beginning with \"esac\"; several fixes for expansion when IFS contains DEL",
-      "version": "54f3ed2278025081f897b9bd958fcf099fd5be18"
+      "description": "add stdbool.h detection and replacement for bool; use ckd_mul/ckd_add/ckd_sub where appropriate; update overflow detection in brace expansion and printf builtin",
+      "version": "b1e7f68032bd90dec1a2968a616b32a469929c78"
     },
-    "version": "20240304"
+    "version": "20240318"
   }
 }

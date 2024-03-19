@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 54f3ed2278025081f897b9bd958fcf099fd5be18
-# fix for printing case pattern lists beginning with "esac"; several fixes for expansion when IFS contains DEL
-ENV _BASH_VERSION devel-20240304
+ENV _BASH_COMMIT b1e7f68032bd90dec1a2968a616b32a469929c78
+# add stdbool.h detection and replacement for bool; use ckd_mul/ckd_add/ckd_sub where appropriate; update overflow detection in brace expansion and printf builtin
+ENV _BASH_VERSION devel-20240318
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
