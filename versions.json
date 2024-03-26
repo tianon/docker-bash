@@ -140,9 +140,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "add stdbool.h detection and replacement for bool; use ckd_mul/ckd_add/ckd_sub where appropriate; update overflow detection in brace expansion and printf builtin",
-      "version": "b1e7f68032bd90dec1a2968a616b32a469929c78"
+      "description": "change to test builtin for parenthesized expressions when there are more than four arguments to test; tentative change to @A transformation to output declare commands for local variables",
+      "version": "8af5a8e0ca7d75f91eac7d81783af7d06d32dd50"
     },
-    "version": "20240318"
+    "version": "20240325"
   }
 }

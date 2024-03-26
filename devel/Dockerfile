@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT b1e7f68032bd90dec1a2968a616b32a469929c78
-# add stdbool.h detection and replacement for bool; use ckd_mul/ckd_add/ckd_sub where appropriate; update overflow detection in brace expansion and printf builtin
-ENV _BASH_VERSION devel-20240318
+ENV _BASH_COMMIT 8af5a8e0ca7d75f91eac7d81783af7d06d32dd50
+# change to test builtin for parenthesized expressions when there are more than four arguments to test; tentative change to @A transformation to output declare commands for local variables
+ENV _BASH_VERSION devel-20240325
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
