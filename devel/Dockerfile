@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 8af5a8e0ca7d75f91eac7d81783af7d06d32dd50
-# change to test builtin for parenthesized expressions when there are more than four arguments to test; tentative change to @A transformation to output declare commands for local variables
-ENV _BASH_VERSION devel-20240325
+ENV _BASH_COMMIT 2532a2ccefc50e26a32ddd430286af6f5c43d881
+# fix parser state with funsubs in PS2 and line continuations; fix for @P transformation in prompt strings
+ENV _BASH_VERSION devel-20240401
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

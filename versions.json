@@ -140,9 +140,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "change to test builtin for parenthesized expressions when there are more than four arguments to test; tentative change to @A transformation to output declare commands for local variables",
-      "version": "8af5a8e0ca7d75f91eac7d81783af7d06d32dd50"
+      "description": "fix parser state with funsubs in PS2 and line continuations; fix for @P transformation in prompt strings",
+      "version": "2532a2ccefc50e26a32ddd430286af6f5c43d881"
     },
-    "version": "20240325"
+    "version": "20240401"
   }
 }
