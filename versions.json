@@ -140,9 +140,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "fix parser state with funsubs in PS2 and line continuations; fix for @P transformation in prompt strings",
-      "version": "2532a2ccefc50e26a32ddd430286af6f5c43d881"
+      "description": "fix coproc code to close previous coproc file descriptors if another one is created; start at setting additional coproc states; change release status to bash-5.3-alpha",
+      "version": "e6795c05dd877334832568a7145f0587ad3901e0"
     },
-    "version": "20240401"
+    "version": "20240406"
   }
 }
