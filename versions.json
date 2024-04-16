@@ -140,9 +140,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "fix coproc code to close previous coproc file descriptors if another one is created; start at setting additional coproc states; change release status to bash-5.3-alpha",
-      "version": "e6795c05dd877334832568a7145f0587ad3901e0"
+      "description": "fix recogniation of IN token in for command nested within case command",
+      "version": "a06616a689a239e0ade2c08ae78fd114d2324c5a"
     },
-    "version": "20240406"
+    "version": "20240415"
   }
 }

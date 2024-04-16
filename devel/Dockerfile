@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT e6795c05dd877334832568a7145f0587ad3901e0
-# fix coproc code to close previous coproc file descriptors if another one is created; start at setting additional coproc states; change release status to bash-5.3-alpha
-ENV _BASH_VERSION devel-20240406
+ENV _BASH_COMMIT a06616a689a239e0ade2c08ae78fd114d2324c5a
+# fix recogniation of IN token in for command nested within case command
+ENV _BASH_VERSION devel-20240415
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
