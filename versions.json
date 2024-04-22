@@ -135,6 +135,12 @@
     },
     "version": "5.2.26"
   },
+  "5.3-rc": {
+    "alpine": {
+      "version": "3.19"
+    },
+    "version": "5.3-alpha"
+  },
   "devel": {
     "alpine": {
       "version": "3.19"
