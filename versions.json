@@ -146,9 +146,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "fix recogniation of IN token in for command nested within case command",
-      "version": "a06616a689a239e0ade2c08ae78fd114d2324c5a"
+      "description": "minor updates to several tests",
+      "version": "8c8daff1e3661cfe427f194c38c6a1b452cd1456"
     },
-    "version": "20240415"
+    "version": "20240422"
   }
 }
