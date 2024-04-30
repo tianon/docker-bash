@@ -146,9 +146,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "minor updates to several tests",
-      "version": "8c8daff1e3661cfe427f194c38c6a1b452cd1456"
+      "description": "enable MULTIPLE_COPROCS; bind -p/-P can print out bindings for individual command names; changes to Makefile to remove MFLAGS; simplify build tools by assuming C90 compilation environment for better cross-compiling support",
+      "version": "9c430f6bf37984e01977cc17f7066a6498aa4f18"
     },
-    "version": "20240422"
+    "version": "20240426"
   }
 }
