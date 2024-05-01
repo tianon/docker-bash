@@ -13,9 +13,13 @@ ENV _BASH_BASELINE 4.0
 ENV _BASH_LATEST_PATCH 44
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
+# The global SOURCE_DATE_EPOCH is consumed by commands that are not associated with a source artifact.
+# This is not propagated from --build-arg: https://github.com/moby/buildkit/issues/4576#issuecomment-2159501282
+ENV SOURCE_DATE_EPOCH 0
+
 RUN set -eux; \
 	\
-	apk add --no-cache --virtual .build-deps \
+	apk add --no-cache --virtual .build-deps=0 \
 		bison \
 		coreutils \
 		dpkg-dev dpkg \
@@ -43,7 +47,7 @@ RUN set -eux; \
 		done; \
 	fi; \
 	\
-	apk add --no-cache --virtual .gpg-deps gnupg; \
+	apk add --no-cache --virtual .gpg-deps=0 gnupg; \
 	export GNUPGHOME="$(mktemp -d)"; \
 # gpg: key 64EA74AB: public key "Chet Ramey <chet@cwru.edu>" imported
 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 7C0135FB088AAF6C66C650B9BB5869F064EA74AB; \
@@ -70,18 +74,25 @@ RUN set -eux; \
 	rm bash.tar.gz; \
 	\
 	if [ -d bash-patches ]; then \
-		apk add --no-cache --virtual .patch-deps patch; \
+		apk add --no-cache --virtual .patch-deps=0 patch; \
 		for p in bash-patches/*; do \
+# --force is set for reproducing timestamps
 			patch \
 				--directory=/usr/src/bash \
 				--input="$(readlink -f "$p")" \
 				--strip=0 \
+				--set-utc \
+				--force \
 			; \
 			rm "$p"; \
 		done; \
 		rmdir bash-patches; \
 		apk del --no-network .patch-deps; \
 	fi; \
+	SOURCE_DATE_EPOCH="$(find /usr/src/bash -type f -exec stat -c '%Y' {} + | sort -nr | head -n1)"; \
+	export SOURCE_DATE_EPOCH; \
+# for logging validation/edification
+	date --date "@$SOURCE_DATE_EPOCH" --rfc-2822; \
 	\
 	cd /usr/src/bash; \
 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \
@@ -124,7 +135,7 @@ RUN set -eux; \
 			| sort -u \
 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' \
 	)"; \
-	apk add --no-network --virtual .bash-rundeps $runDeps; \
+	apk add --no-network --virtual .bash-rundeps=0 $runDeps; \
 	apk del --no-network .build-deps; \
 	\
 	[ "$(which bash)" = '/usr/local/bin/bash' ]; \
