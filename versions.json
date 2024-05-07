@@ -146,9 +146,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "enable MULTIPLE_COPROCS; bind -p/-P can print out bindings for individual command names; changes to Makefile to remove MFLAGS; simplify build tools by assuming C90 compilation environment for better cross-compiling support",
-      "version": "9c430f6bf37984e01977cc17f7066a6498aa4f18"
+      "description": "allow some job notifications while running $PROMPT_COMMAND; allow notifications while running bind -x commands; change some translated messages to be more uniform",
+      "version": "6fb61ee126cf5ffdcbff9ae51345838dc21d935e"
     },
-    "version": "20240426"
+    "version": "20240506"
   }
 }

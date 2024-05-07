@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 9c430f6bf37984e01977cc17f7066a6498aa4f18
-# enable MULTIPLE_COPROCS; bind -p/-P can print out bindings for individual command names; changes to Makefile to remove MFLAGS; simplify build tools by assuming C90 compilation environment for better cross-compiling support
-ENV _BASH_VERSION devel-20240426
+ENV _BASH_COMMIT 6fb61ee126cf5ffdcbff9ae51345838dc21d935e
+# allow some job notifications while running $PROMPT_COMMAND; allow notifications while running bind -x commands; change some translated messages to be more uniform
+ENV _BASH_VERSION devel-20240506
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
