@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 6fb61ee126cf5ffdcbff9ae51345838dc21d935e
-# allow some job notifications while running $PROMPT_COMMAND; allow notifications while running bind -x commands; change some translated messages to be more uniform
-ENV _BASH_VERSION devel-20240506
+ENV _BASH_COMMIT b3d8c8a4e7c5417d986f93f646ea740cb13c08d7
+# change some error messages so the format string isn't the return value from gettext(); work around macos problem with gettext() in child processes; don't try to set tty state while running a trap; don't default to trying enable -f file if the shell is restricted; note that configure now supports --enable-year2038
+ENV _BASH_VERSION devel-20240513
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
