@@ -7,9 +7,9 @@
 FROM alpine:3.19
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT b3d8c8a4e7c5417d986f93f646ea740cb13c08d7
-# change some error messages so the format string isn't the return value from gettext(); work around macos problem with gettext() in child processes; don't try to set tty state while running a trap; don't default to trying enable -f file if the shell is restricted; note that configure now supports --enable-year2038
-ENV _BASH_VERSION devel-20240513
+ENV _BASH_COMMIT dbd27e54cc741b116d5ce0e731b778c4f014a74e
+# fix to backslash quoting of glob pattern characters; allow newly-loaded compspecs to be used in more cases; fixes to the cross-compiling environment; avoid potential overflow in GLOBSORT processing
+ENV _BASH_VERSION devel-20240520
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

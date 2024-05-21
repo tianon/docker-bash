@@ -146,9 +146,9 @@
       "version": "3.19"
     },
     "commit": {
-      "description": "change some error messages so the format string isn't the return value from gettext(); work around macos problem with gettext() in child processes; don't try to set tty state while running a trap; don't default to trying enable -f file if the shell is restricted; note that configure now supports --enable-year2038",
-      "version": "b3d8c8a4e7c5417d986f93f646ea740cb13c08d7"
+      "description": "fix to backslash quoting of glob pattern characters; allow newly-loaded compspecs to be used in more cases; fixes to the cross-compiling environment; avoid potential overflow in GLOBSORT processing",
+      "version": "dbd27e54cc741b116d5ce0e731b778c4f014a74e"
     },
-    "version": "20240513"
+    "version": "20240520"
   }
 }
