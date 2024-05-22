@@ -62,7 +62,7 @@
   },
   "4.2": {
     "alpine": {
-      "version": "3.19"
+      "version": "3.20"
     },
     "baseline": {
       "patch": "53"
