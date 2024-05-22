@@ -143,7 +143,7 @@
   },
   "devel": {
     "alpine": {
-      "version": "3.19"
+      "version": "3.20"
     },
     "commit": {
       "description": "fix to backslash quoting of glob pattern characters; allow newly-loaded compspecs to be used in more cases; fixes to the cross-compiling environment; avoid potential overflow in GLOBSORT processing",
