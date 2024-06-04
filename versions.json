@@ -146,9 +146,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "fix to backslash quoting of glob pattern characters; allow newly-loaded compspecs to be used in more cases; fixes to the cross-compiling environment; avoid potential overflow in GLOBSORT processing",
-      "version": "dbd27e54cc741b116d5ce0e731b778c4f014a74e"
+      "description": "fix issue with interupting timed functions; fix for parsing comsubs inside arith for commands; allow break and continue inside arith for expressions; fix for case-insensitive completion with multibyte chars; fix some minor memory leaks; reset read buffer if it returns partial results on EINTR; fix for undo in execute-named-command",
+      "version": "f65ed506d4dfecbc2667c34a9cb18175ada95cea"
     },
-    "version": "20240520"
+    "version": "20240603"
   }
 }
