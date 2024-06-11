@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT f65ed506d4dfecbc2667c34a9cb18175ada95cea
-# fix issue with interupting timed functions; fix for parsing comsubs inside arith for commands; allow break and continue inside arith for expressions; fix for case-insensitive completion with multibyte chars; fix some minor memory leaks; reset read buffer if it returns partial results on EINTR; fix for undo in execute-named-command
-ENV _BASH_VERSION devel-20240603
+ENV _BASH_COMMIT dbb48b978671394bcb33c9f34656a9aadf40a318
+# avoid storing extra copy of function bodies; fix some minor memory leaks
+ENV _BASH_VERSION devel-20240604
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

@@ -146,9 +146,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "fix issue with interupting timed functions; fix for parsing comsubs inside arith for commands; allow break and continue inside arith for expressions; fix for case-insensitive completion with multibyte chars; fix some minor memory leaks; reset read buffer if it returns partial results on EINTR; fix for undo in execute-named-command",
-      "version": "f65ed506d4dfecbc2667c34a9cb18175ada95cea"
+      "description": "avoid storing extra copy of function bodies; fix some minor memory leaks",
+      "version": "dbb48b978671394bcb33c9f34656a9aadf40a318"
     },
-    "version": "20240603"
+    "version": "20240604"
   }
 }
