@@ -146,9 +146,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "avoid storing extra copy of function bodies; fix some minor memory leaks",
-      "version": "dbb48b978671394bcb33c9f34656a9aadf40a318"
+      "description": "use name as GLOBSORT secondary sort key; new GLOBSORT sort specifier: `numeric'; let readonly and export work on local variables at previous scopes for both array and scalar variables",
+      "version": "ad1f497a8477df4f3387adfb6a0f465980d2a292"
     },
-    "version": "20240604"
+    "version": "20240621"
   }
 }

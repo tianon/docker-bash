@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT dbb48b978671394bcb33c9f34656a9aadf40a318
-# avoid storing extra copy of function bodies; fix some minor memory leaks
-ENV _BASH_VERSION devel-20240604
+ENV _BASH_COMMIT ad1f497a8477df4f3387adfb6a0f465980d2a292
+# use name as GLOBSORT secondary sort key; new GLOBSORT sort specifier: `numeric'; let readonly and export work on local variables at previous scopes for both array and scalar variables
+ENV _BASH_VERSION devel-20240621
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
