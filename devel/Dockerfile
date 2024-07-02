@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT ad1f497a8477df4f3387adfb6a0f465980d2a292
-# use name as GLOBSORT secondary sort key; new GLOBSORT sort specifier: `numeric'; let readonly and export work on local variables at previous scopes for both array and scalar variables
-ENV _BASH_VERSION devel-20240621
+ENV _BASH_COMMIT 5e28a1813ce7d08628c8df584ea36515091c6d9b
+# size_t changes for multibyte characters; fix for running debug trap in asynchronous pipeline; remove support for precomputed cache files for cross-compiling; more size_t and ssize_t changes to avoid overflow
+ENV _BASH_VERSION devel-20240628
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

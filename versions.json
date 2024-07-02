@@ -146,9 +146,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "use name as GLOBSORT secondary sort key; new GLOBSORT sort specifier: `numeric'; let readonly and export work on local variables at previous scopes for both array and scalar variables",
-      "version": "ad1f497a8477df4f3387adfb6a0f465980d2a292"
+      "description": "size_t changes for multibyte characters; fix for running debug trap in asynchronous pipeline; remove support for precomputed cache files for cross-compiling; more size_t and ssize_t changes to avoid overflow",
+      "version": "5e28a1813ce7d08628c8df584ea36515091c6d9b"
     },
-    "version": "20240621"
+    "version": "20240628"
   }
 }
