@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 5e28a1813ce7d08628c8df584ea36515091c6d9b
-# size_t changes for multibyte characters; fix for running debug trap in asynchronous pipeline; remove support for precomputed cache files for cross-compiling; more size_t and ssize_t changes to avoid overflow
-ENV _BASH_VERSION devel-20240628
+ENV _BASH_COMMIT a91b8b077300b0a2a7daefe02f0363f9116e00d5
+# doc changes for --rcfile; fix isearch undo list incompatibility with bash-5.2; non-inc search preserves undo lists in history entries
+ENV _BASH_VERSION devel-20240706
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

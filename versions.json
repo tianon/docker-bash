@@ -146,9 +146,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "size_t changes for multibyte characters; fix for running debug trap in asynchronous pipeline; remove support for precomputed cache files for cross-compiling; more size_t and ssize_t changes to avoid overflow",
-      "version": "5e28a1813ce7d08628c8df584ea36515091c6d9b"
+      "description": "doc changes for --rcfile; fix isearch undo list incompatibility with bash-5.2; non-inc search preserves undo lists in history entries",
+      "version": "a91b8b077300b0a2a7daefe02f0363f9116e00d5"
     },
-    "version": "20240628"
+    "version": "20240706"
   }
 }
