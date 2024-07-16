@@ -146,9 +146,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "doc changes for --rcfile; fix isearch undo list incompatibility with bash-5.2; non-inc search preserves undo lists in history entries",
-      "version": "a91b8b077300b0a2a7daefe02f0363f9116e00d5"
+      "description": "reap and store status of process substitutions even when there are no jobs; fix issue with optimizing shell functions that set RETURN trap; fix issue with procsubs and eval allowing '<file'; fix for fignore and ignorning completions",
+      "version": "d3e86e66ce857a8dc02e3116fd98b6e5b34d6364"
     },
-    "version": "20240706"
+    "version": "20240711"
   }
 }

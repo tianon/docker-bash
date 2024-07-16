@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT a91b8b077300b0a2a7daefe02f0363f9116e00d5
-# doc changes for --rcfile; fix isearch undo list incompatibility with bash-5.2; non-inc search preserves undo lists in history entries
-ENV _BASH_VERSION devel-20240706
+ENV _BASH_COMMIT d3e86e66ce857a8dc02e3116fd98b6e5b34d6364
+# reap and store status of process substitutions even when there are no jobs; fix issue with optimizing shell functions that set RETURN trap; fix issue with procsubs and eval allowing '<file'; fix for fignore and ignorning completions
+ENV _BASH_VERSION devel-20240711
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
