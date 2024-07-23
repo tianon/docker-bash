@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT d3e86e66ce857a8dc02e3116fd98b6e5b34d6364
-# reap and store status of process substitutions even when there are no jobs; fix issue with optimizing shell functions that set RETURN trap; fix issue with procsubs and eval allowing '<file'; fix for fignore and ignorning completions
-ENV _BASH_VERSION devel-20240711
+ENV _BASH_COMMIT 6c703092759ace29263ea96374e18412c59acc7f
+# job control cleanups; wait -n can return terminated jobs if supplied pid arguments; wait -n can wait for process substitutions if supplied pid arguments
+ENV _BASH_VERSION devel-20240718
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

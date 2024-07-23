@@ -146,9 +146,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "reap and store status of process substitutions even when there are no jobs; fix issue with optimizing shell functions that set RETURN trap; fix issue with procsubs and eval allowing '<file'; fix for fignore and ignorning completions",
-      "version": "d3e86e66ce857a8dc02e3116fd98b6e5b34d6364"
+      "description": "job control cleanups; wait -n can return terminated jobs if supplied pid arguments; wait -n can wait for process substitutions if supplied pid arguments",
+      "version": "6c703092759ace29263ea96374e18412c59acc7f"
     },
-    "version": "20240711"
+    "version": "20240718"
   }
 }
