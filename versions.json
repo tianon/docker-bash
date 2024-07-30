@@ -146,9 +146,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "job control cleanups; wait -n can return terminated jobs if supplied pid arguments; wait -n can wait for process substitutions if supplied pid arguments",
-      "version": "6c703092759ace29263ea96374e18412c59acc7f"
+      "description": "fix issue with invalidating pointer to last procsub; fix boundary issues with small reallocs",
+      "version": "d5ef283cbdd08217efdc55974a6a8a2c52a7562f"
     },
-    "version": "20240718"
+    "version": "20240726"
   }
 }

@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 6c703092759ace29263ea96374e18412c59acc7f
-# job control cleanups; wait -n can return terminated jobs if supplied pid arguments; wait -n can wait for process substitutions if supplied pid arguments
-ENV _BASH_VERSION devel-20240718
+ENV _BASH_COMMIT d5ef283cbdd08217efdc55974a6a8a2c52a7562f
+# fix issue with invalidating pointer to last procsub; fix boundary issues with small reallocs
+ENV _BASH_VERSION devel-20240726
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
