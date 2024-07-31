@@ -131,9 +131,9 @@
       "version": "5.2.21"
     },
     "patch": {
-      "version": "26"
+      "version": "32"
     },
-    "version": "5.2.26"
+    "version": "5.2.32"
   },
   "5.3-rc": {
     "alpine": {
