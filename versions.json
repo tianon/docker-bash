@@ -127,8 +127,7 @@
       "version": "3.20"
     },
     "baseline": {
-      "patch": "21",
-      "version": "5.2.21"
+      "patch": "32"
     },
     "patch": {
       "version": "32"
