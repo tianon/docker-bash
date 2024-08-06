@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT d5ef283cbdd08217efdc55974a6a8a2c52a7562f
-# fix issue with invalidating pointer to last procsub; fix boundary issues with small reallocs
-ENV _BASH_VERSION devel-20240726
+ENV _BASH_COMMIT e45ec6f76bea49cf8df306ac45022306831ed086
+# new bash_source_fullpath shell option; documentation updates for wait builtin
+ENV _BASH_VERSION devel-20240730
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
