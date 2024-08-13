@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT e45ec6f76bea49cf8df306ac45022306831ed086
-# new bash_source_fullpath shell option; documentation updates for wait builtin
-ENV _BASH_VERSION devel-20240730
+ENV _BASH_COMMIT 772e7e760e8a098e4d8dee21cf11090be4757918
+# fix issue with read builtin delimiter in invaild mutibyte char; fix crash if caller passes negative count argument to one of the history file writing functions
+ENV _BASH_VERSION devel-20240809
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

@@ -145,9 +145,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "new bash_source_fullpath shell option; documentation updates for wait builtin",
-      "version": "e45ec6f76bea49cf8df306ac45022306831ed086"
+      "description": "fix issue with read builtin delimiter in invaild mutibyte char; fix crash if caller passes negative count argument to one of the history file writing functions",
+      "version": "772e7e760e8a098e4d8dee21cf11090be4757918"
     },
-    "version": "20240730"
+    "version": "20240809"
   }
 }
