@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 772e7e760e8a098e4d8dee21cf11090be4757918
-# fix issue with read builtin delimiter in invaild mutibyte char; fix crash if caller passes negative count argument to one of the history file writing functions
-ENV _BASH_VERSION devel-20240809
+ENV _BASH_COMMIT cf694865de527e597de5a906643a74037341a431
+# optimize asynchronous function invocations; fix for running return from trap while sourcing a file; restore completion function if read -e is interrupted
+ENV _BASH_VERSION devel-20240815
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

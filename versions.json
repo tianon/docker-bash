@@ -145,9 +145,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "fix issue with read builtin delimiter in invaild mutibyte char; fix crash if caller passes negative count argument to one of the history file writing functions",
-      "version": "772e7e760e8a098e4d8dee21cf11090be4757918"
+      "description": "optimize asynchronous function invocations; fix for running return from trap while sourcing a file; restore completion function if read -e is interrupted",
+      "version": "cf694865de527e597de5a906643a74037341a431"
     },
-    "version": "20240809"
+    "version": "20240815"
   }
 }
