@@ -145,9 +145,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "optimize asynchronous function invocations; fix for running return from trap while sourcing a file; restore completion function if read -e is interrupted",
-      "version": "cf694865de527e597de5a906643a74037341a431"
+      "description": "add bindable readline variable `force-meta-prefix' to allow users to tell readline how their Meta key works",
+      "version": "2e01122fe78eb5a42c9b9f3ca46b91f895959675"
     },
-    "version": "20240815"
+    "version": "20240823"
   }
 }

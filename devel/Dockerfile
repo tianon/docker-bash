@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT cf694865de527e597de5a906643a74037341a431
-# optimize asynchronous function invocations; fix for running return from trap while sourcing a file; restore completion function if read -e is interrupted
-ENV _BASH_VERSION devel-20240815
+ENV _BASH_COMMIT 2e01122fe78eb5a42c9b9f3ca46b91f895959675
+# add bindable readline variable `force-meta-prefix' to allow users to tell readline how their Meta key works
+ENV _BASH_VERSION devel-20240823
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
