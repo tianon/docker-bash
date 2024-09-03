@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 2e01122fe78eb5a42c9b9f3ca46b91f895959675
-# add bindable readline variable `force-meta-prefix' to allow users to tell readline how their Meta key works
-ENV _BASH_VERSION devel-20240823
+ENV _BASH_COMMIT 2610d40b32301cd7256bf1dfc49c9f8bfe0dcd53
+# documentation updates; fix for null commands with redirection expansion errors; changes to job notifications for interactive shells sourcing files; fix underflow issue with word_top
+ENV _BASH_VERSION devel-20240828
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

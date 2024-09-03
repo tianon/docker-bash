@@ -145,9 +145,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "add bindable readline variable `force-meta-prefix' to allow users to tell readline how their Meta key works",
-      "version": "2e01122fe78eb5a42c9b9f3ca46b91f895959675"
+      "description": "documentation updates; fix for null commands with redirection expansion errors; changes to job notifications for interactive shells sourcing files; fix underflow issue with word_top",
+      "version": "2610d40b32301cd7256bf1dfc49c9f8bfe0dcd53"
     },
-    "version": "20240823"
+    "version": "20240828"
   }
 }
