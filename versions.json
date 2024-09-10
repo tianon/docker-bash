@@ -145,9 +145,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "documentation updates; fix for null commands with redirection expansion errors; changes to job notifications for interactive shells sourcing files; fix underflow issue with word_top",
-      "version": "2610d40b32301cd7256bf1dfc49c9f8bfe0dcd53"
+      "description": "track initial line number of `{'', `(', and `[[' compound commands; don't have readline check for signals while it's handling a signal; fix for malformed printf time format specifier",
+      "version": "5576c26da8e0ad74048203398acb493c65fd3476"
     },
-    "version": "20240828"
+    "version": "20240904"
   }
 }

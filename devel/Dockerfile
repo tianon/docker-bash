@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 2610d40b32301cd7256bf1dfc49c9f8bfe0dcd53
-# documentation updates; fix for null commands with redirection expansion errors; changes to job notifications for interactive shells sourcing files; fix underflow issue with word_top
-ENV _BASH_VERSION devel-20240828
+ENV _BASH_COMMIT 5576c26da8e0ad74048203398acb493c65fd3476
+# track initial line number of `{'', `(', and `[[' compound commands; don't have readline check for signals while it's handling a signal; fix for malformed printf time format specifier
+ENV _BASH_VERSION devel-20240904
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
