@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 5576c26da8e0ad74048203398acb493c65fd3476
-# track initial line number of `{'', `(', and `[[' compound commands; don't have readline check for signals while it's handling a signal; fix for malformed printf time format specifier
-ENV _BASH_VERSION devel-20240904
+ENV _BASH_COMMIT bc5ddc8698d56df588fd99864a650b834426ccf7
+# `wait -n' notifies on a job it returns; in posix mode, `wait' defers notification on a reaped pid unless the shell is interactive, as posix now specifies
+ENV _BASH_VERSION devel-20240911
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
