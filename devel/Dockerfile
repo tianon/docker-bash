@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT bc5ddc8698d56df588fd99864a650b834426ccf7
-# `wait -n' notifies on a job it returns; in posix mode, `wait' defers notification on a reaped pid unless the shell is interactive, as posix now specifies
-ENV _BASH_VERSION devel-20240911
+ENV _BASH_COMMIT 8d74195d7f379c6adaee217f50d60d0c8f79ad8c
+# in posix mode, don't notify about other terminated jobs if the jobs builtin is listing individual jobs; in posix mode, if `wait pid' finds pid in bgpids, remove it from there
+ENV _BASH_VERSION devel-20240920
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

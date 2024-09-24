@@ -145,9 +145,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "`wait -n' notifies on a job it returns; in posix mode, `wait' defers notification on a reaped pid unless the shell is interactive, as posix now specifies",
-      "version": "bc5ddc8698d56df588fd99864a650b834426ccf7"
+      "description": "in posix mode, don't notify about other terminated jobs if the jobs builtin is listing individual jobs; in posix mode, if `wait pid' finds pid in bgpids, remove it from there",
+      "version": "8d74195d7f379c6adaee217f50d60d0c8f79ad8c"
     },
-    "version": "20240911"
+    "version": "20240920"
   }
 }
