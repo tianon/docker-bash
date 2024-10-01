@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 8d74195d7f379c6adaee217f50d60d0c8f79ad8c
-# in posix mode, don't notify about other terminated jobs if the jobs builtin is listing individual jobs; in posix mode, if `wait pid' finds pid in bgpids, remove it from there
-ENV _BASH_VERSION devel-20240920
+ENV _BASH_COMMIT 254081c09767738833cdf161b4bc3feb1a51690a
+# fix for set -e and compound commands inverting return status; tty fix for `fg' from a key binding; posix mode `wait -n' can return notified jobs; off-by-one error in history word tokenization; new configure option to set bash_source_fullpath
+ENV _BASH_VERSION devel-20240927
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

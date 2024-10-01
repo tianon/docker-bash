@@ -145,9 +145,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "in posix mode, don't notify about other terminated jobs if the jobs builtin is listing individual jobs; in posix mode, if `wait pid' finds pid in bgpids, remove it from there",
-      "version": "8d74195d7f379c6adaee217f50d60d0c8f79ad8c"
+      "description": "fix for set -e and compound commands inverting return status; tty fix for `fg' from a key binding; posix mode `wait -n' can return notified jobs; off-by-one error in history word tokenization; new configure option to set bash_source_fullpath",
+      "version": "254081c09767738833cdf161b4bc3feb1a51690a"
     },
-    "version": "20240920"
+    "version": "20240927"
   }
 }
