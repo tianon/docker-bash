@@ -145,9 +145,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "third set of documentation updates: readline and history",
-      "version": "5edfaa45e791bbb2bf6c9342e13e5e364ff87bad"
+      "description": "next set of documentation fixes: update formatting, make filename formatting consistent, typeset the name readline consistently",
+      "version": "261c6e8cc6c59b63be3a1597aadec72e9cf5ae72"
     },
-    "version": "20241012"
+    "version": "20241018"
   }
 }
