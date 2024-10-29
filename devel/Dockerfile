@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 261c6e8cc6c59b63be3a1597aadec72e9cf5ae72
-# next set of documentation fixes: update formatting, make filename formatting consistent, typeset the name readline consistently
-ENV _BASH_VERSION devel-20241018
+ENV _BASH_COMMIT 4917f2859c8624e834f589bbd526a7b707072ce3
+# fixes for a couple of autoconf macros; update exit builtin for POSIX interp 1602; include more info in EOF error message when parsing compound command; update Makefiles by removing some variables, initializing others; update dependencies on version.h
+ENV _BASH_VERSION devel-20241028
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
