@@ -145,9 +145,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "fixes for a couple of autoconf macros; update exit builtin for POSIX interp 1602; include more info in EOF error message when parsing compound command; update Makefiles by removing some variables, initializing others; update dependencies on version.h",
-      "version": "4917f2859c8624e834f589bbd526a7b707072ce3"
+      "description": "changes to non-incremental search implementation for consistency with incremental search; fix for readline unsetting rl_eof_found; minor man page updates",
+      "version": "0075715b29c9c1d984ec243cf3018775ed5612de"
     },
-    "version": "20241028"
+    "version": "20241104"
   }
 }

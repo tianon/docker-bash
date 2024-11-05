@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 4917f2859c8624e834f589bbd526a7b707072ce3
-# fixes for a couple of autoconf macros; update exit builtin for POSIX interp 1602; include more info in EOF error message when parsing compound command; update Makefiles by removing some variables, initializing others; update dependencies on version.h
-ENV _BASH_VERSION devel-20241028
+ENV _BASH_COMMIT 0075715b29c9c1d984ec243cf3018775ed5612de
+# changes to non-incremental search implementation for consistency with incremental search; fix for readline unsetting rl_eof_found; minor man page updates
+ENV _BASH_VERSION devel-20241104
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
