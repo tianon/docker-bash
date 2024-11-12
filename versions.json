@@ -145,9 +145,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "changes to non-incremental search implementation for consistency with incremental search; fix for readline unsetting rl_eof_found; minor man page updates",
-      "version": "0075715b29c9c1d984ec243cf3018775ed5612de"
+      "description": "fix for readline redisplay issue in C locale; fix for small memory leak in termcap replacement library; updates to formatted documentation; fix problem with distclean and y.tab.h; Makefile clean targets updates",
+      "version": "b116cfe57df2c061cd953b77a0fc1b738dd5fe94"
     },
-    "version": "20241104"
+    "version": "20241108"
   }
 }

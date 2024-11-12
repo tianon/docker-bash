@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 0075715b29c9c1d984ec243cf3018775ed5612de
-# changes to non-incremental search implementation for consistency with incremental search; fix for readline unsetting rl_eof_found; minor man page updates
-ENV _BASH_VERSION devel-20241104
+ENV _BASH_COMMIT b116cfe57df2c061cd953b77a0fc1b738dd5fe94
+# fix for readline redisplay issue in C locale; fix for small memory leak in termcap replacement library; updates to formatted documentation; fix problem with distclean and y.tab.h; Makefile clean targets updates
+ENV _BASH_VERSION devel-20241108
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
