@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT b116cfe57df2c061cd953b77a0fc1b738dd5fe94
-# fix for readline redisplay issue in C locale; fix for small memory leak in termcap replacement library; updates to formatted documentation; fix problem with distclean and y.tab.h; Makefile clean targets updates
-ENV _BASH_VERSION devel-20241108
+ENV _BASH_COMMIT fa68e6da80970c302948674369d278164a33ed39
+# More Makefile updates; updates for bash-5.3-beta
+ENV _BASH_VERSION devel-20241115
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \

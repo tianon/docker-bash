@@ -145,9 +145,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "fix for readline redisplay issue in C locale; fix for small memory leak in termcap replacement library; updates to formatted documentation; fix problem with distclean and y.tab.h; Makefile clean targets updates",
-      "version": "b116cfe57df2c061cd953b77a0fc1b738dd5fe94"
+      "description": "More Makefile updates; updates for bash-5.3-beta",
+      "version": "fa68e6da80970c302948674369d278164a33ed39"
     },
-    "version": "20241108"
+    "version": "20241115"
   }
 }
