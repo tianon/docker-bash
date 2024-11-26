@@ -145,9 +145,9 @@
       "version": "3.20"
     },
     "commit": {
-      "description": "More Makefile updates; updates for bash-5.3-beta",
-      "version": "fa68e6da80970c302948674369d278164a33ed39"
+      "description": "new readline command `export-completions'; update documentation; update translations with new strings; Makefile updates",
+      "version": "22417e78816237ae66f2da661567dfe5ed3452a1"
     },
-    "version": "20241115"
+    "version": "20241121"
   }
 }

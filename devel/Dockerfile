@@ -7,9 +7,9 @@
 FROM alpine:3.20
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT fa68e6da80970c302948674369d278164a33ed39
-# More Makefile updates; updates for bash-5.3-beta
-ENV _BASH_VERSION devel-20241115
+ENV _BASH_COMMIT 22417e78816237ae66f2da661567dfe5ed3452a1
+# new readline command `export-completions'; update documentation; update translations with new strings; Makefile updates
+ENV _BASH_VERSION devel-20241121
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 RUN set -eux; \
