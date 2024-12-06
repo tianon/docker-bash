@@ -4,7 +4,7 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM alpine:3.20
+FROM alpine:3.21
 
 # https://ftp.gnu.org/gnu/bash/?C=M;O=D
 ENV _BASH_VERSION 5.3-alpha
