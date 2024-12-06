@@ -142,7 +142,7 @@
   },
   "devel": {
     "alpine": {
-      "version": "3.20"
+      "version": "3.21"
     },
     "commit": {
       "description": "add warning message for null arg to printf %d; update command -v help string; Makefile updates to uninstall directories",
