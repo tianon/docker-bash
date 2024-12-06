@@ -124,7 +124,7 @@
   },
   "5.2": {
     "alpine": {
-      "version": "3.20"
+      "version": "3.21"
     },
     "baseline": {
       "patch": "37"
