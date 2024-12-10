@@ -28,12 +28,12 @@ RUN set -eux; \
 	\
 	wget -O bash.tar.gz "https://git.savannah.gnu.org/cgit/bash.git/snapshot/bash-$_BASH_COMMIT.tar.gz"; \
 	\
-	mkdir -p /usr/src/bash; \
+	mkdir -p /usr/local/src/bash; \
 	tar \
 		--extract \
 		--file=bash.tar.gz \
 		--strip-components=1 \
-		--directory=/usr/src/bash \
+		--directory=/usr/local/src/bash \
 	; \
 	rm bash.tar.gz; \
 	\
@@ -41,7 +41,7 @@ RUN set -eux; \
 		apk add --no-cache --virtual .patch-deps patch; \
 		for p in bash-patches/*; do \
 			patch \
-				--directory=/usr/src/bash \
+				--directory=/usr/local/src/bash \
 				--input="$(readlink -f "$p")" \
 				--strip=0 \
 			; \
@@ -52,10 +52,10 @@ RUN set -eux; \
 	fi; \
 	\
 # https://lists.gnu.org/archive/html/bug-bash/2023-05/msg00011.html
-	{ echo '#include <unistd.h>'; echo; cat /usr/src/bash/lib/sh/strscpy.c; } > /usr/src/bash/lib/sh/strscpy.c.new; \
-	mv /usr/src/bash/lib/sh/strscpy.c.new /usr/src/bash/lib/sh/strscpy.c; \
+	{ echo '#include <unistd.h>'; echo; cat /usr/local/src/bash/lib/sh/strscpy.c; } > /usr/local/src/bash/lib/sh/strscpy.c.new; \
+	mv /usr/local/src/bash/lib/sh/strscpy.c.new /usr/local/src/bash/lib/sh/strscpy.c; \
 	\
-	cd /usr/src/bash; \
+	cd /usr/local/src/bash; \
 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \
 	./configure \
 		--build="$gnuArch" \
@@ -71,7 +71,7 @@ RUN set -eux; \
 	make -j "$(nproc)"; \
 	make install; \
 	cd /; \
-	rm -r /usr/src/bash; \
+	rm -r /usr/local/src/bash; \
 	\
 # delete a few installed bits for smaller image size
 	rm -rf \

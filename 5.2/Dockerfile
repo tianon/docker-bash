@@ -61,12 +61,12 @@ RUN set -eux; \
 	rm -rf "$GNUPGHOME"; \
 	apk del --no-network .gpg-deps; \
 	\
-	mkdir -p /usr/src/bash; \
+	mkdir -p /usr/local/src/bash; \
 	tar \
 		--extract \
 		--file=bash.tar.gz \
 		--strip-components=1 \
-		--directory=/usr/src/bash \
+		--directory=/usr/local/src/bash \
 	; \
 	rm bash.tar.gz; \
 	\
@@ -74,7 +74,7 @@ RUN set -eux; \
 		apk add --no-cache --virtual .patch-deps patch; \
 		for p in bash-patches/*; do \
 			patch \
-				--directory=/usr/src/bash \
+				--directory=/usr/local/src/bash \
 				--input="$(readlink -f "$p")" \
 				--strip=0 \
 			; \
@@ -84,7 +84,7 @@ RUN set -eux; \
 		apk del --no-network .patch-deps; \
 	fi; \
 	\
-	cd /usr/src/bash; \
+	cd /usr/local/src/bash; \
 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \
 	./configure \
 		--build="$gnuArch" \
@@ -100,7 +100,7 @@ RUN set -eux; \
 	make -j "$(nproc)"; \
 	make install; \
 	cd /; \
-	rm -r /usr/src/bash; \
+	rm -r /usr/local/src/bash; \
 	\
 # delete a few installed bits for smaller image size
 	rm -rf \
