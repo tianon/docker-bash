@@ -32,6 +32,9 @@ for version; do
 
 	echo "processing $version ..."
 
+	patches="$(cd "$version" && find -maxdepth 1 -name '*.patch' -type f | LC_ALL=C sort)"
+	export patches
+
 	{
 		generated_warning
 		gawk -f "$jqt" Dockerfile.template

@@ -1,0 +1,28 @@
+Description: minor fixes for Alpine 3.21+
+Author: Tianon (& Chet, for fixes borrowed/backported)
+
+diff --git a/parse.y b/parse.y
+index f415d2ee..e59dbed9 100644
+--- a/parse.y
++++ b/parse.y
+@@ -71,6 +71,7 @@
+ #  include "jobs.h"
+ #else
+ extern int cleanup_dead_jobs __P((void));
++extern int count_all_jobs __P((void));
+ #endif /* JOB_CONTROL */
+ 
+ #if defined (ALIAS)
+
+diff --git a/siglist.h b/siglist.h
+index 4cb65308..bc0ea441 100644
+--- a/siglist.h
++++ b/siglist.h
+@@ -18,6 +18,8 @@
+    along with Bash.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
++#include <string.h>
++
+ #if !defined (_SIGLIST_H_)
+ #define _SIGLIST_H_

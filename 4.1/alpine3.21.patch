@@ -1,0 +1,130 @@
+Description: minor fixes for Alpine 3.21+
+Author: Tianon (& Chet, for fixes borrowed/backported)
+
+diff --git a/execute_cmd.c b/execute_cmd.c
+index 4ee59c11..2a3df6d6 100644
+--- a/execute_cmd.c
++++ b/execute_cmd.c
+@@ -2061,6 +2120,7 @@ coproc_fdrestore (cp)
+ void
+ coproc_pidchk (pid, status)
+      pid_t pid;
++     int status;
+ {
+   struct coproc *cp;
+
+diff --git a/lib/readline/signals.c b/lib/readline/signals.c
+index 4fbc019e..6a68d78c 100644
+--- a/lib/readline/signals.c
++++ b/lib/readline/signals.c
+@@ -131,6 +131,7 @@ static sighandler_cxt old_winch;
+ /* Called from RL_CHECK_SIGNALS() macro */
+ RETSIGTYPE
+ _rl_signal_handler (sig)
++     int sig;
+ {
+   _rl_caught_signal = 0;       /* XXX */
+ 
+
+diff --git a/nojobs.c b/nojobs.c
+index 0c9bd751..fdbe0ae0 100644
+--- a/nojobs.c
++++ b/nojobs.c
+@@ -46,6 +46,7 @@
+ #include "shell.h"
+ #include "jobs.h"
+ #include "execute_cmd.h"
++#include "trap.h"
+ 
+ #include "builtins/builtext.h" /* for wait_builtin */
+ 
+@@ -410,6 +419,7 @@ reap_dead_jobs ()
+ }
+ 
+ /* Initialize the job control mechanism, and set up the tty stuff. */
++int
+ initialize_job_control (force)
+      int force;
+ {
+@@ -879,6 +933,7 @@ static TTYSTRUCT shell_tty_info;
+ static int got_tty_state;
+ 
+ /* Fill the contents of shell_tty_info with the current tty info. */
++int
+ get_tty_state ()
+ {
+   int tty;
+@@ -910,10 +966,12 @@ set_tty_state ()
+ }
+ 
+ /* Give the terminal to PGRP.  */
++int
+ give_terminal_to (pgrp, force)
+      pid_t pgrp;
+      int force;
+ {
++  return 0;
+ }
+ 
+ /* Stop a pipeline. */
+
+diff --git a/parse.y b/parse.y
+index 5211fbcb..f0cdfbf4 100644
+--- a/parse.y
++++ b/parse.y
+@@ -69,6 +69,9 @@
+ 
+ #if defined (JOB_CONTROL)
+ #  include "jobs.h"
++#else
++extern int cleanup_dead_jobs __P((void));
++extern int count_all_jobs __P((void));
+ #endif /* JOB_CONTROL */
+ 
+ #if defined (ALIAS)
+
+diff --git a/shell.c b/shell.c
+index 2fd8179b..45b77f9e 100644
+--- a/shell.c
++++ b/shell.c
+@@ -57,6 +59,9 @@
+ 
+ #if defined (JOB_CONTROL)
+ #include "jobs.h"
++#else
++extern int initialize_job_control __P((int));
++extern int get_tty_state __P((void));
+ #endif /* JOB_CONTROL */
+ 
+ #include "input.h"
+
+diff --git a/sig.c b/sig.c
+index 8bc45c17..d31ca87b 100644
+--- a/sig.c
++++ b/sig.c
+@@ -60,6 +60,12 @@ extern int executing_list;
+ extern int comsub_ignore_return;
+ extern int parse_and_execute_level, shell_initialized;
+ 
++extern void initialize_siglist ();
++
++#if !defined (JOB_CONTROL)
++extern void initialize_job_signals __P((void));
++#endif
++
+ /* Non-zero after SIGINT. */
+ volatile int interrupt_state = 0;
+ 
+diff --git a/siglist.h b/siglist.h
+index 4cb65308..bc0ea441 100644
+--- a/siglist.h
++++ b/siglist.h
+@@ -18,6 +18,8 @@
+    along with Bash.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
++#include <string.h>
++
+ #if !defined (_SIGLIST_H_)
+ #define _SIGLIST_H_
+

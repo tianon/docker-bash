@@ -4,7 +4,7 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM alpine:3.20
+FROM alpine:3.21
 
 # https://ftp.gnu.org/gnu/bash/?C=M;O=D
 ENV _BASH_VERSION 4.1.17
@@ -12,6 +12,8 @@ ENV _BASH_BASELINE 4.1
 # https://ftp.gnu.org/gnu/bash/bash-4.1-patches/?C=M;O=D
 ENV _BASH_LATEST_PATCH 17
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
+
+COPY alpine3.21.patch /usr/local/src/tianon-bash-patches/
 
 RUN set -eux; \
 	\
@@ -82,6 +84,14 @@ RUN set -eux; \
 		rmdir bash-patches; \
 		apk del --no-network .patch-deps; \
 	fi; \
+	\
+	for p in /usr/local/src/tianon-bash-patches/*; do \
+		patch \
+			--directory=/usr/local/src/bash \
+			--input="$p" \
+			--strip=1 \
+		; \
+	done; \
 	\
 	cd /usr/local/src/bash; \
 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \
