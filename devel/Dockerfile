@@ -12,6 +12,8 @@ ENV _BASH_COMMIT 49c2670226b045746d66765b23af37c1c7ba5597
 ENV _BASH_VERSION devel-20241126
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
+COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
+
 RUN set -eux; \
 	\
 	apk add --no-cache --virtual .build-deps \
@@ -51,9 +53,13 @@ RUN set -eux; \
 		apk del --no-network .patch-deps; \
 	fi; \
 	\
-# https://lists.gnu.org/archive/html/bug-bash/2023-05/msg00011.html
-	{ echo '#include <unistd.h>'; echo; cat /usr/local/src/bash/lib/sh/strscpy.c; } > /usr/local/src/bash/lib/sh/strscpy.c.new; \
-	mv /usr/local/src/bash/lib/sh/strscpy.c.new /usr/local/src/bash/lib/sh/strscpy.c; \
+	for p in /usr/local/src/tianon-bash-patches/*; do \
+		patch \
+			--directory=/usr/local/src/bash \
+			--input="$p" \
+			--strip=1 \
+		; \
+	done; \
 	\
 	cd /usr/local/src/bash; \
 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \

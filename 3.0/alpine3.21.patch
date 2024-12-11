@@ -1,0 +1,226 @@
+Description: minor fixes for Alpine 3.21+
+Author: Tianon (& Chet, for fixes borrowed/backported)
+
+diff --git a/builtins/evalfile.c b/builtins/evalfile.c
+index c17e547b..81be017b 100644
+--- a/builtins/evalfile.c
++++ b/builtins/evalfile.c
+@@ -39,6 +39,7 @@
+ #include "../flags.h"
+ #include "../input.h"
+ #include "../execute_cmd.h"
++#include "../trap.h"
+ 
+ #if defined (HISTORY)
+ #  include "../bashhist.h"
+
+diff --git a/externs.h b/externs.h
+index a015d782..c745c2aa 100644
+--- a/externs.h
++++ b/externs.h
+@@ -362,6 +362,9 @@ extern int sh_mktmpfd __P((char *, int, char **));
+ #undef xstrchr
+ extern char *xstrchr __P((const char *, int));
+ 
++/* declarations for functions defined in lib/sh/zcatfd.c */
++extern int zcatfd __P((int, int, char *));
++
+ /* declarations for functions defined in lib/sh/zread.c */
+ extern ssize_t zread __P((int, char *, size_t));
+ extern ssize_t zreadintr __P((int, char *, size_t));
+
+diff --git a/general.c b/general.c
+index 0b9c8fb6..3384e84b 100644
+--- a/general.c
++++ b/general.c
+@@ -39,6 +39,8 @@
+ #include "bashintl.h"
+ 
+ #include "shell.h"
++#include "test.h"
++
+ #include <tilde/tilde.h>
+ 
+ #if !defined (errno)
+
+diff --git a/lib/glob/strmatch.c b/lib/glob/strmatch.c
+index 4d9c68d0..cea9bd86 100644
+--- a/lib/glob/strmatch.c
++++ b/lib/glob/strmatch.c
+@@ -25,7 +25,7 @@
+ #include "strmatch.h"
+ 
+ extern int xstrmatch __P((char *, char *, int));
+-#if defined (HAVE_MULTIBYTE)
++#if defined (HANDLE_MULTIBYTE)
+ extern int internal_wstrmatch __P((wchar_t *, wchar_t *, int));
+ #endif
+ 
+
+diff --git a/lib/intl/Makefile.in b/lib/intl/Makefile.in
+index 70bafc9c..8520ed2e 100644
+--- a/lib/intl/Makefile.in
++++ b/lib/intl/Makefile.in
+@@ -51,12 +51,14 @@ RANLIB = @RANLIB@
+ YACC = @INTLBISON@ -y -d
+ YFLAGS = --name-prefix=__gettext
+ 
++LOCAL_DEFS = @LOCAL_DEFS@
++
+ DEFS = -DLOCALEDIR=\"$(localedir)\" -DLOCALE_ALIAS_PATH=\"$(aliaspath)\" \
+ -DLIBDIR=\"$(prefix)/libdata\" -DIN_LIBINTL \
+ -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"$(libdir)\" -DNO_XMALLOC \
+ -Dset_relocation_prefix=libintl_set_relocation_prefix \
+ -Drelocate=libintl_relocate \
+--DDEPENDS_ON_LIBICONV=1 @DEFS@
++-DDEPENDS_ON_LIBICONV=1 @DEFS@ @LOCAL_DEFS@
+ CPPFLAGS = @CPPFLAGS@
+ CFLAGS = @CFLAGS@
+ LDFLAGS = @LDFLAGS@
+
+diff --git a/lib/intl/dcigettext.c b/lib/intl/dcigettext.c
+index f6edb95c..c7e696a8 100644
+--- a/lib/intl/dcigettext.c
++++ b/lib/intl/dcigettext.c
+@@ -134,6 +134,10 @@ extern int errno;
+ 
+ /* @@ end of prolog @@ */
+ 
++#if defined (SHELL) && !defined (HAVE_GETCWD)
++#  define HAVE_GETCWD
++#endif
++
+ #ifdef _LIBC
+ /* Rename the non ANSI C functions.  This is required by the standard
+    because some ANSI C functions will require linking with this object
+
+diff --git a/make_cmd.c b/make_cmd.c
+index 479d9c3e..df200105 100644
+--- a/make_cmd.c
++++ b/make_cmd.c
+@@ -355,6 +359,7 @@ COMMAND *
+ make_case_command (word, clauses, lineno)
+      WORD_DESC *word;
+      PATTERN_LIST *clauses;
++     int lineno;
+ {
+   CASE_COM *temp;
+ 
+diff --git a/nojobs.c b/nojobs.c
+index a3d51f67..7303f07f 100644
+--- a/nojobs.c
++++ b/nojobs.c
+@@ -45,6 +45,7 @@
+ 
+ #include "shell.h"
+ #include "jobs.h"
++#include "trap.h"
+ 
+ #include "builtins/builtext.h"	/* for wait_builtin */
+ 
+@@ -398,6 +399,7 @@ reap_dead_jobs ()
+ }
+ 
+ /* Initialize the job control mechanism, and set up the tty stuff. */
++int
+ initialize_job_control (force)
+      int force;
+ {
+@@ -838,6 +840,7 @@ static TTYSTRUCT shell_tty_info;
+ static int got_tty_state;
+ 
+ /* Fill the contents of shell_tty_info with the current tty info. */
++int
+ get_tty_state ()
+ {
+   int tty;
+@@ -869,10 +872,12 @@ set_tty_state ()
+ }
+ 
+ /* Give the terminal to PGRP.  */
++int
+ give_terminal_to (pgrp, force)
+      pid_t pgrp;
+      int force;
+ {
++  return 0;
+ }
+ 
+ /* Stop a pipeline. */
+
+diff --git a/parse.y b/parse.y
+index 5211fbcb..f0cdfbf4 100644
+--- a/parse.y
++++ b/parse.y
+@@ -69,6 +69,9 @@
+ 
+ #if defined (JOB_CONTROL)
+ #  include "jobs.h"
++#else
++extern int cleanup_dead_jobs __P((void));
++extern int count_all_jobs __P((void));
+ #endif /* JOB_CONTROL */
+ 
+ #if defined (ALIAS)
+
+diff --git a/shell.c b/shell.c
+index 2fd8179b..45b77f9e 100644
+--- a/shell.c
++++ b/shell.c
+@@ -57,6 +59,9 @@
+ 
+ #if defined (JOB_CONTROL)
+ #include "jobs.h"
++#else
++extern int initialize_job_control __P((int));
++extern int get_tty_state __P((void));
+ #endif /* JOB_CONTROL */
+ 
+ #include "input.h"
+
+diff --git a/sig.c b/sig.c
+index 8bc45c17..d31ca87b 100644
+--- a/sig.c
++++ b/sig.c
+@@ -60,6 +60,12 @@ extern int executing_list;
+ extern int comsub_ignore_return;
+ extern int parse_and_execute_level, shell_initialized;
+ 
++extern void initialize_siglist ();
++
++#if !defined (JOB_CONTROL)
++extern void initialize_job_signals __P((void));
++#endif
++
+ /* Non-zero after SIGINT. */
+ volatile int interrupt_state = 0;
+ 
+
+diff --git a/siglist.h b/siglist.h
+index 4cb65308..bc0ea441 100644
+--- a/siglist.h
++++ b/siglist.h
+@@ -18,6 +18,8 @@
+    along with Bash.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
++#include <string.h>
++
+ #if !defined (_SIGLIST_H_)
+ #define _SIGLIST_H_
+ 
+
+diff --git a/support/bashversion.c b/support/bashversion.c
+index abf1aa8d..59c2321e 100644
+--- a/support/bashversion.c
++++ b/support/bashversion.c
+@@ -47,6 +47,9 @@ extern char *optarg;
+ extern char *dist_version;
+ extern int patch_level;
+ 
++extern char *shell_version_string __P((void));
++extern void show_shell_version __P((int));
++
+ char *shell_name = "bash";
+ char *progname;
+ 

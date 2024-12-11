@@ -1,0 +1,17 @@
+Description: fix Alpine ssize_t vs size_t bug
+Author: Emanuele Torre
+Origin: https://lists.gnu.org/archive/html/bug-bash/2023-05/msg00011.html
+
+diff --git a/lib/sh/strscpy.c b/lib/sh/strscpy.c
+index 7a948ebe..e2679e95 100644
+--- a/lib/sh/strscpy.c
++++ b/lib/sh/strscpy.c
+@@ -22,6 +22,8 @@
+ 
+ #include <bashansi.h>
+ 
++#include <unistd.h>
++
+ ssize_t
+ strscpy (char *d, const char *s, size_t len)
+ {
