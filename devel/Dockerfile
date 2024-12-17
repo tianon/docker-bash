@@ -7,9 +7,9 @@
 FROM alpine:3.21
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 49c2670226b045746d66765b23af37c1c7ba5597
-# add warning message for null arg to printf %d; update command -v help string; Makefile updates to uninstall directories
-ENV _BASH_VERSION devel-20241126
+ENV _BASH_COMMIT bb56d620e075e3c96ae84b52de6b74683d9ab320
+# more documentation updates; fix two issues when displaying readline completions; fix another use-after-free error with readline undo lists
+ENV _BASH_VERSION devel-20241213
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/

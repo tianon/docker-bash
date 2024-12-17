@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "add warning message for null arg to printf %d; update command -v help string; Makefile updates to uninstall directories",
-      "version": "49c2670226b045746d66765b23af37c1c7ba5597"
+      "description": "more documentation updates; fix two issues when displaying readline completions; fix another use-after-free error with readline undo lists",
+      "version": "bb56d620e075e3c96ae84b52de6b74683d9ab320"
     },
-    "version": "20241126"
+    "version": "20241213"
   }
 }
