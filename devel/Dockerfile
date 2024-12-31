@@ -7,9 +7,9 @@
 FROM alpine:3.21
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT bb56d620e075e3c96ae84b52de6b74683d9ab320
-# more documentation updates; fix two issues when displaying readline completions; fix another use-after-free error with readline undo lists
-ENV _BASH_VERSION devel-20241213
+ENV _BASH_COMMIT 5114e17172276cf5a2f889f8037ae58c4cb05bb9
+# fix issue with failed history expansion changing the history list offset; fix some tests to avoid problems with error messages that differ between systems; fix issue with readline rl_abort not clearing any pending command to execute
+ENV _BASH_VERSION devel-20241230
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
