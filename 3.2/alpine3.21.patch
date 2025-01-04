@@ -28,6 +28,28 @@ index 4d9c68d0..cea9bd86 100644
  #endif
  
 
+diff --git a/jobs.c b/jobs.c
+index d183394..6f3a837 100644
+--- a/jobs.c
++++ b/jobs.c
+@@ -152,6 +152,7 @@ extern sigset_t top_level_mask;
+ extern procenv_t wait_intr_buf;
+ extern int wait_signal_received;
+ extern WORD_LIST *subst_assign_varlist;
++extern void close_pgrp_pipe __P((void));
+ 
+ static struct jobstats zerojs = { -1L, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NO_JOB, NO_JOB, 0, 0 };
+ struct jobstats js = { -1L, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NO_JOB, NO_JOB, 0, 0 };
+@@ -845,6 +846,7 @@ cleanup_dead_jobs ()
+ 
+ static int
+ processes_in_job (job)
++	int job;
+ {
+   int nproc;
+   register PROCESS *p;
+
+
 diff --git a/nojobs.c b/nojobs.c
 index a3d51f67..7303f07f 100644
 --- a/nojobs.c
@@ -69,6 +91,7 @@ index a3d51f67..7303f07f 100644
  }
  
  /* Stop a pipeline. */
+
 
 diff --git a/parse.y b/parse.y
 index 5211fbcb..f0cdfbf4 100644
@@ -133,10 +156,21 @@ index 4cb65308..bc0ea441 100644
  
 
 diff --git a/subst.c b/subst.c
-index 089457fb..2e24ac4e 100644
+index 089457f..ba8fc45 100644
 --- a/subst.c
 +++ b/subst.c
-@@ -2625,6 +2625,7 @@ expand_assignment_string_to_string (string, quoted)
+@@ -56,6 +56,10 @@
+ #include <tilde/tilde.h>
+ #include <glob/strmatch.h>
+ 
++#if defined (JOB_CONTROL)
++extern void close_pgrp_pipe __P((void));
++#endif
++
+ #if !defined (errno)
+ extern int errno;
+ #endif /* !errno */
+@@ -2625,6 +2629,7 @@ expand_assignment_string_to_string (string, quoted)
  char *
  expand_arith_string (string, quoted)
       char *string;

@@ -69,6 +69,19 @@ index 8b39c99e..f4696de0 100644
  void
  get_new_window_size (from_sig, rp, cp)
 
+diff --git a/jobs.c b/jobs.c
+index d30a427..aa5a4d8 100644
+--- a/jobs.c
++++ b/jobs.c
+@@ -824,6 +824,7 @@ cleanup_dead_jobs ()
+ 
+ static int
+ processes_in_job (job)
++	int job;
+ {
+   int nproc;
+   register PROCESS *p;
+
 diff --git a/nojobs.c b/nojobs.c
 index a3d51f67..7303f07f 100644
 --- a/nojobs.c
@@ -172,12 +185,21 @@ index 4cb65308..bc0ea441 100644
  #if !defined (_SIGLIST_H_)
  #define _SIGLIST_H_
  
-
 diff --git a/subst.c b/subst.c
-index 089457fb..2e24ac4e 100644
+index bf91fee..0e30eda 100644
 --- a/subst.c
 +++ b/subst.c
-@@ -2625,6 +2625,7 @@ expand_assignment_string_to_string (string, quoted)
+@@ -134,6 +134,9 @@ unsigned char ifs_firstc;
+ #endif
+ 
+ /* Extern functions and variables from different files. */
++#if defined (JOB_CONTROL) && defined (PGRP_PIPE)
++extern void close_pgrp_pipe __P((void));
++#endif
+ extern int last_command_exit_value, last_command_exit_signal;
+ extern int subshell_environment;
+ extern int subshell_level;
+@@ -2578,6 +2581,7 @@ expand_assignment_string_to_string (string, quoted)
  char *
  expand_arith_string (string, quoted)
       char *string;

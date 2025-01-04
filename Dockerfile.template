@@ -116,7 +116,38 @@ RUN set -eux; \
 	done; \
 {{ ) end -}}
 {{ if env.version | startswith("3.") or (env.version | startswith("4.") and (env.version | split(".") | .[1] | tonumber) <= 3) then ( -}}
-	CFLAGS="-Wno-error=implicit-int -Wno-error=implicit-function-declaration" \
+	mv configure configure.bak; \
+    awk '\
+        BEGIN { \
+            # Initialize the previous line variable as empty \
+            prev = ""; \
+        } \
+        \
+        { \
+            if ($0 ~ /^\s*int\s*$/) { \
+                prev = "int"; \
+            } \
+            else if ($0 ~ /^\s*(int\s+)?main\s*\(\s*\)\s*$/) { \
+                print "#include <stdlib.h>"; \
+                print "int main(void)"; \
+                prev = ""; \
+            } \
+            else { \
+                if (prev != "") { \
+                    print prev; \
+                    prev = ""; \
+                } \
+                print $0; \
+            } \
+        } \
+        \
+        END { \
+            if (prev != "") { \
+                print prev; \
+            } \
+        } \
+    ' configure.bak > configure; \
+    chmod +x configure; \
 {{ ) else "" end -}}
 	./configure \
 		--build="$gnuArch" \
