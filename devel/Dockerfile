@@ -7,9 +7,9 @@
 FROM alpine:3.21
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 5114e17172276cf5a2f889f8037ae58c4cb05bb9
-# fix issue with failed history expansion changing the history list offset; fix some tests to avoid problems with error messages that differ between systems; fix issue with readline rl_abort not clearing any pending command to execute
-ENV _BASH_VERSION devel-20241230
+ENV _BASH_COMMIT 2ea356081dbfbac2c791f9b8072ed4b824e3d9df
+# documentation updates; test suite updates to reduce extraneous diff output; don't export BASHOPTS into running tests
+ENV _BASH_VERSION devel-20250109
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/

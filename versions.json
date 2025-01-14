@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "fix issue with failed history expansion changing the history list offset; fix some tests to avoid problems with error messages that differ between systems; fix issue with readline rl_abort not clearing any pending command to execute",
-      "version": "5114e17172276cf5a2f889f8037ae58c4cb05bb9"
+      "description": "documentation updates; test suite updates to reduce extraneous diff output; don't export BASHOPTS into running tests",
+      "version": "2ea356081dbfbac2c791f9b8072ed4b824e3d9df"
     },
-    "version": "20241230"
+    "version": "20250109"
   }
 }
