@@ -210,6 +210,22 @@ index 4cb65308..bc0ea441 100644
  #define _SIGLIST_H_
  
 
+diff --git a/subst.c b/subst.c
+index dbaecd6..1d68013 100644
+--- a/subst.c
++++ b/subst.c
+@@ -127,6 +127,9 @@ unsigned char ifs_cmap[UCHAR_MAX + 1];
+ unsigned char ifs_firstc;
+ 
+ /* Extern functions and variables from different files. */
++#if defined (JOB_CONTROL) && defined (PGRP_PIPE)
++extern void close_pgrp_pipe __P((void));
++#endif
+ extern int last_command_exit_value, last_command_exit_signal;
+ extern int subshell_environment;
+ extern int subshell_level;
+
+
 diff --git a/support/bashversion.c b/support/bashversion.c
 index abf1aa8d..59c2321e 100644
 --- a/support/bashversion.c

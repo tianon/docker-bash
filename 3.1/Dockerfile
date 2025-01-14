@@ -99,6 +99,38 @@ RUN set -eux; \
 	for f in config.guess config.sub; do \
 		wget -O "support/$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; \
 	done; \
+	mv configure configure.bak; \
+	awk '\
+	    BEGIN { \
+	        # Initialize the previous line variable as empty \
+	        prev = ""; \
+	    } \
+	    \
+	    { \
+	        if ($0 ~ /^\s*int\s*$/) { \
+	            prev = "int"; \
+	        } \
+	        else if ($0 ~ /^\s*(int\s+)?main\s*\(\s*\)\s*$/) { \
+	            print "#include <stdlib.h>"; \
+	            print "int main(void)"; \
+	            prev = ""; \
+	        } \
+	        else { \
+	            if (prev != "") { \
+	                print prev; \
+	                prev = ""; \
+	            } \
+	            print $0; \
+	        } \
+	    } \
+	    \
+	    END { \
+	        if (prev != "") { \
+	            print prev; \
+	        } \
+	    } \
+	' configure.bak > configure; \
+	chmod +x configure; \
 	./configure \
 		--build="$gnuArch" \
 		--enable-readline \
@@ -112,7 +144,7 @@ RUN set -eux; \
 	}; \
 # parallel jobs workaround borrowed from Alpine :)
 	make y.tab.c; make builtins/libbuiltins.a; \
-	make -j "$(nproc)"; \
+	make -j 1; \
 	make install; \
 	cd /; \
 	rm -r /usr/local/src/bash; \
