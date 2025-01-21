@@ -7,9 +7,9 @@
 FROM alpine:3.21
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 2ea356081dbfbac2c791f9b8072ed4b824e3d9df
-# documentation updates; test suite updates to reduce extraneous diff output; don't export BASHOPTS into running tests
-ENV _BASH_VERSION devel-20250109
+ENV _BASH_COMMIT 42c49d621d9341a530bca9422d7000087593e6bb
+# fix issue with internally quoting multibyte characters; the let builtin now suppresses additional array subscript expansion; small change to how readline export-completions displays filenames; new loadable builtin to do floating-point arithmetic
+ENV _BASH_VERSION devel-20250117
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/

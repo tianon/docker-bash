@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "documentation updates; test suite updates to reduce extraneous diff output; don't export BASHOPTS into running tests",
-      "version": "2ea356081dbfbac2c791f9b8072ed4b824e3d9df"
+      "description": "fix issue with internally quoting multibyte characters; the let builtin now suppresses additional array subscript expansion; small change to how readline export-completions displays filenames; new loadable builtin to do floating-point arithmetic",
+      "version": "42c49d621d9341a530bca9422d7000087593e6bb"
     },
-    "version": "20250109"
+    "version": "20250117"
   }
 }
