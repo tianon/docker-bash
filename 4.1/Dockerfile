@@ -99,6 +99,8 @@ RUN set -eux; \
 	for f in config.guess config.sub; do \
 		wget -O "support/$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; \
 	done; \
+# https://github.com/tianon/docker-bash/pull/45
+	export CFLAGS='-Wno-error=implicit-int -Wno-error=implicit-function-declaration'; \
 	./configure \
 		--build="$gnuArch" \
 		--enable-readline \
