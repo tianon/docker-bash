@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "fix issue with internally quoting multibyte characters; the let builtin now suppresses additional array subscript expansion; small change to how readline export-completions displays filenames; new loadable builtin to do floating-point arithmetic",
-      "version": "42c49d621d9341a530bca9422d7000087593e6bb"
+      "description": "taking the length of an unset variable subscripted with anything but @ or * is a fatal error; quote results of u prompt expansion; posix mode changes for exiting on -e when in a shell function; fix readline redisplay issue when bold prompt spans multiple lines",
+      "version": "25e213a551dc808c7f29360075bad4806fb9fec5"
     },
-    "version": "20250117"
+    "version": "20250124"
   }
 }
