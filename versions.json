@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "taking the length of an unset variable subscripted with anything but @ or * is a fatal error; quote results of u prompt expansion; posix mode changes for exiting on -e when in a shell function; fix readline redisplay issue when bold prompt spans multiple lines",
-      "version": "25e213a551dc808c7f29360075bad4806fb9fec5"
+      "description": "posix change for undoing redirections after failed exec; change readline to set lines and columns after SIGTSTP/SIGCONT",
+      "version": "0390b4354a9e5df517ef2d4f9d78a099063b22b4"
     },
-    "version": "20250124"
+    "version": "20250128"
   }
 }

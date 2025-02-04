@@ -7,9 +7,9 @@
 FROM alpine:3.21
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 25e213a551dc808c7f29360075bad4806fb9fec5
-# taking the length of an unset variable subscripted with anything but @ or * is a fatal error; quote results of u prompt expansion; posix mode changes for exiting on -e when in a shell function; fix readline redisplay issue when bold prompt spans multiple lines
-ENV _BASH_VERSION devel-20250124
+ENV _BASH_COMMIT 0390b4354a9e5df517ef2d4f9d78a099063b22b4
+# posix change for undoing redirections after failed exec; change readline to set lines and columns after SIGTSTP/SIGCONT
+ENV _BASH_VERSION devel-20250128
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
