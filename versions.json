@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "posix change for undoing redirections after failed exec; change readline to set lines and columns after SIGTSTP/SIGCONT",
-      "version": "0390b4354a9e5df517ef2d4f9d78a099063b22b4"
+      "description": "fix error return from wait builtin in a subshell when there are no children of this shell",
+      "version": "3cfc255efe9a05fe8b28cc03a1b6a3fac59741c0"
     },
-    "version": "20250128"
+    "version": "20250210"
   }
 }
