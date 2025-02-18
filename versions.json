@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "fix error return from wait builtin in a subshell when there are no children of this shell",
-      "version": "3cfc255efe9a05fe8b28cc03a1b6a3fac59741c0"
+      "description": "fix issue with redirections to bash input file descriptor; new minimal chmod builtin; posix mode change for kill builtin return status; perform additional validation on brace expansion sequence expressions",
+      "version": "c3ca11424d2ae66cafa2f931b008dfb728e209a5"
     },
-    "version": "20250210"
+    "version": "20250212"
   }
 }
