@@ -7,9 +7,9 @@
 FROM alpine:3.21
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT c3ca11424d2ae66cafa2f931b008dfb728e209a5
-# fix issue with redirections to bash input file descriptor; new minimal chmod builtin; posix mode change for kill builtin return status; perform additional validation on brace expansion sequence expressions
-ENV _BASH_VERSION devel-20250212
+ENV _BASH_COMMIT e608233770b0ba5fe20cb46842992b64f7252383
+# revert change that suppressed array subscript expansion when called by the let builtin; fix default file descriptor for <> redirection when printing command
+ENV _BASH_VERSION devel-20250224
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
