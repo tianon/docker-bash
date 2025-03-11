@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "revert change that suppressed array subscript expansion when called by the let builtin; fix default file descriptor for <> redirection when printing command",
-      "version": "e608233770b0ba5fe20cb46842992b64f7252383"
+      "description": "documentation updates for arithmetic expansion and array subscripts; update BASH_COMMAND for subshells; fix potential file descriptor leak in here document pipes",
+      "version": "c3997d51f8ba359eeabb45b90b9cdae4fe599b5a"
     },
-    "version": "20250224"
+    "version": "20250307"
   }
 }

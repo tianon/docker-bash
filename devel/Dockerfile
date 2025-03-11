@@ -7,9 +7,9 @@
 FROM alpine:3.21
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT e608233770b0ba5fe20cb46842992b64f7252383
-# revert change that suppressed array subscript expansion when called by the let builtin; fix default file descriptor for <> redirection when printing command
-ENV _BASH_VERSION devel-20250224
+ENV _BASH_COMMIT c3997d51f8ba359eeabb45b90b9cdae4fe599b5a
+# documentation updates for arithmetic expansion and array subscripts; update BASH_COMMAND for subshells; fix potential file descriptor leak in here document pipes
+ENV _BASH_VERSION devel-20250307
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
