@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "documentation updates for arithmetic expansion and array subscripts; update BASH_COMMAND for subshells; fix potential file descriptor leak in here document pipes",
-      "version": "c3997d51f8ba359eeabb45b90b9cdae4fe599b5a"
+      "description": "fix for invalid brace sequence expressions; cosmetic fix to help builtin; documentation and copyright updates; bump version to bash-5.3-rc1; cosmetic locale fixes",
+      "version": "e009d30dfff92d5389f7bb05ec8627e524d5a0ca"
     },
-    "version": "20250307"
+    "version": "20250324"
   }
 }
