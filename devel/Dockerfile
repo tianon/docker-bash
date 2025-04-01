@@ -7,9 +7,9 @@
 FROM alpine:3.21
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT e009d30dfff92d5389f7bb05ec8627e524d5a0ca
-# fix for invalid brace sequence expressions; cosmetic fix to help builtin; documentation and copyright updates; bump version to bash-5.3-rc1; cosmetic locale fixes
-ENV _BASH_VERSION devel-20250324
+ENV _BASH_COMMIT a6767763de5e7859107711b166a64a9e4a77a8ae
+# fix for multiple assignment statements containing nofork comsubs preceding a command; fix for possible issue with invalid bash input fd
+ENV _BASH_VERSION devel-20250331
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
