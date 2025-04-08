@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "fix for multiple assignment statements containing nofork comsubs preceding a command; fix for possible issue with invalid bash input fd",
-      "version": "a6767763de5e7859107711b166a64a9e4a77a8ae"
+      "description": "minor updates for 5.3-rc1 release",
+      "version": "2e113467f061587a3475b692d25ca449717834c8"
     },
-    "version": "20250331"
+    "version": "20250404"
   }
 }
