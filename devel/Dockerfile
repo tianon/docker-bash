@@ -7,9 +7,9 @@
 FROM alpine:3.21
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 2e113467f061587a3475b692d25ca449717834c8
-# minor updates for 5.3-rc1 release
-ENV _BASH_VERSION devel-20250404
+ENV _BASH_COMMIT 42c6cbd459a121e98d9ac43c477a5daf6c3d4f0c
+# add math function calls to fltexpr; HISTFILESIZE documentation updates; help text updates for exxport, history; update translations
+ENV _BASH_VERSION devel-20250409
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/

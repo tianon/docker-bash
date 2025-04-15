@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "minor updates for 5.3-rc1 release",
-      "version": "2e113467f061587a3475b692d25ca449717834c8"
+      "description": "add math function calls to fltexpr; HISTFILESIZE documentation updates; help text updates for exxport, history; update translations",
+      "version": "42c6cbd459a121e98d9ac43c477a5daf6c3d4f0c"
     },
-    "version": "20250404"
+    "version": "20250409"
   }
 }
