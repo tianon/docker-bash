@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "add math function calls to fltexpr; HISTFILESIZE documentation updates; help text updates for exxport, history; update translations",
-      "version": "42c6cbd459a121e98d9ac43c477a5daf6c3d4f0c"
+      "description": "fix to preserve blank lines when reading multiline entries from a history file; fix for completion with quoted command delimiters; updated translations",
+      "version": "482872ed8b51408066c3275a18350436f4d0ee41"
     },
-    "version": "20250409"
+    "version": "20250418"
   }
 }

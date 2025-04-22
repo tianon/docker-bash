@@ -7,9 +7,9 @@
 FROM alpine:3.21
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 42c6cbd459a121e98d9ac43c477a5daf6c3d4f0c
-# add math function calls to fltexpr; HISTFILESIZE documentation updates; help text updates for exxport, history; update translations
-ENV _BASH_VERSION devel-20250409
+ENV _BASH_COMMIT 482872ed8b51408066c3275a18350436f4d0ee41
+# fix to preserve blank lines when reading multiline entries from a history file; fix for completion with quoted command delimiters; updated translations
+ENV _BASH_VERSION devel-20250418
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
