@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "fix to preserve blank lines when reading multiline entries from a history file; fix for completion with quoted command delimiters; updated translations",
-      "version": "482872ed8b51408066c3275a18350436f4d0ee41"
+      "description": "fix for read builtin and invalid multibyte characters followed by the delimiter; updated formatted documentation; new bash.pot file with updated strings; updated translations",
+      "version": "7731dc5c4d405ab147fc562e3af2a375ca593554"
     },
-    "version": "20250418"
+    "version": "20250422"
   }
 }

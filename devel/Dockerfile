@@ -7,9 +7,9 @@
 FROM alpine:3.21
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 482872ed8b51408066c3275a18350436f4d0ee41
-# fix to preserve blank lines when reading multiline entries from a history file; fix for completion with quoted command delimiters; updated translations
-ENV _BASH_VERSION devel-20250418
+ENV _BASH_COMMIT 7731dc5c4d405ab147fc562e3af2a375ca593554
+# fix for read builtin and invalid multibyte characters followed by the delimiter; updated formatted documentation; new bash.pot file with updated strings; updated translations
+ENV _BASH_VERSION devel-20250422
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
