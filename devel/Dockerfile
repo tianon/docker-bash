@@ -7,9 +7,9 @@
 FROM alpine:3.21
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 7731dc5c4d405ab147fc562e3af2a375ca593554
-# fix for read builtin and invalid multibyte characters followed by the delimiter; updated formatted documentation; new bash.pot file with updated strings; updated translations
-ENV _BASH_VERSION devel-20250422
+ENV _BASH_COMMIT 535a8150b65ee6888f54f602274dbbdcd77c788e
+# fix for command substitution string parsing that resulted in top-level unwind-protects being run in the wrong spot; fix for delimiter byte being part of invalid multibyte character in read builtin
+ENV _BASH_VERSION devel-20250504
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
