@@ -145,9 +145,9 @@
       "version": "3.21"
     },
     "commit": {
-      "description": "fix for command substitution string parsing that resulted in top-level unwind-protects being run in the wrong spot; fix for delimiter byte being part of invalid multibyte character in read builtin",
-      "version": "535a8150b65ee6888f54f602274dbbdcd77c788e"
+      "description": "some fixes for static analysis findings; fix for brace expansion being too greedy checking sequence expressions; fix for strip targets when cross-compiling",
+      "version": "870ad4c92b771aafe5b444792a8fa904b2d4a418"
     },
-    "version": "20250504"
+    "version": "20250519"
   }
 }

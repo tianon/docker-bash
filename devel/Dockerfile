@@ -7,9 +7,9 @@
 FROM alpine:3.21
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 535a8150b65ee6888f54f602274dbbdcd77c788e
-# fix for command substitution string parsing that resulted in top-level unwind-protects being run in the wrong spot; fix for delimiter byte being part of invalid multibyte character in read builtin
-ENV _BASH_VERSION devel-20250504
+ENV _BASH_COMMIT 870ad4c92b771aafe5b444792a8fa904b2d4a418
+# some fixes for static analysis findings; fix for brace expansion being too greedy checking sequence expressions; fix for strip targets when cross-compiling
+ENV _BASH_VERSION devel-20250519
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
