@@ -87,7 +87,7 @@
   },
   "4.4": {
     "alpine": {
-      "version": "3.21"
+      "version": "3.22"
     },
     "baseline": {
       "patch": "18",
