@@ -142,7 +142,7 @@
   },
   "devel": {
     "alpine": {
-      "version": "3.21"
+      "version": "3.22"
     },
     "commit": {
       "description": "some fixes for static analysis findings; fix for brace expansion being too greedy checking sequence expressions; fix for strip targets when cross-compiling",
