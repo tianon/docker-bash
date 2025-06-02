@@ -138,7 +138,7 @@
     "alpine": {
       "version": "3.22"
     },
-    "version": "5.3-rc1"
+    "version": "5.3-rc2"
   },
   "devel": {
     "alpine": {
