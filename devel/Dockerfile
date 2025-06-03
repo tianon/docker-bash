@@ -7,9 +7,9 @@
 FROM alpine:3.22
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 870ad4c92b771aafe5b444792a8fa904b2d4a418
-# some fixes for static analysis findings; fix for brace expansion being too greedy checking sequence expressions; fix for strip targets when cross-compiling
-ENV _BASH_VERSION devel-20250519
+ENV _BASH_COMMIT dbe4256d5ea02fec1817fe7e275b0e534dc33a40
+# fix for namerefs referencing an unset array index with nounset enabled; addition to buildconf.h.in for C23 compilers
+ENV _BASH_VERSION devel-20250530
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/

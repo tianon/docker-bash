@@ -145,9 +145,9 @@
       "version": "3.22"
     },
     "commit": {
-      "description": "some fixes for static analysis findings; fix for brace expansion being too greedy checking sequence expressions; fix for strip targets when cross-compiling",
-      "version": "870ad4c92b771aafe5b444792a8fa904b2d4a418"
+      "description": "fix for namerefs referencing an unset array index with nounset enabled; addition to buildconf.h.in for C23 compilers",
+      "version": "dbe4256d5ea02fec1817fe7e275b0e534dc33a40"
     },
-    "version": "20250519"
+    "version": "20250530"
   }
 }
