@@ -145,9 +145,9 @@
       "version": "3.22"
     },
     "commit": {
-      "description": "addition to POSIX mode documentation; new translations; update copyrights on some files; update formatted documentation; changes to cut/lcut loadable builtins when supplied -a ARRAY",
-      "version": "727b8d366390fea446f7a566c4be1be6c0e2a765"
+      "description": "updated translations; back out change allowing quoted characters and process substitution words in function names; rework readline change for GNU Hurd and ncurses",
+      "version": "0f0cea342e32f1f82aa9cc9026038bfc3bb03e92"
     },
-    "version": "20250606"
+    "version": "20250616"
   }
 }

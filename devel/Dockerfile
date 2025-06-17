@@ -7,9 +7,9 @@
 FROM alpine:3.22
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
-ENV _BASH_COMMIT 727b8d366390fea446f7a566c4be1be6c0e2a765
-# addition to POSIX mode documentation; new translations; update copyrights on some files; update formatted documentation; changes to cut/lcut loadable builtins when supplied -a ARRAY
-ENV _BASH_VERSION devel-20250606
+ENV _BASH_COMMIT 0f0cea342e32f1f82aa9cc9026038bfc3bb03e92
+# updated translations; back out change allowing quoted characters and process substitution words in function names; rework readline change for GNU Hurd and ncurses
+ENV _BASH_VERSION devel-20250616
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
