@@ -7,6 +7,7 @@
 FROM alpine:3.22
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
+# https://github.com/tianon/mirror-bash/commits/devel
 ENV _BASH_COMMIT b35866a2891a9b069e37ca5684d4309c0391e261
 # updated translations; documentation updates; update copyright dates
 ENV _BASH_VERSION devel-20250627
@@ -28,7 +29,8 @@ RUN set -eux; \
 		tar \
 	; \
 	\
-	wget -O bash.tar.gz "https://git.savannah.gnu.org/cgit/bash.git/snapshot/bash-$_BASH_COMMIT.tar.gz"; \
+	wget -T2 -O bash.tar.gz "https://git.savannah.gnu.org/cgit/bash.git/snapshot/bash-$_BASH_COMMIT.tar.gz" || \
+		wget -O bash.tar.gz "https://github.com/tianon/mirror-bash/archive/$_BASH_COMMIT.tar.gz"; \
 	\
 	mkdir -p /usr/local/src/bash; \
 	tar \

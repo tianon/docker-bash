@@ -2,6 +2,7 @@ FROM alpine:{{ .alpine.version }}
 
 {{ if env.version == "devel" then ( -}}
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
+# https://github.com/tianon/mirror-bash/commits/devel
 ENV _BASH_COMMIT {{ .commit.version }}
 # {{ .commit.description }}
 ENV _BASH_VERSION devel-{{ .version }}
@@ -38,7 +39,8 @@ RUN set -eux; \
 	; \
 	\
 {{ if env.version == "devel" then ( -}}
-	wget -O bash.tar.gz "https://git.savannah.gnu.org/cgit/bash.git/snapshot/bash-$_BASH_COMMIT.tar.gz"; \
+	wget -T2 -O bash.tar.gz "https://git.savannah.gnu.org/cgit/bash.git/snapshot/bash-$_BASH_COMMIT.tar.gz" || \
+		wget -O bash.tar.gz "https://github.com/tianon/mirror-bash/archive/$_BASH_COMMIT.tar.gz"; \
 {{ ) else ( -}}
 	wget -O bash.tar.gz "https://ftp.gnu.org/gnu/bash/bash-$_BASH_BASELINE.tar.gz"; \
 	wget -O bash.tar.gz.sig "https://ftp.gnu.org/gnu/bash/bash-$_BASH_BASELINE.tar.gz.sig"; \
@@ -112,7 +114,8 @@ RUN set -eux; \
 {{ if env.version == "devel" or (env.version | split(".") | .[0] | tonumber) >= 5 then "" else ( -}}
 # update "config.guess" and "config.sub" to get more aggressively inclusive architecture support
 	for f in config.guess config.sub; do \
-		wget -O "support/$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; \
+		wget -T2 -O "support/$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb" || \
+			wget -O "support/$f" "https://github.com/tianon/mirror-gnu-config/raw/7d3d27baf8107b630586c962c057e22149653deb/$f"; \
 	done; \
 {{ ) end -}}
 {{ if env.version | IN("3.0", "3.1", "3.2", "4.0", "4.1", "4.2", "4.3", "4.4") then ( -}}

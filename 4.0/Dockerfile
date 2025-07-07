@@ -97,7 +97,8 @@ RUN set -eux; \
 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \
 # update "config.guess" and "config.sub" to get more aggressively inclusive architecture support
 	for f in config.guess config.sub; do \
-		wget -O "support/$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; \
+		wget -T2 -O "support/$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb" || \
+			wget -O "support/$f" "https://github.com/tianon/mirror-gnu-config/raw/7d3d27baf8107b630586c962c057e22149653deb/$f"; \
 	done; \
 # https://github.com/tianon/docker-bash/pull/45
 	export CFLAGS='-Wno-error=implicit-int -Wno-error=implicit-function-declaration'; \
