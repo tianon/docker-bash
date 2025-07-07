@@ -62,17 +62,28 @@ for version in "${versions[@]}"; do
 		fullVersion=
 		while [ -z "$fullVersion" ]; do
 			commits="$(
-				wget -qO- "https://cgit.git.savannah.gnu.org/cgit/bash.git/atom/?h=$commit" \
+				{ wget -T2 -qO- "https://cgit.git.savannah.gnu.org/cgit/bash.git/atom/?h=$commit" || \
+					wget -qO- "https://github.com/tianon/mirror-bash/commits/$commit.atom"; } \
 					| "$yq" --input-format xml --output-format json \
 					| jq -r '
 						.feed.entry[]
+						| (
+							.id
+							| if startswith("urn:sha1:") then
+								# cgit
+								ltrimstr("urn:sha1:")
+							elif contains(":Commit/") then
+								# github
+								sub("^.*:Commit/"; "")
+							else null end
+						) as $commit
 						| select(
-							(.id | startswith("urn:sha1:"))
+							$commit
 							and .updated // .published
 							and .title
 						)
 						| [
-							@sh "commit=\(.id | ltrimstr("urn:sha1:"))",
+							@sh "commit=\($commit)",
 							@sh "date=\([ .updated, .published ] | sort | reverse[0])",
 							@sh "desc=\(.title)",
 							empty
