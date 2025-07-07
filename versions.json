@@ -148,9 +148,9 @@
       "version": "3.22"
     },
     "commit": {
-      "description": "updated translations; back out change allowing quoted characters and process substitution words in function names; rework readline change for GNU Hurd and ncurses",
-      "version": "0f0cea342e32f1f82aa9cc9026038bfc3bb03e92"
+      "description": "updated translations; documentation updates; update copyright dates",
+      "version": "b35866a2891a9b069e37ca5684d4309c0391e261"
     },
-    "version": "20250616"
+    "version": "20250627"
   }
 }

@@ -62,7 +62,7 @@ for version in "${versions[@]}"; do
 		fullVersion=
 		while [ -z "$fullVersion" ]; do
 			commits="$(
-				wget -qO- "https://git.savannah.gnu.org/cgit/bash.git/atom/?h=$commit" \
+				wget -qO- "https://cgit.git.savannah.gnu.org/cgit/bash.git/atom/?h=$commit" \
 					| "$yq" --input-format xml --output-format json \
 					| jq -r '
 						.feed.entry[]
