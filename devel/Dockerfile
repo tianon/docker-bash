@@ -8,9 +8,9 @@ FROM alpine:3.22
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT b35866a2891a9b069e37ca5684d4309c0391e261
-# updated translations; documentation updates; update copyright dates
-ENV _BASH_VERSION devel-20250627
+ENV _BASH_COMMIT 80a8f650a1defc3f72539c3b57bf6d228c33c116
+# change overflow behavior in fltexpr; fix for readline event hook; fix for internal quoting of array subscripts in arithmetic expression contexts
+ENV _BASH_VERSION devel-20250711
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
