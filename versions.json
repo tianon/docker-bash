@@ -148,9 +148,9 @@
       "version": "3.22"
     },
     "commit": {
-      "description": "change overflow behavior in fltexpr; fix for readline event hook; fix for internal quoting of array subscripts in arithmetic expression contexts",
-      "version": "80a8f650a1defc3f72539c3b57bf6d228c33c116"
+      "description": "fix for `wait -n' in posix mode; fix for long messages in readline; fix for short reads by `source' builtin; fix for crash on RISC-V machines; fix for bad memory read when getopts is called twice with different sets of arguments",
+      "version": "01070d43248fb97f3b2a08d780ae5a392573ce34"
     },
-    "version": "20250711"
+    "version": "20250718"
   }
 }
