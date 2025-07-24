@@ -151,7 +151,7 @@
       "version": "3.22"
     },
     "commit": {
-      "description": "fix for `wait -n' in posix mode; fix for long messages in readline; f…",
+      "description": "fix for `wait -n' in posix mode; fix for long messages in readline; fix for short reads by `source' builtin; fix for crash on RISC-V machines; fix for bad memory read when getopts is called twice with different sets of arguments",
       "version": "01070d43248fb97f3b2a08d780ae5a392573ce34"
     },
     "version": "20250718"
