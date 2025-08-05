@@ -8,9 +8,9 @@ FROM alpine:3.22
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT 01070d43248fb97f3b2a08d780ae5a392573ce34
-# fix for `wait -n' in posix mode; fix for long messages in readline; fix for short reads by `source' builtin; fix for crash on RISC-V machines; fix for bad memory read when getopts is called twice with different sets of arguments
-ENV _BASH_VERSION devel-20250718
+ENV _BASH_COMMIT e9053f2a3ae4ed638d269481626e0e5408ae8965
+# fix for parameter expansions that contain valid and invalid expansions; avoid stale readdir() value in getcwd replacement; check libtinfow for termcap functions; fix to propagate exit status of builtins run in subshells back to calling shell
+ENV _BASH_VERSION devel-20250804
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
