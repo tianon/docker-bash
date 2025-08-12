@@ -151,9 +151,9 @@
       "version": "3.22"
     },
     "commit": {
-      "description": "fix for parameter expansions that contain valid and invalid expansions; avoid stale readdir() value in getcwd replacement; check libtinfow for termcap functions; fix to propagate exit status of builtins run in subshells back to calling shell",
-      "version": "e9053f2a3ae4ed638d269481626e0e5408ae8965"
+      "description": "allow the --with-curses configure argument to specify a library name; fix for case pattern lists containing both null and non-null strings; fix for bug with PS1 expansion containing an arithmetic syntax error",
+      "version": "ff6cfb1464a39b964204a4f83caab2b8484829a6"
     },
-    "version": "20250804"
+    "version": "20250808"
   }
 }

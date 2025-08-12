@@ -8,9 +8,9 @@ FROM alpine:3.22
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT e9053f2a3ae4ed638d269481626e0e5408ae8965
-# fix for parameter expansions that contain valid and invalid expansions; avoid stale readdir() value in getcwd replacement; check libtinfow for termcap functions; fix to propagate exit status of builtins run in subshells back to calling shell
-ENV _BASH_VERSION devel-20250804
+ENV _BASH_COMMIT ff6cfb1464a39b964204a4f83caab2b8484829a6
+# allow the --with-curses configure argument to specify a library name; fix for case pattern lists containing both null and non-null strings; fix for bug with PS1 expansion containing an arithmetic syntax error
+ENV _BASH_VERSION devel-20250808
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
