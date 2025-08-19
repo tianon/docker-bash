@@ -151,9 +151,9 @@
       "version": "3.22"
     },
     "commit": {
-      "description": "allow the --with-curses configure argument to specify a library name; fix for case pattern lists containing both null and non-null strings; fix for bug with PS1 expansion containing an arithmetic syntax error",
-      "version": "ff6cfb1464a39b964204a4f83caab2b8484829a6"
+      "description": "fix issue with break in nofork comsub when expanding for command word list; add error message if the value of a nameref variable expands to an invalid variable name",
+      "version": "3160c0b89ce4f3934e791de94f9370b6cfc26ae5"
     },
-    "version": "20250808"
+    "version": "20250814"
   }
 }

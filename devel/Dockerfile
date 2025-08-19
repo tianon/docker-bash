@@ -8,9 +8,9 @@ FROM alpine:3.22
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT ff6cfb1464a39b964204a4f83caab2b8484829a6
-# allow the --with-curses configure argument to specify a library name; fix for case pattern lists containing both null and non-null strings; fix for bug with PS1 expansion containing an arithmetic syntax error
-ENV _BASH_VERSION devel-20250808
+ENV _BASH_COMMIT 3160c0b89ce4f3934e791de94f9370b6cfc26ae5
+# fix issue with break in nofork comsub when expanding for command word list; add error message if the value of a nameref variable expands to an invalid variable name
+ENV _BASH_VERSION devel-20250814
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
