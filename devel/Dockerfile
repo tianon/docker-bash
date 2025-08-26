@@ -8,9 +8,9 @@ FROM alpine:3.22
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT 3160c0b89ce4f3934e791de94f9370b6cfc26ae5
-# fix issue with break in nofork comsub when expanding for command word list; add error message if the value of a nameref variable expands to an invalid variable name
-ENV _BASH_VERSION devel-20250814
+ENV _BASH_COMMIT ab17ddb7af948ee6e1a6370aac4ee57b4179cd9c
+# fix for rare readline case where read(2) succeeds but also gets a signal as it is returning to user mode; fix for bash completion filename quoting when there is more than one match
+ENV _BASH_VERSION devel-20250822
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/

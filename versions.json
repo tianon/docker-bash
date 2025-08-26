@@ -151,9 +151,9 @@
       "version": "3.22"
     },
     "commit": {
-      "description": "fix issue with break in nofork comsub when expanding for command word list; add error message if the value of a nameref variable expands to an invalid variable name",
-      "version": "3160c0b89ce4f3934e791de94f9370b6cfc26ae5"
+      "description": "fix for rare readline case where read(2) succeeds but also gets a signal as it is returning to user mode; fix for bash completion filename quoting when there is more than one match",
+      "version": "ab17ddb7af948ee6e1a6370aac4ee57b4179cd9c"
     },
-    "version": "20250814"
+    "version": "20250822"
   }
 }
