@@ -68,14 +68,12 @@ for version in "${versions[@]}"; do
 					| jq -r '
 						.feed.entry[]
 						| (
-							.id
-							| if startswith("urn:sha1:") then
-								# cgit
-								ltrimstr("urn:sha1:")
-							elif contains(":Commit/") then
-								# github
-								sub("^.*:Commit/"; "")
-							else null end
+							"[0-9a-f]{40}" as $commitRegex
+							| "(^|[:/=])(?<commit>\($commitRegex))([&/:]|$)" as $captureRegex
+							| (.id | capture($captureRegex))
+							// (.link."+@href" | capture($captureRegex))
+							// {}
+							| .commit
 						) as $commit
 						| select(
 							$commit
