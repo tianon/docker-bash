@@ -8,9 +8,9 @@ FROM alpine:3.22
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT ab17ddb7af948ee6e1a6370aac4ee57b4179cd9c
-# fix for rare readline case where read(2) succeeds but also gets a signal as it is returning to user mode; fix for bash completion filename quoting when there is more than one match
-ENV _BASH_VERSION devel-20250822
+ENV _BASH_COMMIT a451bfc3f57201bc0933b62c2fb721940a4c33f5
+# declare builtin changes to reject -i when used with -n; readline changes to make control characters visible in search strings; readline signal handling changes to avoid data corruption and UAF; documentation updates for more consistent quoting
+ENV _BASH_VERSION devel-20250904
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
