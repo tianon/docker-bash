@@ -9,7 +9,7 @@ FROM alpine:3.22
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
 ENV _BASH_COMMIT cf8a2518c8b94f75b330d398f5daa0ee21417e1b
-# fix for potential read builtin crash if bash gets a signal before rea…
+# fix for potential read builtin crash if bash gets a signal before read reads any input; make wait -f work if there are no pid or job arguments and update documentation; save and restore variable reflected in $BASH_COMMAND around shell function calls
 ENV _BASH_VERSION devel-20250918
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 

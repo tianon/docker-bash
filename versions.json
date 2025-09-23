@@ -151,7 +151,7 @@
       "version": "3.22"
     },
     "commit": {
-      "description": "fix for potential read builtin crash if bash gets a signal before rea…",
+      "description": "fix for potential read builtin crash if bash gets a signal before read reads any input; make wait -f work if there are no pid or job arguments and update documentation; save and restore variable reflected in $BASH_COMMAND around shell function calls",
       "version": "cf8a2518c8b94f75b330d398f5daa0ee21417e1b"
     },
     "version": "20250918"
