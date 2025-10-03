@@ -4,13 +4,9 @@
       "version": "3.22"
     },
     "baseline": {
-      "patch": "16",
-      "version": "3.0.16"
+      "patch": "16"
     },
-    "patch": {
-      "version": "22"
-    },
-    "version": "3.0.22"
+    "version": "3.0.16"
   },
   "3.1": {
     "alpine": {
