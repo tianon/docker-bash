@@ -7,9 +7,11 @@
 FROM alpine:3.22
 
 # https://ftp.gnu.org/gnu/bash/?C=M;O=D
-ENV _BASH_VERSION 3.0.16
+ENV _BASH_VERSION 3.0.22
 ENV _BASH_BASELINE 3.0.16
 ENV _BASH_BASELINE_PATCH 16
+# https://ftp.gnu.org/gnu/bash/bash-3.0-patches/?C=M;O=D
+ENV _BASH_LATEST_PATCH 22
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine3.21.patch /usr/local/src/tianon-bash-patches/
