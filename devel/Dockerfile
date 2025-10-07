@@ -8,9 +8,9 @@ FROM alpine:3.22
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT cf8a2518c8b94f75b330d398f5daa0ee21417e1b
-# fix for potential read builtin crash if bash gets a signal before read reads any input; make wait -f work if there are no pid or job arguments and update documentation; save and restore variable reflected in $BASH_COMMAND around shell function calls
-ENV _BASH_VERSION devel-20250918
+ENV _BASH_COMMIT 25c6aa5b230167c6471898539c46dd2891d891a5
+# fix issue with making local variables from the temporary environment arrays; documentation updates; fix read builtin to check that the delimiter is not a newline before changing the terminal settings with a zero-length timeout
+ENV _BASH_VERSION devel-20251006
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/

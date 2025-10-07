@@ -151,9 +151,9 @@
       "version": "3.22"
     },
     "commit": {
-      "description": "fix for potential read builtin crash if bash gets a signal before read reads any input; make wait -f work if there are no pid or job arguments and update documentation; save and restore variable reflected in $BASH_COMMAND around shell function calls",
-      "version": "cf8a2518c8b94f75b330d398f5daa0ee21417e1b"
+      "description": "fix issue with making local variables from the temporary environment arrays; documentation updates; fix read builtin to check that the delimiter is not a newline before changing the terminal settings with a zero-length timeout",
+      "version": "25c6aa5b230167c6471898539c46dd2891d891a5"
     },
-    "version": "20250918"
+    "version": "20251006"
   }
 }
