@@ -8,9 +8,9 @@ FROM alpine:3.22
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT 25c6aa5b230167c6471898539c46dd2891d891a5
-# fix issue with making local variables from the temporary environment arrays; documentation updates; fix read builtin to check that the delimiter is not a newline before changing the terminal settings with a zero-length timeout
-ENV _BASH_VERSION devel-20251006
+ENV _BASH_COMMIT 6edfd0bf647cac5c3af3c15aabf49e27528ddf78
+# more test suite changes to partially highlight warning messages; several fixes to bracket expression parsing with equivalence classes, collating symbols, and character classes together with range expressions
+ENV _BASH_VERSION devel-20251017
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/

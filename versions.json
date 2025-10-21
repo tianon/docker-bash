@@ -151,9 +151,9 @@
       "version": "3.22"
     },
     "commit": {
-      "description": "fix issue with making local variables from the temporary environment arrays; documentation updates; fix read builtin to check that the delimiter is not a newline before changing the terminal settings with a zero-length timeout",
-      "version": "25c6aa5b230167c6471898539c46dd2891d891a5"
+      "description": "more test suite changes to partially highlight warning messages; several fixes to bracket expression parsing with equivalence classes, collating symbols, and character classes together with range expressions",
+      "version": "6edfd0bf647cac5c3af3c15aabf49e27528ddf78"
     },
-    "version": "20251006"
+    "version": "20251017"
   }
 }
