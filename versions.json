@@ -151,9 +151,9 @@
       "version": "3.22"
     },
     "commit": {
-      "description": "more test suite changes to partially highlight warning messages; several fixes to bracket expression parsing with equivalence classes, collating symbols, and character classes together with range expressions",
-      "version": "6edfd0bf647cac5c3af3c15aabf49e27528ddf78"
+      "description": "speedups for character processing in a multibyte locale when expanding $'...'; cosmetic fix for select command when read returns EOF; fix for a forced interactive shell running under emacs with a pipe for stdin; fix for local nameref variables with the same name as variables in a function's temporary environment; fix for `x=y local -n x' not making `x' visible as a local variable; turn off nameref attribute for local nameref variables converted to arrays",
+      "version": "c299f535be51179b1e0c989ad9ba4365e182ec28"
     },
-    "version": "20251017"
+    "version": "20251027"
   }
 }
