@@ -9,7 +9,7 @@ FROM alpine:3.22
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
 ENV _BASH_COMMIT c299f535be51179b1e0c989ad9ba4365e182ec28
-# speedups for character processing in a multibyte locale when expanding $'...'; cosmetic fix for select command when read returns EOF; fix for a forced interactive shell running under emacs with a pipe for stdin; fix for local nameref variables with the same name as variables in a function's temporary environment; fix for `x=y local -n x' not making `x' visible as a local variable; turn off nameref attribute for local nameref variables converted to arrays
+# speedups for character processing in a multibyte locale when expandin…
 ENV _BASH_VERSION devel-20251027
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
