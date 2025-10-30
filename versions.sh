@@ -117,6 +117,42 @@ for version in "${versions[@]}"; do
 		[ -n "$date" ]
 		[ -n "$desc" ]
 
+		if [[ "$desc" == *… ]]; then
+			# if our commit description ends with …, it's probably from GitHub, and will cause flappy commits like https://github.com/tianon/docker-bash/commit/9f7b9a49f4e369b9035faa06653fc38e4ebe9b9a
+			# to combat that, we'll ask GitHub to give us the full description via the commit "patch" interface
+			newDesc="$(wget -qO- "https://github.com/tianon/mirror-bash/commit/$commit.patch" | jq --raw-input --null-input --raw-output '
+				[
+					# collect all lines up to the first empty line
+					label $stopAtEmpty
+					| inputs
+					| if . != "" then . else
+						break $stopAtEmpty
+					end
+				]
+				| join("\n")
+				# (now we have a single "paragraph" of just the patch headers in a single string)
+
+				# a simplified form of https://github.com/tianon/debian-bin/blob/1ec50e608cfb37d143888de9f232bd22777fd46c/jq/deb822.jq#L49-L62
+				# split on newlines that are not followed by space or tab
+				| split("\n(?![ \t])"; "")
+				# now we have an array of "fields"
+				| map(
+					index(":") as $colon
+					| select($colon) # ignore malformed lines that miss a colon
+					| { (.[0:$colon]): (
+						.[$colon+1:]
+						| gsub("^[ \t]+|[ \t]+$"; "")
+						| gsub("[ \t]*\n[ \t]*"; "\n")
+					) }
+				)
+				| add
+
+				| .Subject
+				| gsub("\n"; " ")
+				| ltrimstr("[PATCH] ")
+			')"
+		fi
+
 		if timestamp="$(sed -rne '/.*[[:space:]]+bash-([0-9]+)[[:space:]]+.*/s//\1/p' <<<"$desc")" && [ -n "$timestamp" ]; then
 			: # "commit bash-20210305 snapshot" (https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel&id=11bf534f3628cc0a592866ee4f689beca473f548)
 		else
