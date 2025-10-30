@@ -15,9 +15,13 @@ versions=( "${versions[@]%/}" )
 ftpBase='https://ftp.gnu.org/gnu/bash'
 
 allBaseVersions="$(
-	wget -qO- "$ftpBase/" \
-		| sed -rne '/^(.*[/"[:space:]])?bash-([0-9].+)[.]tar[.]gz([/"[:space:]].*)?$/s//\2/p' \
-		| sort -V
+	if [ "${versions[*]}" = 'devel' ]; then
+		:
+	else
+		wget -qO- "$ftpBase/" \
+			| sed -rne '/^(.*[/"[:space:]])?bash-([0-9].+)[.]tar[.]gz([/"[:space:]].*)?$/s//\2/p' \
+			| sort -V
+	fi
 )"
 
 alpine="$(
