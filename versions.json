@@ -148,7 +148,7 @@
   },
   "devel": {
     "alpine": {
-      "version": "3.22"
+      "version": "3.23"
     },
     "commit": {
       "description": "fix expansion of $* and $@ in contexts where word splitting is not performed to be more consistent across different word expansions; fix pathname canonicalization when setting $BASH",
