@@ -217,7 +217,20 @@ for version in "${versions[@]}"; do
 	json="$(jq <<<"$json" -c '
 		(env.patchbase | tonumber) as $patchbase
 		| (env.patchlevel | tonumber) as $patchlevel
-		| .[env.version] = { version: env.fullVersion, alpine: { version: env.alpine } }
+		| .[env.version] = {
+			version: env.fullVersion,
+			alpine: { version: (
+				if
+					env.version
+					| split(".")
+					| map(tonumber? // .)
+					| .[0] < 5 or (.[0] == 5 and .[1] < 3)
+				then
+					# TODO decide if these older versions are worth updating (they have more fresh compiler errors in Alpine 3.23+)
+					"3.22"
+				else env.alpine end
+			) },
+		}
 		+ if env.baseline != env.fullVersion or $patchbase > 0 then
 			{
 				baseline: (
