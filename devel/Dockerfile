@@ -8,9 +8,9 @@ FROM alpine:3.23
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT 4e705ed53ac364ee110f0b2fbeeab9d3301fcb6b
-# fix expansion of $* and $@ in contexts where word splitting is not performed to be more consistent across different word expansions; fix pathname canonicalization when setting $BASH
-ENV _BASH_VERSION devel-20251124
+ENV _BASH_COMMIT f27bf94a7927219f96e97e1a21f2ade9dd439a3e
+# implementation of printf '%N$' numbered argument conversion specifier, compatible with coreutils
+ENV _BASH_VERSION devel-20251205
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/

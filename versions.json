@@ -151,9 +151,9 @@
       "version": "3.23"
     },
     "commit": {
-      "description": "fix expansion of $* and $@ in contexts where word splitting is not performed to be more consistent across different word expansions; fix pathname canonicalization when setting $BASH",
-      "version": "4e705ed53ac364ee110f0b2fbeeab9d3301fcb6b"
+      "description": "implementation of printf '%N$' numbered argument conversion specifier, compatible with coreutils",
+      "version": "f27bf94a7927219f96e97e1a21f2ade9dd439a3e"
     },
-    "version": "20251124"
+    "version": "20251205"
   }
 }
