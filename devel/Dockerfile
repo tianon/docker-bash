@@ -8,9 +8,9 @@ FROM alpine:3.23
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT f27bf94a7927219f96e97e1a21f2ade9dd439a3e
-# implementation of printf '%N$' numbered argument conversion specifier, compatible with coreutils
-ENV _BASH_VERSION devel-20251205
+ENV _BASH_COMMIT 2cdb2f9b314525a118eff5237839ccc272c2e32b
+# allow locale's decimal point as radix character when parsing fixed-point decimal into seconds and fractional seconds; handle case of shell script file descriptor being made non-blocking; fix smalkl memory leak in programmable completion of shell option names; fix for patsub_replacement behavior when BASH_COMPAT = 42 and the replacement string is quoted; fix for readine when changing show-mode-in-prompt variable
+ENV _BASH_VERSION devel-20251217
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/

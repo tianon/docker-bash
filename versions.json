@@ -151,9 +151,9 @@
       "version": "3.23"
     },
     "commit": {
-      "description": "implementation of printf '%N$' numbered argument conversion specifier, compatible with coreutils",
-      "version": "f27bf94a7927219f96e97e1a21f2ade9dd439a3e"
+      "description": "allow locale's decimal point as radix character when parsing fixed-point decimal into seconds and fractional seconds; handle case of shell script file descriptor being made non-blocking; fix smalkl memory leak in programmable completion of shell option names; fix for patsub_replacement behavior when BASH_COMPAT = 42 and the replacement string is quoted; fix for readine when changing show-mode-in-prompt variable",
+      "version": "2cdb2f9b314525a118eff5237839ccc272c2e32b"
     },
-    "version": "20251205"
+    "version": "20251217"
   }
 }
