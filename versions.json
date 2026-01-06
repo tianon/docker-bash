@@ -151,9 +151,9 @@
       "version": "3.23"
     },
     "commit": {
-      "description": "allow locale's decimal point as radix character when parsing fixed-point decimal into seconds and fractional seconds; handle case of shell script file descriptor being made non-blocking; fix smalkl memory leak in programmable completion of shell option names; fix for patsub_replacement behavior when BASH_COMPAT = 42 and the replacement string is quoted; fix for readine when changing show-mode-in-prompt variable",
-      "version": "2cdb2f9b314525a118eff5237839ccc272c2e32b"
+      "description": "history builtin has a -H option to display history entries as they would be written to the history file; history builtin now takes a START-END range specifier for listing; fix stray semicolon when printing shell functions containing a case command; changes to stdin redirection detection in preparation for POSIX interp 1913",
+      "version": "a43e08df2deefa6b63dce66d57adad2c9a704eb7"
     },
-    "version": "20251217"
+    "version": "20260105"
   }
 }

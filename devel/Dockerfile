@@ -8,9 +8,9 @@ FROM alpine:3.23
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT 2cdb2f9b314525a118eff5237839ccc272c2e32b
-# allow locale's decimal point as radix character when parsing fixed-point decimal into seconds and fractional seconds; handle case of shell script file descriptor being made non-blocking; fix smalkl memory leak in programmable completion of shell option names; fix for patsub_replacement behavior when BASH_COMPAT = 42 and the replacement string is quoted; fix for readine when changing show-mode-in-prompt variable
-ENV _BASH_VERSION devel-20251217
+ENV _BASH_COMMIT a43e08df2deefa6b63dce66d57adad2c9a704eb7
+# history builtin has a -H option to display history entries as they would be written to the history file; history builtin now takes a START-END range specifier for listing; fix stray semicolon when printing shell functions containing a case command; changes to stdin redirection detection in preparation for POSIX interp 1913
+ENV _BASH_VERSION devel-20260105
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
