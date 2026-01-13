@@ -8,9 +8,9 @@ FROM alpine:3.23
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT a43e08df2deefa6b63dce66d57adad2c9a704eb7
-# history builtin has a -H option to display history entries as they would be written to the history file; history builtin now takes a START-END range specifier for listing; fix stray semicolon when printing shell functions containing a case command; changes to stdin redirection detection in preparation for POSIX interp 1913
-ENV _BASH_VERSION devel-20260105
+ENV _BASH_COMMIT e7c3acf10876963d15f4b6b8030717d308c12bd4
+# change posix-mode implicit redirection from /dev/null for asynchronous commands so that 0<&0 does not count as an explicit redirection for austin-group interp 1913; fix spurious debug message about job notification for -c command; fix error handling for wait builtin if there are no children in a subshell
+ENV _BASH_VERSION devel-20260106
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/

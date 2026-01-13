@@ -151,9 +151,9 @@
       "version": "3.23"
     },
     "commit": {
-      "description": "history builtin has a -H option to display history entries as they would be written to the history file; history builtin now takes a START-END range specifier for listing; fix stray semicolon when printing shell functions containing a case command; changes to stdin redirection detection in preparation for POSIX interp 1913",
-      "version": "a43e08df2deefa6b63dce66d57adad2c9a704eb7"
+      "description": "change posix-mode implicit redirection from /dev/null for asynchronous commands so that 0<&0 does not count as an explicit redirection for austin-group interp 1913; fix spurious debug message about job notification for -c command; fix error handling for wait builtin if there are no children in a subshell",
+      "version": "e7c3acf10876963d15f4b6b8030717d308c12bd4"
     },
-    "version": "20260105"
+    "version": "20260106"
   }
 }
