@@ -151,9 +151,9 @@
       "version": "3.23"
     },
     "commit": {
-      "description": "readline's internal pager now accepts `f' and `d' commands like `less",
-      "version": "c4b56ed9ac00424bde0f9ce3adfb7edb3d19a557"
+      "description": "modify way bash avoids running traps in subshells that haven't reset the trap strings yet; new readline bindable command 'shell-expand-and-requote-line'",
+      "version": "a6421d84191dbc90832747f4ba88bf0b5eed0550"
     },
-    "version": "20260118"
+    "version": "20260114"
   }
 }
