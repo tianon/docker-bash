@@ -8,9 +8,9 @@ FROM alpine:3.23
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT e7c3acf10876963d15f4b6b8030717d308c12bd4
-# change posix-mode implicit redirection from /dev/null for asynchronous commands so that 0<&0 does not count as an explicit redirection for austin-group interp 1913; fix spurious debug message about job notification for -c command; fix error handling for wait builtin if there are no children in a subshell
-ENV _BASH_VERSION devel-20260106
+ENV _BASH_COMMIT c4b56ed9ac00424bde0f9ce3adfb7edb3d19a557
+# readline's internal pager now accepts `f' and `d' commands like `less
+ENV _BASH_VERSION devel-20260118
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/

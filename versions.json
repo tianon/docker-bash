@@ -151,9 +151,9 @@
       "version": "3.23"
     },
     "commit": {
-      "description": "change posix-mode implicit redirection from /dev/null for asynchronous commands so that 0<&0 does not count as an explicit redirection for austin-group interp 1913; fix spurious debug message about job notification for -c command; fix error handling for wait builtin if there are no children in a subshell",
-      "version": "e7c3acf10876963d15f4b6b8030717d308c12bd4"
+      "description": "readline's internal pager now accepts `f' and `d' commands like `less",
+      "version": "c4b56ed9ac00424bde0f9ce3adfb7edb3d19a557"
     },
-    "version": "20260106"
+    "version": "20260118"
   }
 }
