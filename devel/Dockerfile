@@ -8,9 +8,9 @@ FROM alpine:3.23
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT a6421d84191dbc90832747f4ba88bf0b5eed0550
-# modify way bash avoids running traps in subshells that haven't reset the trap strings yet; new readline bindable command 'shell-expand-and-requote-line'
-ENV _BASH_VERSION devel-20260114
+ENV _BASH_COMMIT c4b56ed9ac00424bde0f9ce3adfb7edb3d19a557
+# readline's internal pager now accepts `f' and `d' commands like `less
+ENV _BASH_VERSION devel-20260118
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
