@@ -151,9 +151,9 @@
       "version": "3.23"
     },
     "commit": {
-      "description": "modify way bash avoids running traps in subshells that haven't reset the trap strings yet; new readline bindable command 'shell-expand-and-requote-line'",
-      "version": "a6421d84191dbc90832747f4ba88bf0b5eed0550"
+      "description": "new `jobid' loadable builtin like ash-based shells; fix for nofork command substitution when followed by an asynchronous subshell using GNU nohup; fix for nofork command substitution to move the file descriptor moved to the anonymous file out of the user-accessible range",
+      "version": "b805bbec801b3ac9adf1e67707b2d5bd3da9e60b"
     },
-    "version": "20260114"
+    "version": "20260123"
   }
 }
