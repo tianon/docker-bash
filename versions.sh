@@ -163,6 +163,12 @@ for version in "${versions[@]}"; do
 			timestamp="$(date --utc --date "@$date" '+%Y%m%d')"
 		fi
 
+		currentTimestamp="$(jq -r '.devel.version' versions.json)"
+		if [ "$currentTimestamp" -gt "$timestamp" ]; then
+			echo >&2 "error: downgrade protection: $currentTimestamp (current) > $timestamp (new)"
+			exit 1
+		fi
+
 		echo "$version: $commit ($timestamp -- $desc)"
 
 		export commit timestamp desc
