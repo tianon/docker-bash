@@ -151,9 +151,9 @@
       "version": "3.23"
     },
     "commit": {
-      "description": "new `jobid' loadable builtin like ash-based shells; fix for nofork command substitution when followed by an asynchronous subshell using GNU nohup; fix for nofork command substitution to move the file descriptor moved to the anonymous file out of the user-accessible range",
-      "version": "b805bbec801b3ac9adf1e67707b2d5bd3da9e60b"
+      "description": "change `read -d' on a tty when the delimiter is not a newline to set the terminal EOL character instead of putting the terminal into character-at-a-time mode; change some calls to atoi to use strol instead",
+      "version": "468e98e574c182a4c5cee6ae63eb124907bfce16"
     },
-    "version": "20260123"
+    "version": "20260130"
   }
 }

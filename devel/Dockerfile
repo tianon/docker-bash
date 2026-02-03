@@ -8,9 +8,9 @@ FROM alpine:3.23
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT b805bbec801b3ac9adf1e67707b2d5bd3da9e60b
-# new `jobid' loadable builtin like ash-based shells; fix for nofork command substitution when followed by an asynchronous subshell using GNU nohup; fix for nofork command substitution to move the file descriptor moved to the anonymous file out of the user-accessible range
-ENV _BASH_VERSION devel-20260123
+ENV _BASH_COMMIT 468e98e574c182a4c5cee6ae63eb124907bfce16
+# change `read -d' on a tty when the delimiter is not a newline to set the terminal EOL character instead of putting the terminal into character-at-a-time mode; change some calls to atoi to use strol instead
+ENV _BASH_VERSION devel-20260130
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
