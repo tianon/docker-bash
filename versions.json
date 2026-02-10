@@ -151,9 +151,9 @@
       "version": "3.23"
     },
     "commit": {
-      "description": "change `read -d' on a tty when the delimiter is not a newline to set the terminal EOL character instead of putting the terminal into character-at-a-time mode; change some calls to atoi to use strol instead",
-      "version": "468e98e574c182a4c5cee6ae63eb124907bfce16"
+      "description": "documentation updates; fix read builtin not to set tty EOL character to NUL if the delimiter is NULL",
+      "version": "979ae783922a31fb075878da8394ed67a2a71e4c"
     },
-    "version": "20260130"
+    "version": "20260209"
   }
 }
