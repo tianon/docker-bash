@@ -8,9 +8,9 @@ FROM alpine:3.23
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT 979ae783922a31fb075878da8394ed67a2a71e4c
-# documentation updates; fix read builtin not to set tty EOL character to NUL if the delimiter is NULL
-ENV _BASH_VERSION devel-20260209
+ENV _BASH_COMMIT 044c1acc91df168c9e9f1379b9a1ecc75d395bd3
+# fix posix-mode tilde expansion so non-assignment words containing "~:" do not undergo tilde expansion; heuristic to skip case statements while performing history expansion on $() command substitutions; undo redirections before running an EXIT trap when executing a builtin in a subshell
+ENV _BASH_VERSION devel-20260217
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
