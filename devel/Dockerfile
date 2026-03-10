@@ -8,9 +8,9 @@ FROM alpine:3.23
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT 044c1acc91df168c9e9f1379b9a1ecc75d395bd3
-# fix posix-mode tilde expansion so non-assignment words containing "~:" do not undergo tilde expansion; heuristic to skip case statements while performing history expansion on $() command substitutions; undo redirections before running an EXIT trap when executing a builtin in a subshell
-ENV _BASH_VERSION devel-20260217
+ENV _BASH_COMMIT 1f292e433e2e51184c15d8f71b4d9daf1104d3e7
+# fix for heuristic to detect case statements when parsing $() command substitutions to find history expansion; fix for history not being saved if a SIGHUP arrives during $PROMPT_COMMAND execution; workaround for Cygwin bug that results in bash incorrectly calculating the system pipe size
+ENV _BASH_VERSION devel-20260309
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/

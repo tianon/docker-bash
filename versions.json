@@ -151,9 +151,9 @@
       "version": "3.23"
     },
     "commit": {
-      "description": "fix posix-mode tilde expansion so non-assignment words containing \"~:\" do not undergo tilde expansion; heuristic to skip case statements while performing history expansion on $() command substitutions; undo redirections before running an EXIT trap when executing a builtin in a subshell",
-      "version": "044c1acc91df168c9e9f1379b9a1ecc75d395bd3"
+      "description": "fix for heuristic to detect case statements when parsing $() command substitutions to find history expansion; fix for history not being saved if a SIGHUP arrives during $PROMPT_COMMAND execution; workaround for Cygwin bug that results in bash incorrectly calculating the system pipe size",
+      "version": "1f292e433e2e51184c15d8f71b4d9daf1104d3e7"
     },
-    "version": "20260217"
+    "version": "20260309"
   }
 }
