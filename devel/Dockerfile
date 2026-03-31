@@ -8,9 +8,9 @@ FROM alpine:3.23
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT 1f292e433e2e51184c15d8f71b4d9daf1104d3e7
-# fix for heuristic to detect case statements when parsing $() command substitutions to find history expansion; fix for history not being saved if a SIGHUP arrives during $PROMPT_COMMAND execution; workaround for Cygwin bug that results in bash incorrectly calculating the system pipe size
-ENV _BASH_VERSION devel-20260309
+ENV _BASH_COMMIT 55f721c51e2d7999144b28cb2e97d1d077d1d1ef
+# update fix to save history if fatal signal arrives during $PROMPT_COMMAND execution; fix issue with extglob and empty patterns preceding pattern beginning with a `.'
+ENV _BASH_VERSION devel-20260324
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
