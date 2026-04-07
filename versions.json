@@ -151,9 +151,9 @@
       "version": "3.23"
     },
     "commit": {
-      "description": "update fix to save history if fatal signal arrives during $PROMPT_COMMAND execution; fix issue with extglob and empty patterns preceding pattern beginning with a `.'",
-      "version": "55f721c51e2d7999144b28cb2e97d1d077d1d1ef"
+      "description": "fix a bug in word splitting that could potentially drop the first word; complete -p now prefixes the compspec for commands that begin with `-' with `--'; several builtins updated to use $'...' quoting for output when appropriate",
+      "version": "1cbe8c04bb0aa62e0493e096472528cdea983fc2"
     },
-    "version": "20260324"
+    "version": "20260402"
   }
 }
