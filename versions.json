@@ -151,9 +151,9 @@
       "version": "3.23"
     },
     "commit": {
-      "description": "fix problem with trapped signals arriving while running SIGINT traps; new `rev' loadable builtin",
-      "version": "330223688c6be0a7590e33f1b764a64633de52d6"
+      "description": "interim fix for generic list functions to avoid pointer aliasing issues; documentation updates",
+      "version": "669b32f676a102193f65dcf88b98ba40bb361996"
     },
-    "version": "20260428"
+    "version": "20260508"
   }
 }

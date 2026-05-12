@@ -8,9 +8,9 @@ FROM alpine:3.23
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT 330223688c6be0a7590e33f1b764a64633de52d6
-# fix problem with trapped signals arriving while running SIGINT traps; new `rev' loadable builtin
-ENV _BASH_VERSION devel-20260428
+ENV _BASH_COMMIT 669b32f676a102193f65dcf88b98ba40bb361996
+# interim fix for generic list functions to avoid pointer aliasing issues; documentation updates
+ENV _BASH_VERSION devel-20260508
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
