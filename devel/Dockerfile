@@ -8,9 +8,9 @@ FROM alpine:3.23
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT 2d4ba0c618584d3554165b9484d921ec8c4e4523
-# fixed a bug with expanding unquoted $* when the separator is not whitespace and one or more of the positional parameters ends with the separator, resulting in an extra blank field being generated; fixed an issue with adjusting SHLVL in subshells that caused the environment to be rebuilt too many times; fix to make sure function substitution doesn't leave the -v option unset
-ENV _BASH_VERSION devel-20260520
+ENV _BASH_COMMIT 8085ee139645391bb392cc06dd25717238b65455
+# fix the expansion of $@ on the rhs of an assignment statement to be more consistent; fix mapfile to only look up the variable again if a callback is invoked; fix memory leak when converting a variable to an array
+ENV _BASH_VERSION devel-20260608
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
