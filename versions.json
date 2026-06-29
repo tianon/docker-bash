@@ -43,7 +43,10 @@
     "baseline": {
       "version": "4.0"
     },
-    "version": "4.0.0"
+    "patch": {
+      "version": "44"
+    },
+    "version": "4.0.44"
   },
   "4.1": {
     "alpine": {
