@@ -136,6 +136,9 @@ for version in "${versions[@]}"; do
 				| join("\n")
 				# (now we have a single "paragraph" of just the patch headers in a single string)
 
+				# slurp up the rest of the patch and throw it away to avoid "wget" being sad about the pipe being closed early
+				| ([ inputs | empty ]) as $trash
+
 				# a simplified form of https://github.com/tianon/debian-bin/blob/1ec50e608cfb37d143888de9f232bd22777fd46c/jq/deb822.jq#L49-L62
 				# split on newlines that are not followed by space or tab
 				| split("\n(?![ \t])"; "")
