@@ -124,7 +124,7 @@ for version in "${versions[@]}"; do
 		if [[ "$desc" == *… ]]; then
 			# if our commit description ends with …, it's probably from GitHub, and will cause flappy commits like https://github.com/tianon/docker-bash/commit/9f7b9a49f4e369b9035faa06653fc38e4ebe9b9a
 			# to combat that, we'll ask GitHub to give us the full description via the commit "patch" interface
-			newDesc="$(wget -qO- "https://github.com/tianon/mirror-bash/commit/$commit.patch" | jq --raw-input --null-input --raw-output '
+			desc="$(wget -qO- "https://github.com/tianon/mirror-bash/commit/$commit.patch" | jq --raw-input --null-input --raw-output '
 				[
 					# collect all lines up to the first empty line
 					label $stopAtEmpty
