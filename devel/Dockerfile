@@ -8,9 +8,9 @@ FROM alpine:3.24
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT 2f7eb80c770c13adaabca4d6bf4ba5c01a01244d
-# change expansion for key-value pair compound assignment to associative arrays to split all words before identifying keys and values; controlled by a new shopt option: kvpair_split, enabled by default; new `loadassoc' loadable builtin to load an associative array from a set of key-value arguments
-ENV _BASH_VERSION devel-20260817
+ENV _BASH_COMMIT 71327ab3b5aaa7058d28378d481c2c5a1ddb09fc
+# changed version to bash-5.4-devel; new non-recursive implementation for command list execution; extended new compound assignment word splitting behavior to declaration commands; fixed issue with shell not ignoring -n at invocation unless forced interactive with -i
+ENV _BASH_VERSION devel-20260821
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
