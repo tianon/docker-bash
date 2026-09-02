@@ -151,9 +151,9 @@
       "version": "3.24"
     },
     "commit": {
-      "description": "changed version to bash-5.4-devel; new non-recursive implementation for command list execution; extended new compound assignment word splitting behavior to declaration commands; fixed issue with shell not ignoring -n at invocation unless forced interactive with -i",
-      "version": "71327ab3b5aaa7058d28378d481c2c5a1ddb09fc"
+      "description": "documentation updates for history builtin to note it does not truncate the history file; documentation updates for HISTFILESIZE noting that it can work on lines or history entries depending on $HISTTIMEFORMAT; documentation update for history saving behavior at shell exit; history -w and history -a should update the number of history entries in the current session if they are using $HISTFILE; history -r now updates the number of history entries in the current session; improvement to history_truncate_file so it leaves fewer partial history entries when operating on lines",
+      "version": "81ddb6474bbeed1744ff0573aadc6ddeb7efbeee"
     },
-    "version": "20260821"
+    "version": "20260828"
   }
 }

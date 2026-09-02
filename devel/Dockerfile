@@ -8,9 +8,9 @@ FROM alpine:3.24
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT 71327ab3b5aaa7058d28378d481c2c5a1ddb09fc
-# changed version to bash-5.4-devel; new non-recursive implementation for command list execution; extended new compound assignment word splitting behavior to declaration commands; fixed issue with shell not ignoring -n at invocation unless forced interactive with -i
-ENV _BASH_VERSION devel-20260821
+ENV _BASH_COMMIT 81ddb6474bbeed1744ff0573aadc6ddeb7efbeee
+# documentation updates for history builtin to note it does not truncate the history file; documentation updates for HISTFILESIZE noting that it can work on lines or history entries depending on $HISTTIMEFORMAT; documentation update for history saving behavior at shell exit; history -w and history -a should update the number of history entries in the current session if they are using $HISTFILE; history -r now updates the number of history entries in the current session; improvement to history_truncate_file so it leaves fewer partial history entries when operating on lines
+ENV _BASH_VERSION devel-20260828
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
