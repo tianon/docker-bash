@@ -8,9 +8,9 @@ FROM alpine:3.24
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT f26caaa17864b10e80056eed8fd8e2c0d5eb1b4b
-# convert TMOUT input timeout handling to use native readline timeouts if readline is being used; change TMOUT SIGALRM processing not to run in a signal handler context to exit; fix for adding multiline commands containing |& to the history list; history -r should not change history_lines_this_session if reading from the history file
-ENV _BASH_VERSION devel-20260908
+ENV _BASH_COMMIT 1c20880e1683aaabc887a1358c98cdb9c169a630
+# fixes to the included last-ditch termcap library to avoid buffer overflows due to malicious termcap strings; rework TMOUT handling to avoid running code in a SIGALRM handler; new -L option for help builtin to display short docs one per line; send input timeout message to syslog if SYSLOG_HISTORY is defined
+ENV _BASH_VERSION devel-20260923
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
