@@ -8,9 +8,9 @@ FROM alpine:3.24
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT 7cfdb340d23a5602e2a261d791033994d91e8298
-# fix small race condition when using lastpipe and adding the last process to the pipeline; fix bug that could cause the shell to exit even if `execfail' is enabled if `errexit' is enabled and the pathname to exec doesn't exist
-ENV _BASH_VERSION devel-20261007
+ENV _BASH_COMMIT 5e427bb15d701245350c890be4dae6b339a2cea0
+# fix to make verbose mode print lines as they're read while parsing a multi-line command substitution; change to readline so that it no longer treats SIGTERM causing an immediate exit, so bash can trap it in interactive shells; fix potential integer overflow on command substitution output larger than 2GB; make trap action execution ignore any current break and continue conditions, so actions are always executed even if break or continue was executed before the trap was handled
+ENV _BASH_VERSION devel-20261023
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
