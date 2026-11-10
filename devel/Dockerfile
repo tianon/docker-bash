@@ -8,9 +8,9 @@ FROM alpine:3.24
 
 # https://git.savannah.gnu.org/cgit/bash.git/log/?h=devel
 # https://github.com/tianon/mirror-bash/commits/devel
-ENV _BASH_COMMIT a4a9dbc1b6df1089627b062472756b1e2b24e966
-# update readline-8.3 patch 4 to work better in single-byte locales; fix for kill to make sure all processes in a job's pipeline get signalled; readline fixes to use size_t instead of int; make sure closing a file descriptor that was used for a redirection invalidates any buffered input used by the `read' builtin
-ENV _BASH_VERSION devel-20261030
+ENV _BASH_COMMIT f7043f647e84a9642ff03d001062f47e53f631bb
+# fix potential crash with invalid readline key binding command; fix crash caused by signal cleanup after using ^G to abort out of listing possible completions
+ENV _BASH_VERSION devel-20261106
 # prefixed with "_" since "$BASH..." have meaning in Bash parlance
 
 COPY alpine-strcpy.patch /usr/local/src/tianon-bash-patches/
