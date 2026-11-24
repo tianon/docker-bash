@@ -151,9 +151,9 @@
       "version": "3.24"
     },
     "commit": {
-      "description": "fix potential crash with invalid readline key binding command; fix crash caused by signal cleanup after using ^G to abort out of listing possible completions",
-      "version": "f7043f647e84a9642ff03d001062f47e53f631bb"
+      "description": "restricted shells deny `hash -p' and assigning to BASH_CMDS; fix bug that stripped double quotes embedded in some double-quoted word expansions too early; don't try to restore redirections before exiting a subshell unless there's an exit trap; fix bug that discarded too many unwind-protect frames if an error was encountered in a nested trap while `errexit' is set",
+      "version": "edeabcfb383d53ed90807ac2ce84d66f42721d31"
     },
-    "version": "20261106"
+    "version": "20261117"
   }
 }
